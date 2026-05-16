@@ -100,6 +100,8 @@
   </script>
   <style>
     body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+    html { scroll-behavior: smooth; }
+    section[id] { scroll-margin-top: 80px; }
   </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col pt-20">
@@ -109,14 +111,14 @@
     <div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
       <a class="font-headline-sm text-headline-sm tracking-widest text-primary dark:text-primary-fixed uppercase" href="#">LuxSmile</a>
       <div class="hidden md:flex space-x-8 items-center">
-        <a class="text-primary dark:text-primary-fixed border-b border-primary/30 pb-1 font-label-md text-label-md hover:text-primary transition-colors duration-300" href="#">Services</a>
-        <a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-300" href="#">Philosophy</a>
-        <a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-300" href="#">Boutique</a>
-        <a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-300" href="#">Journal</a>
-        <a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-300" href="#">Contact</a>
+        <a class="text-primary dark:text-primary-fixed border-b border-primary/30 pb-1 font-label-md text-label-md hover:text-primary transition-colors duration-300" href="#services">Services</a>
+        <a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-300" href="#philosophy">Philosophy</a>
+        <a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-300" href="#boutique">Boutique</a>
+        <a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-300" href="#journal">Journal</a>
+        <a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-300" href="#contact">Contact</a>
       </div>
       <div class="hidden md:block">
-        <a class="bg-primary-container text-on-primary font-label-md text-label-md py-3 px-6 hover:bg-primary transition-colors duration-300 uppercase tracking-widest" href="#">Book Ritual</a>
+        <a class="bg-primary-container text-on-primary font-label-md text-label-md py-3 px-6 hover:bg-primary transition-colors duration-300 uppercase tracking-widest" href="#contact">Book Ritual</a>
       </div>
       <button class="md:hidden text-primary">
         <span class="material-symbols-outlined text-3xl">menu</span>
@@ -140,7 +142,7 @@
     </section>
 
     <!-- Comprehensive Care Grid -->
-    <section class="py-section-padding bg-surface-container-low">
+    <section id="services" class="py-section-padding bg-surface-container-low">
       <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         <div class="text-center mb-16">
           <span class="font-label-md text-label-md uppercase tracking-widest text-secondary mb-4 block">Boutique Services</span>
@@ -180,7 +182,7 @@
     </section>
 
     <!-- Modern Tech & Ethics -->
-    <section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+    <section id="philosophy" class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
         <div class="lg:col-span-5 flex flex-col justify-center pr-0 lg:pr-12 mb-12 lg:mb-0">
           <span class="font-label-md text-label-md uppercase tracking-widest text-secondary mb-4 block">Our Philosophy</span>
@@ -213,7 +215,7 @@
     </section>
 
     <!-- Care for Every Stage -->
-    <section class="py-section-padding bg-surface-container-low text-center px-margin-mobile md:px-margin-desktop">
+    <section id="boutique" class="py-section-padding bg-surface-container-low text-center px-margin-mobile md:px-margin-desktop">
       <div class="max-w-3xl mx-auto">
         <span class="font-label-md text-label-md uppercase tracking-widest text-secondary mb-4 block">Inclusive Wellness</span>
         <h2 class="font-headline-lg text-headline-lg text-primary mb-12">Care for Every Stage</h2>
@@ -226,8 +228,15 @@
       </div>
     </section>
 
+    <!-- Journal -->
+    <section id="journal" class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+      <span class="font-label-md text-label-md uppercase tracking-widest text-secondary mb-4 block">Coming Soon</span>
+      <h2 class="font-headline-lg text-headline-lg text-primary">The LuxSmile Journal</h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant mt-6 max-w-xl mx-auto">Insights on oral wellness, ethical care, and the art of a healthy smile. Articles coming soon.</p>
+    </section>
+
     <!-- Final CTA -->
-    <section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+    <section id="contact" class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
       <div class="bg-surface-container p-16 md:p-24 flex flex-col items-center">
         <h2 class="font-headline-lg text-headline-lg text-primary mb-8">Ready for a refreshing dental experience?</h2>
         <a class="bg-primary-container text-on-primary font-label-md text-label-md py-4 px-12 hover:bg-primary transition-colors duration-300 uppercase tracking-widest" href="#">Book Your Ritual</a>
