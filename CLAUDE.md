@@ -14,7 +14,9 @@ This is the repository for **luxsmile.ca**, a single-page website hosted on GitH
 
 ## End of Turn
 - After making any changes, tell the user in plain language what was updated.
-- Always end with: **"Your site is ready — run `git push` in your terminal to publish it."**
+- Never ask the user to run terminal commands like `git push`. 
+- Instead, listen for phrases like "go live", "upload to my website", "publish", "send it live" — these are your cue to run `git push` yourself without asking.
+- When you publish, confirm it simply: "Your site is now live."
 - Never use technical terms in responses: no "worktree", "branch", "pull request", "commit", "merge", "remote", "staging", "deploy", or "push to origin".
 - The user is a doctor, not a developer. Speak to results, not process.
 
