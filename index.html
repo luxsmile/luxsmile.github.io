@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>LuxSmile Dental Boutique - Ethical Dental Care</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "tertiary-container": "#4b371e",
+            "surface-container-highest": "#e3e2e0",
+            "on-error-container": "#93000a",
+            "inverse-on-surface": "#f2f1ee",
+            "on-secondary-fixed": "#221a0f",
+            "on-surface": "#1a1c1a",
+            "outline": "#80756d",
+            "secondary-fixed": "#f0e0cd",
+            "error": "#ba1a1a",
+            "surface-tint": "#705a49",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed": "#281803",
+            "surface-dim": "#dbdad7",
+            "on-tertiary": "#ffffff",
+            "surface-container-high": "#e9e8e5",
+            "tertiary": "#33220a",
+            "on-primary-fixed-variant": "#574333",
+            "on-primary-container": "#bba08c",
+            "surface-variant": "#e3e2e0",
+            "background": "#faf9f6",
+            "on-secondary-fixed-variant": "#4f4538",
+            "on-tertiary-container": "#bca07f",
+            "surface-bright": "#faf9f6",
+            "on-surface-variant": "#4e453e",
+            "secondary-container": "#f0e0cd",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#6e6354",
+            "error-container": "#ffdad6",
+            "secondary-fixed-dim": "#d3c4b2",
+            "primary": "#322214",
+            "tertiary-fixed-dim": "#e0c29f",
+            "primary-container": "#4a3728",
+            "inverse-surface": "#2f312f",
+            "primary-fixed": "#fbddc7",
+            "outline-variant": "#d2c4bb",
+            "surface": "#faf9f6",
+            "primary-fixed-dim": "#dec1ac",
+            "inverse-primary": "#dec1ac",
+            "on-primary": "#ffffff",
+            "surface-container-low": "#f4f3f1",
+            "secondary": "#685d4e",
+            "tertiary-fixed": "#fdddb9",
+            "surface-container": "#efeeeb",
+            "on-primary-fixed": "#28180b",
+            "on-tertiary-fixed-variant": "#584329",
+            "on-error": "#ffffff",
+            "on-background": "#1a1c1a"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          spacing: {
+            "margin-mobile": "20px",
+            "gutter": "24px",
+            "container-max": "1200px",
+            "margin-desktop": "64px",
+            "section-padding": "120px"
+          },
+          fontFamily: {
+            "headline-sm": ["Bodoni Moda"],
+            "headline-lg": ["Bodoni Moda"],
+            "label-md": ["Hanken Grotesk"],
+            "headline-xl-mobile": ["Bodoni Moda"],
+            "headline-md": ["Bodoni Moda"],
+            "body-md": ["Hanken Grotesk"],
+            "headline-xl": ["Bodoni Moda"],
+            "body-lg": ["Hanken Grotesk"]
+          },
+          fontSize: {
+            "headline-sm": ["24px", { lineHeight: "32px", fontWeight: "500" }],
+            "headline-lg": ["48px", { lineHeight: "56px", fontWeight: "400" }],
+            "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }],
+            "headline-xl-mobile": ["40px", { lineHeight: "48px", fontWeight: "400" }],
+            "headline-md": ["32px", { lineHeight: "40px", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "headline-xl": ["64px", { lineHeight: "72px", letterSpacing: "-0.02em", fontWeight: "400" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+  </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col pt-20">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container/80 backdrop-blur-md">
+    <div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+      <a class="font-headline-sm text-headline-sm tracking-widest text-primary dark:text-primary-fixed uppercase" href="#">LuxSmile</a>
+      <div class="hidden md:flex space-x-8 items-center">
+        <a class="text-primary dark:text-primary-fixed border-b border-primary/30 pb-1 font-label-md text-label-md hover:text-primary transition-colors duration-300" href="#">Services</a>
+        <a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-300" href="#">Philosophy</a>
+        <a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-300" href="#">Boutique</a>
+        <a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-300" href="#">Journal</a>
+        <a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-300" href="#">Contact</a>
+      </div>
+      <div class="hidden md:block">
+        <a class="bg-primary-container text-on-primary font-label-md text-label-md py-3 px-6 hover:bg-primary transition-colors duration-300 uppercase tracking-widest" href="#">Book Ritual</a>
+      </div>
+      <button class="md:hidden text-primary">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="flex-grow">
+
+    <!-- Hero Section -->
+    <section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center flex flex-col items-center">
+      <h1 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-primary mb-6 max-w-3xl">Ethical Dental Care for a Brighter Smile.</h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl">Over 15 years of registered expertise in advanced dental hygiene. A wellness sanctuary dedicated to your oral health.</p>
+      <div class="w-full max-w-4xl aspect-[16/9] relative mb-12 bg-surface-container-low p-4">
+        <img alt="Ethical Dental Care Hero" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOz_FjhhHhh53nMO5FsMyylefEm64t9tH-VPS43VmBTk9AP1EpDsXMzVMANdjk2W6oYZklgbUQN4ZdYiX8rmXgIAvCOaxVU4Nr5amov79c4WDUm4fniPBIY6ewZypdh1nL9SdYr9DZeIRPM4nA48PIjKtRHvkpzfpLWByJBTSBVyE851lFRQHY81dp4d68yf3xxa7C7bXTm79veh6mTrtenWn-Ahpj5JEwsGldtSMliRAB6nloK59YLHOBfTumBUII7V-xNA8nJo4"/>
+      </div>
+      <a class="bg-primary-container text-on-primary font-label-md text-label-md py-4 px-10 hover:bg-primary transition-colors duration-300 uppercase tracking-widest inline-flex items-center gap-2" href="#">
+        <span>Discover Our Rituals</span>
+        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+      </a>
+    </section>
+
+    <!-- Comprehensive Care Grid -->
+    <section class="py-section-padding bg-surface-container-low">
+      <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+        <div class="text-center mb-16">
+          <span class="font-label-md text-label-md uppercase tracking-widest text-secondary mb-4 block">Boutique Services</span>
+          <h2 class="font-headline-lg text-headline-lg text-primary">Comprehensive Care</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+          <!-- Service Card 1 -->
+          <div class="bg-surface p-10 flex flex-col items-center text-center group hover:bg-surface-container transition-colors duration-500">
+            <span class="material-symbols-outlined text-4xl text-primary-container mb-6" style="font-variation-settings: 'FILL' 0;">cleaning_services</span>
+            <h3 class="font-headline-sm text-headline-sm text-primary mb-4">Scaling &amp; Root Planing</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">Deep cleaning treatments focused on restoring gum health and preventing periodontal disease.</p>
+          </div>
+          <!-- Service Card 2 -->
+          <div class="bg-surface p-10 flex flex-col items-center text-center group hover:bg-surface-container transition-colors duration-500">
+            <span class="material-symbols-outlined text-4xl text-primary-container mb-6" style="font-variation-settings: 'FILL' 0;">search</span>
+            <h3 class="font-headline-sm text-headline-sm text-primary mb-4">Comprehensive Oral Exams</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">Detailed assessments utilizing advanced diagnostic tools to ensure long-term oral wellness.</p>
+          </div>
+          <!-- Service Card 3 -->
+          <div class="bg-surface p-10 flex flex-col items-center text-center group hover:bg-surface-container transition-colors duration-500">
+            <span class="material-symbols-outlined text-4xl text-primary-container mb-6" style="font-variation-settings: 'FILL' 0;">spa</span>
+            <h3 class="font-headline-sm text-headline-sm text-primary mb-4">Gentle Stain Removal</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">Safe and effective brightening techniques designed to enhance your natural smile without sensitivity.</p>
+          </div>
+          <!-- Service Card 4 -->
+          <div class="bg-surface p-10 flex flex-col items-center text-center group hover:bg-surface-container transition-colors duration-500">
+            <span class="material-symbols-outlined text-4xl text-primary-container mb-6" style="font-variation-settings: 'FILL' 0;">water_drop</span>
+            <h3 class="font-headline-sm text-headline-sm text-primary mb-4">Fluoride Therapy</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">Targeted remineralization treatments to strengthen enamel and protect against decay.</p>
+          </div>
+          <!-- Image Accent -->
+          <div class="lg:col-span-2 bg-surface p-4 flex">
+            <img alt="Dental Care Accent" class="w-full h-64 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3TRzGsTJqr7R_AVbbBg8iozPW4nEf-_R_-NrCFa_yQbYus2xJj1lkkhEdGlOHc_V1iEgJvs1q_OKKbzga1DBMXGB9FGGU_iHcZN4zt3ECPcDpHPe1HocvwPPpBDzI1ePtGdRZU0F2ffcAsq5R9dIEBFoGRG5-_cv-vz5bM8S5naWVkDGWlPn78H3dE5AgoAEIM3sBeL5e0g805KE0HQj6OAJ-Ikr_UY55hyfplrGggkKFhd9ozcxbNjuMyttmrR_8WJwKyXvRF0M"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modern Tech & Ethics -->
+    <section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+        <div class="lg:col-span-5 flex flex-col justify-center pr-0 lg:pr-12 mb-12 lg:mb-0">
+          <span class="font-label-md text-label-md uppercase tracking-widest text-secondary mb-4 block">Our Philosophy</span>
+          <h2 class="font-headline-lg text-headline-lg text-primary mb-6">Modern Tech &amp; Ethics</h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">We believe in a holistic approach to dentistry. Our commitment to 100% vegan materials and advanced whitening technology ensures your treatment is as kind to the environment as it is to your smile.</p>
+          <ul class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 0;">check</span>
+              100% Vegan Materials
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 0;">check</span>
+              Advanced Whitening Tech
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 0;">check</span>
+              Sustainable Practices
+            </li>
+          </ul>
+        </div>
+        <div class="lg:col-span-7 grid grid-cols-2 gap-gutter">
+          <div class="col-span-2 md:col-span-1 aspect-[4/5] bg-surface-container p-3">
+            <img alt="Vegan Materials" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6szJqSFVZx8szm_gg9XG51tE-t44Z47clFw7Vnw08uP7Sl63OJsmZ0e7AUh84NfEj_yawEtwLM_r73Qbkf_3MkN4tVE2XL0siTG39O1wEVWqUVYW9X_qIxNc6O07vudwLs6Vah2QZ_Tw34gl53dCshlQAt9lsKEsgQ9Ui-OOK3yEA9y8d0wNJr6dhIFAGlGBJOZGuV1bFRiX03m2kfOkV0MCG1CbEtUQsniVTwnEOrsnJFpen_U_B62ynedUWYe_YHquKV-qONOY"/>
+          </div>
+          <div class="col-span-2 md:col-span-1 aspect-[4/5] bg-surface-container p-3 mt-0 md:mt-12">
+            <img alt="Advanced Tech" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnkF2ChJccooxFRKvDiIDHS5UwT8k3MatfoaMsMiQ5byheqMxJj5cv-ULzFR59FsX6BST_2-t7l1RQ2U2LlCF4nByOFYR54O_7GLAAigW3miqbYhB4f4r5bmK3lhmzaXzXHHI_f6Ptt3rup2ILEhmFiyTVPhtBikVtznJUAshoQYjmdcqq3IiskGbdNwMQVEdd-2psLTxoGHXWp43hdzpYLVb-Oth0SznN1cv9FS6515yVTCtn6vVwiQKy2UesDGw9KjtXtnPmDO0"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Care for Every Stage -->
+    <section class="py-section-padding bg-surface-container-low text-center px-margin-mobile md:px-margin-desktop">
+      <div class="max-w-3xl mx-auto">
+        <span class="font-label-md text-label-md uppercase tracking-widest text-secondary mb-4 block">Inclusive Wellness</span>
+        <h2 class="font-headline-lg text-headline-lg text-primary mb-12">Care for Every Stage</h2>
+        <div class="flex flex-wrap justify-center gap-4">
+          <span class="bg-surface font-label-md text-label-md text-primary py-2 px-6 uppercase tracking-widest">Kids</span>
+          <span class="bg-surface font-label-md text-label-md text-primary py-2 px-6 uppercase tracking-widest">Families</span>
+          <span class="bg-surface font-label-md text-label-md text-primary py-2 px-6 uppercase tracking-widest">Seniors</span>
+          <span class="bg-surface font-label-md text-label-md text-primary py-2 px-6 uppercase tracking-widest">Special Needs</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+      <div class="bg-surface-container p-16 md:p-24 flex flex-col items-center">
+        <h2 class="font-headline-lg text-headline-lg text-primary mb-8">Ready for a refreshing dental experience?</h2>
+        <a class="bg-primary-container text-on-primary font-label-md text-label-md py-4 px-12 hover:bg-primary transition-colors duration-300 uppercase tracking-widest" href="#">Book Your Ritual</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface-container-low dark:bg-tertiary-container w-full py-section-padding flex flex-col items-center gap-8 px-margin-mobile md:px-margin-desktop">
+    <a class="font-headline-sm text-headline-sm text-primary dark:text-tertiary-fixed uppercase tracking-widest" href="#">LuxSmile</a>
+    <div class="flex flex-wrap justify-center gap-6">
+      <a class="text-on-surface-variant dark:text-on-tertiary-container font-label-md text-label-md hover:text-primary dark:hover:text-tertiary-fixed transition-all focus:ring-1 focus:ring-primary-fixed" href="#">Privacy Policy</a>
+      <a class="text-on-surface-variant dark:text-on-tertiary-container font-label-md text-label-md hover:text-primary dark:hover:text-tertiary-fixed transition-all focus:ring-1 focus:ring-primary-fixed" href="#">Accessibility</a>
+      <a class="text-on-surface-variant dark:text-on-tertiary-container font-label-md text-label-md hover:text-primary dark:hover:text-tertiary-fixed transition-all focus:ring-1 focus:ring-primary-fixed" href="#">Terms of Service</a>
+    </div>
+    <p class="font-body-md text-body-md text-primary dark:text-tertiary-fixed text-center">© 2024 LuxSmile Dental Boutique. Designed for Serenity.</p>
+  </footer>
+
+  <script src="public/js/main.js"></script>
+</body>
+</html>
