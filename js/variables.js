@@ -35,3 +35,11 @@ var c_hours = "HOURS";
 var c_minutes = "MIN.";
 var c_seconds = "SEC.";
 var countdown_end_msg = "We're Open!";
+
+//GOOGLE MAP VARIABLES (required by scripts.js)
+var map_color = "#8eaeba";
+var map_initial_zoom = 15;
+var map_initial_latitude = 43.6532;
+var map_initial_longitude = -79.3832;
+var use_default_map_style = false;
+var map_markers = [];
