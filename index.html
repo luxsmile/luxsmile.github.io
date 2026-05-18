@@ -3,344 +3,566 @@
 <head>
   <meta charset="utf-8">
   <title>LuxSmile Dental Boutique - Ethical Dental Care</title>
-  <meta name="description" content="LuxSmile Dental Boutique - Over 15 years of registered expertise in advanced dental hygiene. Ethical, vegan, and wellness-focused dental care.">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="LuxSmile Dental Boutique - Over 15 years of registered expertise in advanced dental hygiene.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Fav icons -->
   <link rel="icon" href="images/fav_touch_icons/favicon.ico" sizes="any">
-  <link rel="icon" href="images/fav_touch_icons/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/fav_touch_icons/apple-touch-icon-180x180.png">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
   <!-- Neela Theme CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/fontawesome-all.min.css" rel="stylesheet">
-  <link href="css/neela-icon-set.css" rel="stylesheet">
-  <link href="css/owl.carousel.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 
-  <!-- Calendly CSS -->
+  <!-- Calendly -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
-  <!-- Modernizr -->
-  <script src="js/modernizr-3.6.0.min.js"></script>
-
   <style>
-    /* LuxSmile overrides */
-    .nav-logo-text {
-      font-size: 1.4rem;
-      letter-spacing: 0.15em;
-      font-weight: 500;
-      color: #fff;
-      text-decoration: none;
-      text-transform: uppercase;
+    :root {
+      --gold: #a07850;
+      --gold-light: #c9a87c;
+      --dark: #1a1a1a;
+      --cream: #faf8f5;
+      --text: #555;
     }
-    .nav-section .nav-logo-text { color: #fff; }
-    .sticky .nav-logo-text { color: #333; }
-    .service-card {
-      padding: 40px 30px;
-      text-align: center;
-      background: #faf9f7;
-      transition: background 0.3s;
-    }
-    .service-card:hover { background: #f0ede8; }
-    .service-card i { font-size: 2.5rem; color: #a07850; margin-bottom: 20px; }
-    .service-card h3 { font-size: 1.15rem; margin-bottom: 12px; }
-    .service-card p { font-size: 0.9rem; color: #666; line-height: 1.7; }
-    .tag-pill {
-      display: inline-block;
-      padding: 8px 24px;
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      color: var(--dark);
       background: #fff;
-      border: 1px solid #ddd;
-      margin: 6px;
-      font-size: 0.8rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
     }
-    .book-now-btn {
-      background: transparent;
-      border: 2px solid #fff;
-      color: #fff;
-      padding: 14px 40px;
-      font-size: 0.8rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background 0.3s, color 0.3s;
-      text-decoration: none;
-      display: inline-block;
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
     }
-    .book-now-btn:hover { background: #fff; color: #333; }
-    .book-now-btn-dark {
-      background: transparent;
-      border: 2px solid #a07850;
-      color: #a07850;
-      padding: 14px 40px;
-      font-size: 0.8rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background 0.3s, color 0.3s;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .book-now-btn-dark:hover { background: #a07850; color: #fff; }
-    .philosophy-list li {
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 0 40px;
+      height: 70px;
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 12px;
-      font-size: 0.95rem;
-      color: #555;
+      justify-content: space-between;
+      transition: background 0.4s, box-shadow 0.4s;
     }
-    .philosophy-list li i { color: #a07850; }
+    nav.scrolled {
+      background: #fff;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.15em;
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.4s;
+    }
+    nav.scrolled .nav-logo { color: var(--dark); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav.scrolled .nav-links a { color: var(--text); }
+    .nav-links a:hover { color: var(--gold-light); }
+    nav.scrolled .nav-links a:hover { color: var(--gold); }
+
+    .nav-book {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 10px 24px;
+      border: 1px solid rgba(255,255,255,0.7);
+      color: #fff;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: 'Poppins', sans-serif;
+    }
+    .nav-book:hover { background: #fff; color: var(--dark); }
+    nav.scrolled .nav-book { border-color: var(--gold); color: var(--gold); }
+    nav.scrolled .nav-book:hover { background: var(--gold); color: #fff; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: #fff;
+      transition: background 0.4s;
+    }
+    nav.scrolled .hamburger span { background: var(--dark); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 70px; left: 0; right: 0;
+      background: #fff;
+      padding: 20px 40px 30px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      z-index: 999;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a {
+      display: block;
+      padding: 12px 0;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .mobile-menu .mob-book {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 12px 30px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: none;
+      font-family: 'Poppins', sans-serif;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      min-height: 600px;
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url('https://lh3.googleusercontent.com/aida-public/AB6AXuAOz_FjhhHhh53nMO5FsMyylefEm64t9tH-VPS43VmBTk9AP1EpDsXMzVMANdjk2W6oYZklgbUQN4ZdYiX8rmXgIAvCOaxVU4Nr5amov79c4WDUm4fniPBIY6ewZypdh1nL9SdYr9DZeIRPM4nA48PIjKtRHvkpzfpLWByJBTSBVyE851lFRQHY81dp4d68yf3xxa7C7bXTm79veh6mTrtenWn-Ahpj5JEwsGldtSMliRAB6nloK59YLHOBfTumBUII7V-xNA8nJo4')
+        center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+    .hero-inner { padding: 0 20px; }
+    .hero-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      opacity: 0.8;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 1.05;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+    .hero-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.75;
+      margin-bottom: 48px;
+    }
+    .btn-hero {
+      display: inline-block;
+      padding: 16px 48px;
+      border: 1px solid rgba(255,255,255,0.8);
+      color: #fff;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: transparent;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.3s;
+    }
+    .btn-hero:hover { background: #fff; color: var(--dark); }
+
+    /* SECTIONS */
+    section { padding: 100px 40px; }
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      margin-bottom: 60px;
+    }
+    .text-center { text-align: center; }
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    /* SERVICES */
+    #services { background: var(--cream); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2px;
+    }
+    .service-card {
+      background: #fff;
+      padding: 50px 30px;
+      text-align: center;
+      transition: background 0.3s;
+    }
+    .service-card:hover { background: #f5f1ec; }
+    .service-card i {
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: block;
+    }
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .service-card p {
+      font-size: 0.85rem;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    /* PHILOSOPHY */
+    #philosophy {
+      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url('https://lh3.googleusercontent.com/aida-public/AB6AXuB6szJqSFVZx8szm_gg9XG51tE-t44Z47clFw7Vnw08uP7Sl63OJsmZ0e7AUh84NfEj_yawEtwLM_r73Qbkf_3MkN4tVE2XL0siTG39O1wEVWqUVYW9X_qIxNc6O07vudwLs6Vah2QZ_Tw34gl53dCshlQAt9lsKEsgQ9Ui-OOK3yEA9y8d0wNJr6dhIFAGlGBJOZGuV1bFRiX03m2kfOkV0MCG1CbEtUQsniVTwnEOrsnJFpen_U_B62ynedUWYe_YHquKV-qONOY')
+        center/cover no-repeat fixed;
+      color: #fff;
+      text-align: center;
+    }
+    #philosophy .section-label { color: var(--gold-light); }
+    #philosophy .section-title { color: #fff; margin-bottom: 30px; }
+    #philosophy p {
+      max-width: 600px;
+      margin: 0 auto 40px;
+      font-size: 0.95rem;
+      line-height: 1.9;
+      opacity: 0.9;
+    }
+    .checklist {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 14px;
+      text-align: left;
+    }
+    .checklist li {
+      list-style: none;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+    }
+    .checklist li i { color: var(--gold-light); margin-right: 10px; }
+
+    /* BOUTIQUE */
+    #boutique { background: #fff; text-align: center; }
+    .boutique-img {
+      width: 100%;
+      max-height: 420px;
+      object-fit: cover;
+      margin-top: 50px;
+    }
+    .tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .tag {
+      padding: 10px 28px;
+      border: 1px solid #ddd;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--dark);
+    }
+
+    /* JOURNAL */
+    #journal { background: var(--cream); text-align: center; }
+    #journal p {
+      max-width: 500px;
+      margin: 0 auto;
+      color: var(--text);
+      font-size: 0.9rem;
+      line-height: 1.9;
+    }
+
+    /* CONTACT / CTA */
+    #contact { background: #fff; }
     .cta-box {
-      background: #f5f1ec;
+      background: var(--cream);
       padding: 80px 40px;
       text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .cta-box h2 { font-size: clamp(1.5rem, 2.5vw, 2.2rem); margin-bottom: 30px; }
+    .btn-cta {
+      display: inline-block;
+      padding: 16px 48px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: transparent;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.3s;
+    }
+    .btn-cta:hover { background: var(--gold); color: #fff; }
+
+    /* FOOTER */
+    footer {
+      background: #1a1a1a;
+      color: rgba(255,255,255,0.5);
+      padding: 60px 40px;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 20px;
+    }
+    footer p { font-size: 0.78rem; line-height: 1.8; }
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    footer .footer-links a {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    footer .footer-links a:hover { color: var(--gold-light); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      section { padding: 70px 20px; }
+      #philosophy { background-attachment: scroll; }
+    }
+
+    /* SCROLL REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 <body>
 
-  <!-- PRELOADER -->
-  <div id="preloader">
-    <div class="loading-heart">
-      <svg viewBox="0 0 100 100" width="60">
-        <path fill="#a07850" d="M50 85 C50 85 10 55 10 30 C10 18 18 10 30 10 C38 10 45 15 50 22 C55 15 62 10 70 10 C82 10 90 18 90 30 C90 55 50 85 50 85Z"/>
-      </svg>
-      <div class="preloader-title" style="font-size:1.1rem; letter-spacing:0.15em; margin-top:10px;">LuxSmile</div>
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">LuxSmile</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#philosophy">Philosophy</a></li>
+      <li><a href="#boutique">Boutique</a></li>
+      <li><a href="#journal">Journal</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><button class="nav-book" onclick="Calendly.initPopupWidget({url:'https://calendly.com/luxsmiledentalltd/new-meeting'});return false;">Book Now</button></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services" onclick="closeMobile()">Services</a>
+    <a href="#philosophy" onclick="closeMobile()">Philosophy</a>
+    <a href="#boutique" onclick="closeMobile()">Boutique</a>
+    <a href="#journal" onclick="closeMobile()">Journal</a>
+    <a href="#contact" onclick="closeMobile()">Contact</a>
+    <button class="mob-book" onclick="Calendly.initPopupWidget({url:'https://calendly.com/luxsmiledentalltd/new-meeting'});closeMobile();return false;">Book Now</button>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <p class="hero-tag">Ethical Dental Care · Toronto</p>
+      <h1>LuxSmile</h1>
+      <p class="hero-sub">Dental Boutique</p>
+      <button class="btn-hero" onclick="Calendly.initPopupWidget({url:'https://calendly.com/luxsmiledentalltd/new-meeting'});return false;">Book Now</button>
     </div>
-  </div>
+  </section>
 
-  <!-- WRAPPER -->
-  <div id="wrapper">
-
-    <!-- HEADER -->
-    <header id="header">
-      <div class="nav-section">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12">
-              <a href="#hero" class="nav-logo nav-logo-text">LuxSmile</a>
-              <nav class="navbar">
-                <ul class="nav navbar-nav">
-                  <li><a href="#services">Services</a></li>
-                  <li><a href="#philosophy">Philosophy</a></li>
-                  <li><a href="#boutique">Boutique</a></li>
-                  <li><a href="#journal">Journal</a></li>
-                  <li><a href="#contact">Contact</a></li>
-                  <li>
-                    <a href="" class="btn btn-light btn-sm" onclick="Calendly.initPopupWidget({url:'https://calendly.com/luxsmiledentalltd/new-meeting'});return false;">Book Now</a>
-                  </li>
-                </ul>
-                <button id="nav-mobile-btn"><i class="fas fa-bars"></i></button>
-              </nav>
-            </div>
-          </div>
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container text-center">
+      <span class="section-label reveal">Boutique Services</span>
+      <h2 class="section-title reveal">Comprehensive Care</h2>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <i class="fas fa-tooth"></i>
+          <h3>Scaling &amp; Root Planing</h3>
+          <p>Deep cleaning treatments focused on restoring gum health and preventing periodontal disease.</p>
+        </div>
+        <div class="service-card reveal">
+          <i class="fas fa-search"></i>
+          <h3>Comprehensive Oral Exams</h3>
+          <p>Detailed assessments utilizing advanced diagnostic tools to ensure long-term oral wellness.</p>
+        </div>
+        <div class="service-card reveal">
+          <i class="fas fa-leaf"></i>
+          <h3>Gentle Stain Removal</h3>
+          <p>Safe and effective brightening techniques designed to enhance your natural smile without sensitivity.</p>
+        </div>
+        <div class="service-card reveal">
+          <i class="fas fa-tint"></i>
+          <h3>Fluoride Therapy</h3>
+          <p>Targeted remineralization treatments to strengthen enamel and protect against decay.</p>
         </div>
       </div>
-    </header>
+    </div>
+  </section>
 
-    <!-- HERO SECTION -->
-    <section id="hero" class="bg-slideshow section-divider-bottom-1">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="hero-wrapper v-center" style="text-align:center;">
-              <h2 data-animation-direction="fade" data-animation-delay="600" style="letter-spacing:0.2em; font-size:0.9rem; margin-bottom:20px;">ETHICAL DENTAL CARE</h2>
-              <h1 class="hero-title light" style="font-size:clamp(2.5rem, 6vw, 5rem); line-height:1.1;">
-                <span data-animation-direction="from-right" data-animation-delay="300">Lux</span><span data-animation-direction="from-left" data-animation-delay="300">Smile</span>
-              </h1>
-              <div class="hero-subtitle light" data-animation-direction="fade" data-animation-delay="800" style="font-size:0.95rem; letter-spacing:0.12em; margin-bottom:40px;">
-                DENTAL BOUTIQUE &nbsp;·&nbsp; TORONTO
-              </div>
-              <div data-animation-direction="fade" data-animation-delay="1000">
-                <a href="" class="book-now-btn" onclick="Calendly.initPopupWidget({url:'https://calendly.com/luxsmiledentalltd/new-meeting'});return false;">Book Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
+  <!-- PHILOSOPHY -->
+  <section id="philosophy">
+    <div class="container">
+      <span class="section-label reveal">Our Philosophy</span>
+      <h2 class="section-title reveal">Modern Tech &amp; Ethics</h2>
+      <p class="reveal">We believe in a holistic approach to dentistry. Our commitment to 100% vegan materials and advanced whitening technology ensures your treatment is as kind to the environment as it is to your smile. Over 15 years of registered expertise.</p>
+      <ul class="checklist reveal">
+        <li><i class="fas fa-check"></i> 100% Vegan Materials</li>
+        <li><i class="fas fa-check"></i> Advanced Whitening Technology</li>
+        <li><i class="fas fa-check"></i> Sustainable Practices</li>
+        <li><i class="fas fa-check"></i> 15+ Years of Registered Expertise</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- BOUTIQUE -->
+  <section id="boutique">
+    <div class="container text-center">
+      <span class="section-label reveal">Inclusive Wellness</span>
+      <h2 class="section-title reveal">Care for Every Stage</h2>
+      <div class="tags reveal">
+        <span class="tag">Kids</span>
+        <span class="tag">Families</span>
+        <span class="tag">Seniors</span>
+        <span class="tag">Special Needs</span>
       </div>
-    </section>
+      <img class="boutique-img reveal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3TRzGsTJqr7R_AVbbBg8iozPW4nEf-_R_-NrCFa_yQbYus2xJj1lkkhEdGlOHc_V1iEgJvs1q_OKKbzga1DBMXGB9FGGU_iHcZN4zt3ECPcDpHPe1HocvwPPpBDzI1ePtGdRZU0F2ffcAsq5R9dIEBFoGRG5-_cv-vz5bM8S5naWVkDGWlPn78H3dE5AgoAEIM3sBeL5e0g805KE0HQj6OAJ-Ikr_UY55hyfplrGggkKFhd9ozcxbNjuMyttmrR_8WJwKyXvRF0M" alt="Dental care for every stage">
+    </div>
+  </section>
 
-    <!-- SERVICES SECTION -->
-    <section id="services" style="padding: 100px 0; background: #fff;">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 text-center" style="margin-bottom: 60px;">
-            <span style="font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:#a07850;">Boutique Services</span>
-            <h2 style="font-size:2.2rem; margin-top:12px; font-weight:400;">Comprehensive Care</h2>
-          </div>
-        </div>
-        <div class="row gx-4 gy-4">
-          <div class="col-md-6 col-lg-3">
-            <div class="service-card">
-              <i class="fas fa-tooth"></i>
-              <h3>Scaling &amp; Root Planing</h3>
-              <p>Deep cleaning treatments focused on restoring gum health and preventing periodontal disease.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="service-card">
-              <i class="fas fa-search"></i>
-              <h3>Comprehensive Oral Exams</h3>
-              <p>Detailed assessments utilizing advanced diagnostic tools to ensure long-term oral wellness.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="service-card">
-              <i class="fas fa-spa"></i>
-              <h3>Gentle Stain Removal</h3>
-              <p>Safe and effective brightening techniques designed to enhance your natural smile without sensitivity.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="service-card">
-              <i class="fas fa-tint"></i>
-              <h3>Fluoride Therapy</h3>
-              <p>Targeted remineralization treatments to strengthen enamel and protect against decay.</p>
-            </div>
-          </div>
-        </div>
+  <!-- JOURNAL -->
+  <section id="journal">
+    <div class="container text-center">
+      <span class="section-label reveal">Coming Soon</span>
+      <h2 class="section-title reveal">The LuxSmile Journal</h2>
+      <p class="reveal">Insights on oral wellness, ethical care, and the art of a healthy smile. Articles coming soon.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="cta-box reveal">
+        <span class="section-label">Ready to Visit Us?</span>
+        <h2>Ready for a refreshing dental experience?</h2>
+        <button class="btn-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/luxsmiledentalltd/new-meeting'});return false;">Book Now</button>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- PHILOSOPHY SECTION -->
-    <section id="philosophy" class="parallax-background bg-color-overlay padding-divider-top section-divider-bottom-1" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCnkF2ChJccooxFRKvDiIDHS5UwT8k3MatfoaMsMiQ5byheqMxJj5cv-ULzFR59FsX6BST_2-k3MatfoaMsMiQ5byheqMxJj5cv-ULzFR59FsX6BST_2-');">
-      <div class="section-divider-top-1 off-section"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <h1 class="section-title light">Our Philosophy</h1>
-          </div>
-        </div>
-        <div class="row" style="margin-top: 40px;">
-          <div class="col-lg-6 offset-lg-3 text-center" style="color:#fff;">
-            <p style="font-size:1.05rem; line-height:1.9; margin-bottom:40px; opacity:0.9;">
-              We believe in a holistic approach to dentistry. Our commitment to 100% vegan materials and advanced whitening technology ensures your treatment is as kind to the environment as it is to your smile. Over 15 years of registered expertise in advanced dental hygiene.
-            </p>
-            <ul class="philosophy-list" style="list-style:none; padding:0; display:inline-block; text-align:left;">
-              <li style="color:#fff; margin-bottom:14px;"><i class="fas fa-check" style="color:#e8d5b0; margin-right:10px;"></i> 100% Vegan Materials</li>
-              <li style="color:#fff; margin-bottom:14px;"><i class="fas fa-check" style="color:#e8d5b0; margin-right:10px;"></i> Advanced Whitening Technology</li>
-              <li style="color:#fff; margin-bottom:14px;"><i class="fas fa-check" style="color:#e8d5b0; margin-right:10px;"></i> Sustainable Practices</li>
-              <li style="color:#fff; margin-bottom:14px;"><i class="fas fa-check" style="color:#e8d5b0; margin-right:10px;"></i> 15+ Years of Registered Expertise</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- BOUTIQUE / INCLUSIVE CARE SECTION -->
-    <section id="boutique" style="padding: 100px 0; background: #faf9f7; text-align:center;">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <span style="font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:#a07850;">Inclusive Wellness</span>
-            <h2 style="font-size:2.2rem; margin-top:12px; margin-bottom:50px; font-weight:400;">Care for Every Stage</h2>
-            <div>
-              <span class="tag-pill">Kids</span>
-              <span class="tag-pill">Families</span>
-              <span class="tag-pill">Seniors</span>
-              <span class="tag-pill">Special Needs</span>
-            </div>
-            <div style="margin-top: 60px;">
-              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3TRzGsTJqr7R_AVbbBg8iozPW4nEf-_R_-NrCFa_yQbYus2xJj1lkkhEdGlOHc_V1iEgJvs1q_OKKbzga1DBMXGB9FGGU_iHcZN4zt3ECPcDpHPe1HocvwPPpBDzI1ePtGdRZU0F2ffcAsq5R9dIEBFoGRG5-_cv-vz5bM8S5naWVkDGWlPn78H3dE5AgoAEIM3sBeL5e0g805KE0HQj6OAJ-Ikr_UY55hyfplrGggkKFhd9ozcxbNjuMyttmrR_8WJwKyXvRF0M" alt="Dental care for every stage" style="max-width:100%; max-height:400px; object-fit:cover;">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- JOURNAL SECTION -->
-    <section id="journal" style="padding: 100px 0; background: #fff; text-align:center;">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 offset-lg-2">
-            <span style="font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:#a07850;">Coming Soon</span>
-            <h2 style="font-size:2.2rem; margin-top:12px; font-weight:400;">The LuxSmile Journal</h2>
-            <p style="color:#777; margin-top:20px; font-size:1rem; line-height:1.8;">
-              Insights on oral wellness, ethical care, and the art of a healthy smile. Articles coming soon.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT / BOOK NOW SECTION -->
-    <section id="contact" class="bg-color extra-padding-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 offset-lg-2 text-center">
-            <div class="cta-box">
-              <span style="font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:#a07850; display:block; margin-bottom:16px;">Ready to Visit Us?</span>
-              <h2 style="font-size:2rem; font-weight:400; margin-bottom:30px;">Ready for a refreshing dental experience?</h2>
-              <a href="" class="book-now-btn-dark" onclick="Calendly.initPopupWidget({url:'https://calendly.com/luxsmiledentalltd/new-meeting'});return false;">Book Now</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer id="footer-onepage" class="bg-color">
-      <div class="footer-widget-area">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="footer-info left" style="color:#ccc; font-size:0.85rem;">
-                Toronto, Ontario, Canada<br>
-                luxsmile.ca
-              </div>
-            </div>
-            <div class="col-md-4 text-center">
-              <div class="footer-logo" style="font-size:1.3rem; letter-spacing:0.15em; text-transform:uppercase;">
-                LuxSmile
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="footer-info right" style="color:#ccc; font-size:0.85rem;">
-                Ethical · Vegan · Boutique<br>
-                Dental Hygiene
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="copyright">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12">
-              &copy; 2025 LuxSmile Dental Boutique. All Rights Reserved.
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-  </div>
-  <!-- END WRAPPER -->
-
-  <!-- Libs -->
-  <script src="js/jquery-3.6.0.min.js"></script>
-  <script src="js/jquery-ui.min.js"></script>
-  <script src="js/jquery-migrate-3.3.2.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/jquery.placeholder.min.js"></script>
-  <script src="js/ismobile.js"></script>
-  <script src="js/retina.min.js"></script>
-  <script src="js/waypoints.min.js"></script>
-  <script src="js/waypoints-sticky.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.nicescroll.js"></script>
-  <script src="js/jquery.zoomslider.js"></script>
-  <script src="js/variables.js"></script>
-  <script src="js/scripts.js"></script>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">LuxSmile</div>
+    <p>Dental Boutique · Toronto, Ontario, Canada</p>
+    <p>Ethical · Vegan · Advanced Dental Hygiene</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Accessibility</a>
+      <a href="#">Terms of Service</a>
+    </div>
+    <p style="margin-top:30px; font-size:0.72rem;">&copy; 2025 LuxSmile Dental Boutique. All Rights Reserved.</p>
+  </footer>
 
   <!-- Calendly -->
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+  <script>
+    // Sticky nav
+    window.addEventListener('scroll', function () {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu
+    document.getElementById('hamburger').addEventListener('click', function () {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    });
+    function closeMobile() {
+      document.getElementById('mobileMenu').classList.remove('open');
+    }
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Scroll reveal
+    var reveals = document.querySelectorAll('.reveal');
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(function (el) { observer.observe(el); });
+  </script>
 
 </body>
 </html>
