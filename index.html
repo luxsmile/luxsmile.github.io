@@ -7,6 +7,8 @@
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
   <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
@@ -118,7 +120,7 @@
         <a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-300" href="#contact">Contact</a>
       </div>
       <div class="hidden md:block">
-        <a class="bg-primary-container text-on-primary font-label-md text-label-md py-3 px-6 hover:bg-primary transition-colors duration-300 uppercase tracking-widest" href="#contact">Book Ritual</a>
+        <a class="bg-primary-container text-on-primary font-label-md text-label-md py-3 px-6 hover:bg-primary transition-colors duration-300 uppercase tracking-widest" href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/luxsmiledentalltd/new-meeting'});return false;">Book Ritual</a>
       </div>
       <button class="md:hidden text-primary">
         <span class="material-symbols-outlined text-3xl">menu</span>
@@ -239,7 +241,7 @@
     <section id="contact" class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
       <div class="bg-surface-container p-16 md:p-24 flex flex-col items-center">
         <h2 class="font-headline-lg text-headline-lg text-primary mb-8">Ready for a refreshing dental experience?</h2>
-        <a class="bg-primary-container text-on-primary font-label-md text-label-md py-4 px-12 hover:bg-primary transition-colors duration-300 uppercase tracking-widest" href="#">Book Your Ritual</a>
+        <a class="bg-primary-container text-on-primary font-label-md text-label-md py-4 px-12 hover:bg-primary transition-colors duration-300 uppercase tracking-widest" href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/luxsmiledentalltd/new-meeting'});return false;">Book Your Ritual</a>
       </div>
     </section>
 
