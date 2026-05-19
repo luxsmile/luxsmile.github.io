@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>LuxSmile Flyer v2 - 2.125" x 4.875"</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  @page { size: 2.125in 4.875in; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 2.125in;
+    height: 4.875in;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    background: #f5f0e8;
+  }
+
+  .flyer {
+    width: 2.125in;
+    height: 4.875in;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* 1. HEADER */
+  .header {
+    background: #f5f0e8;
+    padding: 4pt 6pt 3pt;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    border-bottom: 0.5pt solid #c9a84c;
+  }
+  .header-left { display: flex; align-items: center; gap: 3pt; }
+  .logo-img { width: 20pt; height: 20pt; object-fit: contain; flex-shrink: 0; }
+  .logo-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 10pt;
+    color: #1B2A4A;
+    font-weight: 600;
+    line-height: 1;
+  }
+  .logo-text p {
+    font-size: 4pt;
+    color: #1B2A4A;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 1pt;
+    font-weight: 600;
+  }
+  /* Location — right corner, single line */
+  .header-right p {
+    font-size: 3.5pt;
+    color: #1B2A4A;
+    letter-spacing: 0.05em;
+    text-align: right;
+    text-transform: uppercase;
+  }
+
+  /* 2. PHOTO */
+  .photo {
+    height: 52pt;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  /* 3. GREEN BOX */
+  .green-box {
+    background: #1B2A4A;
+    padding: 5pt 7pt 4pt;
+    flex-shrink: 0;
+  }
+  .green-box .eyebrow {
+    font-size: 4pt;
+    color: #C9A96E;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 2pt;
+    font-weight: 600;
+  }
+  .green-box h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 8pt;
+    color: #fff;
+    font-style: italic;
+    line-height: 1.3;
+    margin-bottom: 4pt;
+  }
+  .green-box .phone-cta {
+    font-size: 8pt;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.04em;
+    margin-bottom: 2pt;
+  }
+  .green-box .name-cta {
+    font-family: 'Playfair Display', serif;
+    font-size: 6pt;
+    color: #C9A96E;
+    font-style: italic;
+  }
+
+  /* 4. GOLD BAND */
+  .gold-band {
+    background: #c9a84c;
+    padding: 4pt 7pt;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .gift-label {
+    font-size: 4pt;
+    color: #1B2A4A;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1pt;
+    font-weight: 600;
+  }
+  .gift-divider {
+    width: 80%;
+    border: none;
+    border-top: 0.4pt solid #1B2A4A;
+    margin: 2pt 0;
+  }
+  .gift-sub {
+    font-family: 'Playfair Display', serif;
+    font-size: 6pt;
+    color: #1B2A4A;
+    font-style: italic;
+    margin-bottom: 1pt;
+  }
+  .gold-band h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 12pt;
+    color: #1B2A4A;
+    font-style: italic;
+    margin-bottom: 2pt;
+  }
+  .gift-value {
+    font-size: 4pt;
+    color: #1B2A4A;
+    font-weight: 600;
+  }
+
+  /* 5. WHITENING STRIP */
+  .whitening {
+    background: #1B2A4A;
+    padding: 3pt 7pt;
+    flex-shrink: 0;
+    text-align: center;
+  }
+  .whitening .w-title {
+    font-size: 5pt;
+    font-weight: 700;
+    color: #C9A96E;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .whitening .w-sub {
+    font-size: 4pt;
+    color: rgba(255,255,255,0.85);
+    font-style: italic;
+    margin-top: 1pt;
+  }
+
+  /* 6. STATS — 3 columns */
+  .stats {
+    background: #f5f0e8;
+    display: flex;
+    border-bottom: 0.5pt solid #c9a84c;
+    border-top: 0.5pt solid #c9a84c;
+    flex-shrink: 0;
+  }
+  .stat {
+    flex: 1;
+    padding: 4pt 2pt;
+    text-align: center;
+    border-right: 0.5pt solid #c9a84c;
+  }
+  .stat:last-child { border-right: none; }
+  .stat .num {
+    font-size: 8pt;
+    font-weight: 700;
+    color: #1B2A4A;
+    line-height: 1;
+    display: block;
+  }
+  .stat p { font-size: 3.5pt; color: #1B2A4A; text-transform: uppercase; letter-spacing: 0.04em; line-height: 1.4; margin-top: 1pt; }
+
+  /* 7. SERVICES */
+  .services {
+    background: #f5f0e8;
+    padding: 4pt 6pt;
+    flex: 1;
+  }
+  .services .our-care {
+    font-size: 4pt;
+    color: #c9a84c;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 1pt;
+    font-weight: 600;
+  }
+  .services h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 7pt;
+    font-style: italic;
+    color: #1B2A4A;
+    margin-bottom: 2pt;
+  }
+  .services .desc {
+    font-size: 3.8pt;
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 3pt;
+  }
+  .services-cols { display: flex; gap: 4pt; }
+  .services-col { flex: 1; }
+  .services-col li {
+    list-style: none;
+    font-size: 3.8pt;
+    color: #1B2A4A;
+    line-height: 1.7;
+    padding-left: 5pt;
+    position: relative;
+  }
+  .services-col li::before { content: "•"; position: absolute; left: 0; color: #c9a84c; }
+
+  /* 8. FOOTER */
+  .footer {
+    background: #1B2A4A;
+    padding: 4pt 6pt;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .footer-left .text-to-book { font-size: 4pt; color: #C9A96E; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; }
+  .footer-left .footer-phone { font-size: 8pt; font-weight: 700; color: #fff; }
+  .footer-right { text-align: right; }
+  .footer-right .name {
+    font-family: 'Playfair Display', serif;
+    font-size: 6pt;
+    font-style: italic;
+    color: #fff;
+  }
+  .footer-right .title { font-size: 3.5pt; color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 0.05em; }
+
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="flyer">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <img class="logo-img" src="logo.png" alt="LuxSmile Logo">
+      <div class="logo-text">
+        <h1>LuxSmile</h1>
+        <p>Mobile Dental Hygiene</p>
+      </div>
+    </div>
+    <div class="header-right">
+      <p>Leaside &amp; Surrounding Area</p>
+    </div>
+  </div>
+
+  <!-- PHOTO -->
+  <div class="photo">
+    <img src="dental.jpg" alt="Dental care">
+  </div>
+
+  <!-- GREEN BOX -->
+  <div class="green-box">
+    <p class="eyebrow">At your door &nbsp;·&nbsp; Or our office</p>
+    <h2>Premium dental hygiene<br>that comes to you.</h2>
+    <p class="phone-cta">416-994-9669</p>
+    <p class="name-cta">Leili H Zarrabi, RDH</p>
+  </div>
+
+  <!-- GOLD BAND -->
+  <div class="gold-band">
+    <p class="gift-label">* &nbsp; First-Visit Gift &nbsp; *</p>
+    <hr class="gift-divider">
+    <p class="gift-sub">Complimentary</p>
+    <h3>Waterpik</h3>
+    <p class="gift-value">A $250+ value &nbsp;(While quantities last.)</p>
+  </div>
+
+  <!-- WHITENING STRIP -->
+  <div class="whitening">
+    <p class="w-title">Teeth Whitening</p>
+    <p class="w-sub">Advanced technology &nbsp;·&nbsp; Little to no sensitivity</p>
+  </div>
+
+  <!-- STATS — 3 columns -->
+  <div class="stats">
+    <div class="stat">
+      <span class="num">15</span>
+      <p>Years of Experience</p>
+    </div>
+    <div class="stat">
+      <span class="num" style="font-size:6pt;">CDCP</span>
+      <p>&amp; All Insurance Plans Accepted</p>
+    </div>
+    <div class="stat">
+      <span class="num" style="font-size:6pt; font-family:'Playfair Display',serif; font-style:italic; font-weight:400;">Direct</span>
+      <p>Billing Available</p>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="services">
+    <p class="our-care">Our Care</p>
+    <h3>Full-service hygiene</h3>
+    <p class="desc">Modern technology, gentle hands, no rushed visits.</p>
+    <div class="services-cols">
+      <ul class="services-col">
+        <li>Complete Oral Examination</li>
+        <li>Teeth Cleaning (Scaling)</li>
+        <li>Stain Removal</li>
+        <li>Fluoride Treatments</li>
+        <li>Oral Health Education</li>
+      </ul>
+      <ul class="services-col">
+        <li>Sealants (Cavity Protection)</li>
+        <li>Advanced Gum Therapy</li>
+        <li>Children's Dental Hygiene</li>
+        <li>Seniors &amp; Special Care</li>
+        <li>Referrals to Specialists</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      <p class="text-to-book">Text or Call</p>
+      <p class="footer-phone">416-994-9669</p>
+    </div>
+    <div class="footer-right">
+      <p class="name">Leili H Zarrabi, RDH</p>
+      <p class="title">Registered Dental Hygienist</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
