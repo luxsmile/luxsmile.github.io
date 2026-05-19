@@ -51,7 +51,7 @@ try:
     logo = ImageReader(r"C:\Users\leili\luxsmile.github.io\logo.png")
     c.drawImage(logo, 4, 323, width=26, height=26, mask="auto",
                 preserveAspectRatio=True)
-    logo_right = 34
+    logo_right = 30
 except Exception as e:
     print(f"Logo error: {e}")
     c.setStrokeColor(NAVY)
@@ -74,7 +74,7 @@ c.drawString(logo_right + 2, 330, "MOBILE DENTAL HYGIENE")
 # Location — right corner of header
 c.setFont("Helvetica-Bold", 3.5)
 c.setFillColor(NAVY)
-c.drawRightString(149, 330, "Leaside & Surrounding Area")
+c.drawRightString(152, 326, "Leaside & Surrounding Area")
 
 # ════════════════════════════════════════════════════════════════
 # 2. PHOTO  y: 261–321  (60 pt)
