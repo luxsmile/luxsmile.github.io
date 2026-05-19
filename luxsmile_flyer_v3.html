@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>LuxSmile Flyer v3</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  @page { size: 5.5in 8.5in; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 5.5in;
+    min-height: 8.5in;
+    font-family: 'Poppins', sans-serif;
+    background: #f5f0e8;
+  }
+
+  .flyer {
+    width: 5.5in;
+    min-height: 8.5in;
+    display: flex;
+    flex-direction: column;
+    background: #f5f0e8;
+  }
+
+  /* 1. HEADER */
+  .header {
+    background: #f5f0e8;
+    padding: 10pt 18pt 8pt;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1pt solid #c9a84c;
+  }
+  .header-left { display: flex; align-items: center; gap: 8pt; }
+  .logo-img { height: 72pt; width: auto; object-fit: contain; flex-shrink: 0; }
+  .logo-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20pt;
+    color: #1B2A4A;
+    font-weight: 600;
+    line-height: 1;
+  }
+  .logo-text h1 em { font-style: italic; color: #c9a84c; }
+  .logo-text p {
+    font-size: 6pt;
+    color: #1B2A4A;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-top: 2pt;
+    font-weight: 500;
+  }
+  .header-right {
+    text-align: right;
+    padding-bottom: 0;
+  }
+  .header-right p {
+    font-size: 6.5pt;
+    color: #1B2A4A;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.5;
+  }
+
+  /* 2. PHOTO + NAVY BOX side by side */
+  .hero {
+    display: flex;
+    height: 150pt;
+    flex-shrink: 0;
+  }
+  .photo {
+    flex: 0 0 57%;
+    overflow: hidden;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+  }
+  .navy-box {
+    flex: 0 0 43%;
+    background: #1B2A4A;
+    padding: 14pt 14pt 12pt;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .navy-box .eyebrow {
+    font-size: 5pt;
+    color: #C9A96E;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 5pt;
+    font-weight: 600;
+  }
+  .navy-box h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 12pt;
+    color: #fff;
+    line-height: 1.3;
+    margin-bottom: 7pt;
+  }
+  .navy-box h2 em { font-style: italic; color: #C9A96E; }
+  .navy-box .body-text {
+    font-size: 5.5pt;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.65;
+  }
+
+  /* 3. GOLD BAND */
+  .gold-band {
+    background: #c9a84c;
+    padding: 9pt 16pt;
+    display: flex;
+    align-items: center;
+    gap: 10pt;
+    flex-shrink: 0;
+  }
+  .gift-badge {
+    width: 42pt;
+    height: 42pt;
+    border-radius: 50%;
+    border: 1pt solid #1B2A4A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-shrink: 0;
+    padding: 4pt;
+  }
+  .gift-badge .badge-top {
+    font-size: 4pt;
+    color: #1B2A4A;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .gift-badge .badge-main {
+    font-family: 'Playfair Display', serif;
+    font-size: 5.5pt;
+    color: #1B2A4A;
+    font-style: italic;
+    line-height: 1.2;
+    margin: 1pt 0;
+  }
+  .gift-badge .badge-value {
+    font-size: 3.5pt;
+    color: #1B2A4A;
+    font-weight: 700;
+  }
+  .gift-center { flex: 1; }
+  .gift-label {
+    font-size: 5pt;
+    color: #1B2A4A;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 2pt;
+    font-weight: 600;
+  }
+  .gift-divider {
+    width: 90%;
+    border: none;
+    border-top: 0.5pt solid #1B2A4A;
+    margin: 3pt 0;
+  }
+  .gift-sub {
+    font-family: 'Playfair Display', serif;
+    font-size: 7pt;
+    color: #1B2A4A;
+    font-style: italic;
+    margin-bottom: 1pt;
+  }
+  .gift-center h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 15pt;
+    color: #1B2A4A;
+    font-style: italic;
+    line-height: 1;
+    margin-bottom: 3pt;
+  }
+  .gift-value {
+    font-size: 5pt;
+    color: #1B2A4A;
+  }
+  .gift-right {
+    text-align: right;
+    flex-shrink: 0;
+    border-left: 0.8pt solid rgba(27,42,74,0.3);
+    padding-left: 10pt;
+  }
+  .gift-right .call-label {
+    font-size: 5pt;
+    color: #1B2A4A;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    margin-bottom: 3pt;
+  }
+  .gift-right .phone {
+    font-family: 'Playfair Display', serif;
+    font-size: 11pt;
+    color: #1B2A4A;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
+
+  /* 4. STATS — 4 columns */
+  .stats {
+    background: #f5f0e8;
+    display: flex;
+    border-bottom: 1pt solid #c9a84c;
+    border-top: 1pt solid #c9a84c;
+    flex-shrink: 0;
+  }
+  .stat {
+    flex: 1;
+    padding: 9pt 5pt;
+    text-align: center;
+    border-right: 0.8pt solid #c9a84c;
+  }
+  .stat:last-child { border-right: none; }
+  .stat .num {
+    font-size: 17pt;
+    font-weight: 700;
+    color: #1B2A4A;
+    line-height: 1;
+    display: block;
+  }
+  .stat p {
+    font-size: 4.5pt;
+    color: #1B2A4A;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    line-height: 1.5;
+    margin-top: 2pt;
+  }
+  .stat .highlight { color: #c9a84c; font-weight: 700; }
+
+  /* 5. WHITENING STRIP — bold, centered, below stats */
+  .whitening {
+    background: #1B2A4A;
+    padding: 7pt 20pt;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .whitening .w-title {
+    font-size: 9pt;
+    font-weight: 700;
+    color: #C9A96E;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .whitening .w-sub {
+    font-size: 6pt;
+    color: rgba(255,255,255,0.82);
+    font-style: italic;
+    margin-top: 2pt;
+    letter-spacing: 0.04em;
+  }
+
+  /* 6. SERVICES — Teeth Whitening removed */
+  .services {
+    background: #f5f0e8;
+    padding: 16pt 26pt;
+    flex: 1;
+  }
+  .services .our-care {
+    font-size: 5pt;
+    color: #c9a84c;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    margin-bottom: 2pt;
+    font-weight: 600;
+  }
+  .services h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 13pt;
+    font-style: italic;
+    color: #1B2A4A;
+    margin-bottom: 4pt;
+  }
+  .services .desc {
+    font-size: 5.5pt;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 7pt;
+    max-width: 50%;
+  }
+  .services-cols { display: flex; gap: 0; }
+  .services-col { flex: 1; padding-right: 7pt; }
+  .services-col li {
+    list-style: none;
+    font-size: 6pt;
+    color: #1B2A4A;
+    line-height: 1;
+    padding: 3.5pt 0 3.5pt 9pt;
+    position: relative;
+    border-bottom: 0.4pt solid rgba(201,168,76,0.35);
+  }
+  .services-col li:last-child { border-bottom: none; }
+  .services-col li::before { content: "•"; position: absolute; left: 0; color: #c9a84c; }
+  .services-col li .sub {
+    display: block;
+    font-size: 4.5pt;
+    color: #888;
+    margin-top: 1pt;
+  }
+
+  /* 7. FOOTER */
+  .footer {
+    background: #1B2A4A;
+    padding: 9pt 17pt;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .footer-left .text-to-book {
+    font-size: 5pt;
+    color: #C9A96E;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 600;
+    margin-bottom: 2pt;
+  }
+  .footer-left .footer-phone {
+    font-size: 13pt;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.04em;
+  }
+  .footer-right { text-align: right; }
+  .footer-right .name {
+    font-family: 'Playfair Display', serif;
+    font-size: 10pt;
+    font-style: italic;
+    color: #fff;
+  }
+  .footer-right .title {
+    font-size: 5pt;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 2pt;
+  }
+
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="flyer">
+
+  <!-- HEADER: Toronto ON removed, Leaside moved lower (bottom-aligned) -->
+  <div class="header">
+    <div class="header-left">
+      <img class="logo-img" src="images/luxsmile-logo.png" alt="LuxSmile Logo">
+      <div class="logo-text">
+        <h1><em>Lux</em>Smile</h1>
+        <p>Mobile Dental Hygiene</p>
+      </div>
+    </div>
+    <div class="header-right">
+      <p>Leaside &amp; Surrounding</p>
+    </div>
+  </div>
+
+  <!-- PHOTO left + NAVY BOX right (was teal/green → now navy) -->
+  <div class="hero">
+    <div class="photo">
+      <img src="public/images/dentist-examining-female-patient-with-tools.jpg" alt="Dental care">
+    </div>
+    <div class="navy-box">
+      <p class="eyebrow">At your door &nbsp;·&nbsp; Or our office</p>
+      <h2>Premium dental hygiene<br><em>that comes to you.</em></h2>
+      <p class="body-text">Gentle, modern care delivered in the comfort of your home, office, or care residence — by a Registered Dental Hygienist with 15+ years of experience.</p>
+    </div>
+  </div>
+
+  <!-- GOLD BAND with badge, Waterpik, phone -->
+  <div class="gold-band">
+    <div class="gift-badge">
+      <span class="badge-top">New Client<br>Gift</span>
+      <span class="badge-main">$250+<br>Value</span>
+    </div>
+    <div class="gift-center">
+      <p class="gift-label">First-Visit Gift</p>
+      <hr class="gift-divider">
+      <p class="gift-sub">Complimentary</p>
+      <h3>Waterpik</h3>
+      <p class="gift-value">A premium water flosser ($250+ value) — yours on your first appointment. While quantities last.</p>
+    </div>
+    <div class="gift-right">
+      <p class="call-label">Call or Text</p>
+      <p class="phone">416 · 994 · 9669</p>
+    </div>
+  </div>
+
+  <!-- STATS — 4 columns -->
+  <div class="stats">
+    <div class="stat">
+      <span class="num">15<span style="font-size:16pt;">+</span></span>
+      <p>Years of<br>Experience</p>
+    </div>
+    <div class="stat">
+      <span class="num" style="font-size:20pt;">CDCP</span>
+      <p>&amp; All Insurance<br>Plans Accepted</p>
+    </div>
+    <div class="stat">
+      <span class="num" style="font-size:20pt; font-family:'Playfair Display',serif; font-style:italic; font-weight:400;">Direct</span>
+      <p>Billing <span class="highlight">Available</span></p>
+    </div>
+    <div class="stat">
+      <span class="num" style="font-size:18pt; font-family:'Playfair Display',serif; font-style:italic; font-weight:400;">Leaside</span>
+      <p>&amp; Surrounding<br>Areas Served</p>
+    </div>
+  </div>
+
+  <!-- WHITENING STRIP — bold, centered, below stats -->
+  <div class="whitening">
+    <p class="w-title">Teeth Whitening</p>
+    <p class="w-sub">Advanced technology &nbsp;·&nbsp; Little to no sensitivity</p>
+  </div>
+
+  <!-- SERVICES — Teeth Whitening removed from list -->
+  <div class="services">
+    <p class="our-care">Our Care</p>
+    <h3>Full-service <em>hygiene</em></h3>
+    <p class="desc">From routine cleanings to advanced gum therapy — modern technology, gentle hands, no rushed visits.</p>
+    <div class="services-cols">
+      <ul class="services-col">
+        <li>Complete Oral Examination</li>
+        <li>Emergency Examination</li>
+        <li>Teeth Cleaning<span class="sub">Scaling</span></li>
+        <li>Stain Removal</li>
+        <li>Fluoride Treatments</li>
+      </ul>
+      <ul class="services-col">
+        <li>Sealants<span class="sub">Cavity protection</span></li>
+        <li>Advanced Gum Therapy<span class="sub">Deep cleaning</span></li>
+        <li>Children's Dental Hygiene</li>
+        <li>Seniors &amp; Special Care</li>
+        <li>Oral Health Education</li>
+        <li>Referrals to Specialists</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      <p class="text-to-book">Text to Book</p>
+      <p class="footer-phone">416 · 994 · 9669</p>
+    </div>
+    <div class="footer-right">
+      <p class="name">Leili H. Zarrabi</p>
+      <p class="title">Registered Dental Hygienist</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
