@@ -140,7 +140,7 @@ c.drawCentredString(W/2, 173, "Complimentary")
 
 c.setFont("Times-Bold", 16)
 c.setFillColor(NAVY)
-c.drawCentredString(W/2, 159, "Water Pack")
+c.drawCentredString(W/2, 159, "Water Pick")
 
 c.setFont("Helvetica-Bold", 5)
 c.setFillColor(NAVY)
