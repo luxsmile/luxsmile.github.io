@@ -71,9 +71,10 @@ c.setFont("Helvetica-Bold", 4.5)
 c.setFillColor(NAVY)
 c.drawString(logo_right + 2, 330, "MOBILE DENTAL HYGIENE")
 
+# Location — right corner of header
 c.setFont("Helvetica-Bold", 3.5)
 c.setFillColor(NAVY)
-c.drawString(logo_right + 2, 323, "Leaside & Surrounding Area")
+c.drawRightString(149, 330, "Leaside & Surrounding Area")
 
 # ════════════════════════════════════════════════════════════════
 # 2. PHOTO  y: 261–321  (60 pt)
