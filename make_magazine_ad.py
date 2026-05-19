@@ -74,8 +74,7 @@ c.drawString(logo_right + 2, 329, "MOBILE DENTAL HYGIENE")
 # Location (right-aligned)
 c.setFont("Helvetica-Bold", 4)
 c.setFillColor(NAVY)
-c.drawRightString(149, 340, "LEASIDE & SURROUNDING")
-c.drawRightString(149, 334, "TORONTO  ON")
+c.drawRightString(149, 337, "LEASIDE & SURROUNDING AREA")
 
 # ════════════════════════════════════════════════════════════════
 # 2. PHOTO  y: 261–321  (60 pt)
@@ -111,11 +110,10 @@ c.setFillColor(WHITE)
 c.drawCentredString(W/2, 241, "Premium dental hygiene")
 c.drawCentredString(W/2, 229, "that comes to you.")
 
-# Supporting line
+# Service area
 c.setFont("Helvetica-Bold", 6)
 c.setFillColor(WHITE)
-c.drawCentredString(W/2, 219, "Registered Dental Hygienist")
-c.drawCentredString(W/2, 211, "15+ years experience")
+c.drawCentredString(W/2, 215, "Leaside & Surrounding Area")
 
 c.line(12, 206, W - 12, 206)
 
@@ -218,9 +216,9 @@ c.setFillColor(NAVY)
 c.drawString(7, 69, "Full-service hygiene")
 
 left_svcs  = ["Complete Oral Exam", "Teeth Cleaning", "Stain Removal",
-               "Teeth Whitening", "Fluoride Treatment", "Sealants"]
+               "Fluoride Treatment", "Sealants (Cavity Protection)"]
 right_svcs = ["Advanced Gum Therapy", "Children's Hygiene", "Seniors & Special Care",
-               "Oral Health Education", "Emergency Exam", "Referrals"]
+               "Oral Health Education", "Referrals"]
 
 c.setFont("Helvetica-Bold", 4.5)
 c.setFillColor(NAVY)
@@ -253,9 +251,6 @@ c.setFont("Helvetica-Bold", 4)
 c.setFillColor(WHITE)
 c.drawRightString(148, 13, "REGISTERED DENTAL HYGIENIST")
 
-c.setFont("Helvetica-Bold", 4)
-c.setFillColor(GOLD)
-c.drawRightString(148, 5, "luxsmile.ca")
 
 # ════════════════════════════════════════════════════════════════
 c.save()
