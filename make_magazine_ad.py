@@ -69,12 +69,11 @@ c.drawString(logo_right + 2, 337, "LuxSmile")
 
 c.setFont("Helvetica-Bold", 4.5)
 c.setFillColor(NAVY)
-c.drawString(logo_right + 2, 329, "MOBILE DENTAL HYGIENE")
+c.drawString(logo_right + 2, 330, "MOBILE DENTAL HYGIENE")
 
-# Location (right-aligned)
-c.setFont("Helvetica-Bold", 4)
+c.setFont("Helvetica-Bold", 3.5)
 c.setFillColor(NAVY)
-c.drawRightString(149, 337, "LEASIDE & SURROUNDING AREA")
+c.drawString(logo_right + 2, 323, "Leaside & Surrounding Area")
 
 # ════════════════════════════════════════════════════════════════
 # 2. PHOTO  y: 261–321  (60 pt)
@@ -110,17 +109,15 @@ c.setFillColor(WHITE)
 c.drawCentredString(W/2, 241, "Premium dental hygiene")
 c.drawCentredString(W/2, 229, "that comes to you.")
 
-# Service area
-c.setFont("Helvetica-Bold", 6)
+# Phone number below headline
+c.setFont("Helvetica-Bold", 9)
 c.setFillColor(WHITE)
-c.drawCentredString(W/2, 215, "Leaside & Surrounding Area")
+c.drawCentredString(W/2, 217, "416-994-9669")
 
-c.line(12, 206, W - 12, 206)
-
-# Byline
+# Name below phone
 c.setFont("Times-Bold", 6.5)
 c.setFillColor(GOLD)
-c.drawCentredString(W/2, 197, "Leili H Zarrabi, RDH")
+c.drawCentredString(W/2, 205, "Leili H Zarrabi, RDH")
 
 # ════════════════════════════════════════════════════════════════
 # 4. WATERPIK GIFT BAND  y: 133–191  (58 pt)
@@ -146,18 +143,7 @@ c.drawCentredString(W/2, 159, "Waterpik")
 
 c.setFont("Helvetica-Bold", 5)
 c.setFillColor(NAVY)
-c.drawCentredString(W/2, 151, "A $250+ value  (While quantities last)")
-
-c.line(18, 147, W - 18, 147)
-
-# Phone CTA – centered, fits full width
-c.setFont("Helvetica-Bold", 5.5)
-c.setFillColor(NAVY)
-c.drawCentredString(W/2, 141, "CALL OR TEXT TO BOOK:")
-
-c.setFont("Helvetica-Bold", 10)
-c.setFillColor(NAVY)
-c.drawCentredString(W/2, 133, "416-994-9669")
+c.drawCentredString(W/2, 145, "A $250+ value  (While quantities last)")
 
 # ════════════════════════════════════════════════════════════════
 # 5. TEETH WHITENING STRIP  y: 115–133  (18 pt)
@@ -183,15 +169,14 @@ c.setStrokeColor(GOLD)
 c.setLineWidth(0.5)
 c.line(0, 115, W, 115)
 c.line(0, 83, W, 83)
-# vertical dividers
-for x in (38, 76, 114):
+# vertical dividers — 3 columns now
+for x in (51, 102):
     c.line(x, 83, x, 115)
 
 stats = [
-    (19,  "15",     ["YRS", "EXP"]),
-    (57,  "CDCP",   ["ALL PLANS", "ACCEPTED"]),
-    (95,  "Direct", ["BILLING", "AVAILABLE"]),
-    (133, "Leaside",["& AREA", "SERVICE"]),
+    (25,  "15",      ["YRS", "EXP"]),
+    (76,  "All Ins.",["Plans", "Accepted"]),
+    (127, "Direct",  ["BILLING", "AVAILABLE"]),
 ]
 for cx, big, sub in stats:
     c.setFont("Helvetica-Bold", 9)
@@ -235,21 +220,21 @@ c.rect(0, 0, W, 30, fill=1, stroke=0)
 
 c.setFont("Helvetica-Bold", 5)
 c.setFillColor(GOLD)
-c.drawString(7, 22, "TEXT OR CALL:")
+c.drawString(7, 24, "TEXT OR CALL:")
 
-# Large phone number – full legibility
+# Phone number — moved up slightly
 c.setFont("Helvetica-Bold", 12)
 c.setFillColor(WHITE)
-c.drawString(7, 9, "416-994-9669")
+c.drawString(7, 12, "416-994-9669")
 
-# Name & credential (right side)
+# Name & credential — name moved lower
 c.setFont("Times-Bold", 6.5)
 c.setFillColor(WHITE)
-c.drawRightString(148, 21, "Leili H Zarrabi, RDH")
+c.drawRightString(148, 17, "Leili H Zarrabi, RDH")
 
 c.setFont("Helvetica-Bold", 4)
 c.setFillColor(WHITE)
-c.drawRightString(148, 13, "REGISTERED DENTAL HYGIENIST")
+c.drawRightString(148, 9, "REGISTERED DENTAL HYGIENIST")
 
 
 # ════════════════════════════════════════════════════════════════
