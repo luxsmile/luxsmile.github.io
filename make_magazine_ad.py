@@ -121,7 +121,7 @@ c.setFillColor(GOLD)
 c.drawCentredString(W/2, 205, "Leili H Zarrabi, RDH")
 
 # ════════════════════════════════════════════════════════════════
-# 4. WATERPIK GIFT BAND  y: 133–191  (58 pt)
+# 4. FIRST-VISIT GIFT BAND  y: 133–191  (58 pt)
 # ════════════════════════════════════════════════════════════════
 c.setFillColor(GOLD)
 c.rect(0, 133, W, 58, fill=1, stroke=0)
@@ -140,7 +140,7 @@ c.drawCentredString(W/2, 173, "Complimentary")
 
 c.setFont("Times-Bold", 16)
 c.setFillColor(NAVY)
-c.drawCentredString(W/2, 159, "Waterpik")
+c.drawCentredString(W/2, 159, "Water Pack")
 
 c.setFont("Helvetica-Bold", 5)
 c.setFillColor(NAVY)
