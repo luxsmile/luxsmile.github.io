@@ -175,7 +175,7 @@ for x in (51, 102):
 
 stats = [
     (25,  "15",      ["YRS", "EXP"]),
-    (76,  "All Ins.",["Plans", "Accepted"]),
+    (76,  "CDCP",    ["& All Insurance", "Plans Accepted"]),
     (127, "Direct",  ["BILLING", "AVAILABLE"]),
 ]
 for cx, big, sub in stats:
