@@ -78,17 +78,16 @@ rect(0, 317, 153, 34, CREAM)
 hline(317, GOLD)
 
 try:
-    logo = Image.open(r"C:\Users\leili\luxsmile.github.io\logo.png").convert("RGBA")
-    logo_sz = px(28)
+    logo_path = r"C:\Users\leili\luxsmile.github.io\images\luxsmile-logo-navy.png"
+    logo = Image.open(logo_path).convert("RGBA")
+    logo_sz = px(30)
     logo = logo.resize((logo_sz, logo_sz), Image.LANCZOS)
-    img.paste(logo, (px(3), ry(349)), logo)
+    img.paste(logo, (px(3), ry(351) + 6), logo)
 except Exception as e:
     print(f"Logo: {e}")
 
-tl("LuxSmile",              34, 338, font("timesbd.ttf", 12), NAVY)
-tl("MOBILE DENTAL HYGIENE", 34, 326, font("arialbd.ttf",  8), NAVY)
-tr("Leaside",              149, 338, font("arialbd.ttf",  8), NAVY)
-tr("& Surrounding",        149, 328, font("arialbd.ttf",  8), NAVY)
+tl("LuxSmile",              36, 338, font("timesbd.ttf", 12), NAVY)
+tl("MOBILE DENTAL HYGIENE", 36, 326, font("arialbd.ttf",  8), NAVY)
 
 
 # ══ 2. PHOTO  y: 262–317  (55pt) ════════════════════════════════
@@ -125,12 +124,12 @@ tl("AT YOUR DOOR",     4, 254, font("arialbd.ttf", 8), GOLD)
 tl("OR OUR OFFICE",   4, 244, font("arialbd.ttf", 8), GOLD)
 hline(240, GOLD, x0=4, x1=73)
 
-tc("Premium dental",  229, font("timesbi.ttf", 9), WHITE, cx=38)
-tc("hygiene that",    219, font("timesbi.ttf", 9), WHITE, cx=38)
-tc("comes to you.",   209, font("timesbi.ttf", 9), WHITE, cx=38)
+tc("Premium dental",    229, font("timesbi.ttf", 9), WHITE, cx=38)
+tc("hygiene that",      219, font("timesbi.ttf", 9), WHITE, cx=38)
+tc("comes to you.",     209, font("timesbi.ttf", 9), WHITE, cx=38)
 
-tl("Quality care in your",  4, 197, font("arialbd.ttf", 8), WHITE)
-tl("home, office, or",      4, 187, font("arialbd.ttf", 8), WHITE)
+tc("Leaside &",         197, font("arialbd.ttf", 8), GOLD,  cx=38)
+tc("Surrounding",       187, font("arialbd.ttf", 8), GOLD,  cx=38)
 
 # ── Gold right: "New Client Gift" ────────────────────────────────
 tc("NEW CLIENT GIFT",   254, font("arialbd.ttf",  8), NAVY, cx=115)
@@ -157,9 +156,9 @@ vline(51,  126, 164, GOLD)
 vline(102, 126, 164, GOLD)
 
 stats = [
-    (25,  "15+",    font("arialbd.ttf", 9), "YRS EXPERIENCE"),
-    (76,  "CDCP",   font("arialbd.ttf", 9), "ALL INSURANCE"),
-    (127, "Direct", font("timesbi.ttf", 9), "Billing Avail."),
+    (25,  "15+",    font("arialbd.ttf", 9), "Yrs. Exp."),
+    (76,  "CDCP",   font("arialbd.ttf", 9), "+ All Plans"),
+    (127, "Direct", font("timesbi.ttf", 9), "Billing"),
 ]
 for cx, big, fb, sub in stats:
     tc(big, 150, fb,                     NAVY, cx=cx)
