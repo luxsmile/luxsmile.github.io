@@ -80,14 +80,16 @@ hline(317, GOLD)
 try:
     logo_path = r"C:\Users\leili\luxsmile.github.io\images\luxsmile-logo-navy.png"
     logo = Image.open(logo_path).convert("RGBA")
-    logo_sz = px(30)
+    logo_sz = px(33)                          # 33pt — fills the header nicely
     logo = logo.resize((logo_sz, logo_sz), Image.LANCZOS)
-    img.paste(logo, (px(3), ry(351) + 6), logo)
+    header_px = round(34 * S)                 # header height in pixels
+    top_y = (header_px - logo_sz) // 2        # vertically centred
+    img.paste(logo, (px(2), top_y), logo)
 except Exception as e:
     print(f"Logo: {e}")
 
-tl("LuxSmile",              36, 338, font("timesbd.ttf", 12), NAVY)
-tl("MOBILE DENTAL HYGIENE", 36, 326, font("arialbd.ttf",  8), NAVY)
+tl("LuxSmile",              38, 338, font("timesbd.ttf", 12), NAVY)
+tl("MOBILE DENTAL HYGIENE", 38, 326, font("arialbd.ttf",  8), NAVY)
 
 
 # ══ 2. PHOTO  y: 262–317  (55pt) ════════════════════════════════
