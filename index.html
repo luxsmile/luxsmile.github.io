@@ -1,568 +1,671 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  <title>LuxSmile Dental Boutique - Ethical Dental Care</title>
-  <meta name="description" content="LuxSmile Dental Boutique - Over 15 years of registered expertise in advanced dental hygiene.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<title>LuxSmile - Premium Dental Care</title>
+	<meta name="description" content="LuxSmile - Premium dental hygiene care in Toronto. In-office and mobile dental services by Leili Zarrabi, RDH. Book your appointment today.">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link rel="icon" href="images/fav_touch_icons/favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="images/fav_touch_icons/apple-touch-icon-180x180.png">
+	<link rel="icon" href="images/fav_touch_icons/favicon.png" sizes="any">
+	<link rel="apple-touch-icon" href="images/fav_touch_icons/apple-touch-icon-180x180.png">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet" />
+	<link href="css/fontawesome-all.min.css" rel="stylesheet" />
+	<link href="css/neela-icon-set.css" rel="stylesheet" />
+	<link href="css/owl.carousel.min.css" rel="stylesheet" />
+	<link href="css/style-0.css" rel="stylesheet" />
 
-  <!-- Neela Theme CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/fontawesome-all.min.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+	<!-- Calendly -->
+	<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
-  <!-- Calendly -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-
-  <style>
-    :root {
-      --gold: #a07850;
-      --gold-light: #c9a87c;
-      --dark: #1a1a1a;
-      --cream: #faf8f5;
-      --text: #555;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 300;
-      color: var(--dark);
-      background: #fff;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 400;
-    }
-
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 1000;
-      padding: 0 40px;
-      height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: background 0.4s, box-shadow 0.4s;
-    }
-    nav.scrolled {
-      background: #fff;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
-    }
-    .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      letter-spacing: 0.15em;
-      color: #fff;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: color 0.4s;
-    }
-    nav.scrolled .nav-logo { color: var(--dark); }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    nav.scrolled .nav-links a { color: var(--text); }
-    .nav-links a:hover { color: var(--gold-light); }
-    nav.scrolled .nav-links a:hover { color: var(--gold); }
-
-    .nav-book {
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      padding: 10px 24px;
-      border: 1px solid rgba(255,255,255,0.7);
-      color: #fff;
-      background: transparent;
-      cursor: pointer;
-      transition: all 0.3s;
-      font-family: 'Poppins', sans-serif;
-    }
-    .nav-book:hover { background: #fff; color: var(--dark); }
-    nav.scrolled .nav-book { border-color: var(--gold); color: var(--gold); }
-    nav.scrolled .nav-book:hover { background: var(--gold); color: #fff; }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 4px;
-    }
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 1px;
-      background: #fff;
-      transition: background 0.4s;
-    }
-    nav.scrolled .hamburger span { background: var(--dark); }
-
-    .mobile-menu {
-      display: none;
-      position: fixed;
-      top: 70px; left: 0; right: 0;
-      background: #fff;
-      padding: 20px 40px 30px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-      z-index: 999;
-    }
-    .mobile-menu.open { display: block; }
-    .mobile-menu a {
-      display: block;
-      padding: 12px 0;
-      font-size: 0.8rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text);
-      text-decoration: none;
-      border-bottom: 1px solid #f0f0f0;
-    }
-    .mobile-menu .mob-book {
-      margin-top: 20px;
-      display: inline-block;
-      padding: 12px 30px;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      cursor: pointer;
-      background: none;
-      font-family: 'Poppins', sans-serif;
-      width: 100%;
-      text-align: center;
-    }
-
-    /* HERO */
-    .hero {
-      height: 100vh;
-      min-height: 600px;
-      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-        url('https://lh3.googleusercontent.com/aida-public/AB6AXuAOz_FjhhHhh53nMO5FsMyylefEm64t9tH-VPS43VmBTk9AP1EpDsXMzVMANdjk2W6oYZklgbUQN4ZdYiX8rmXgIAvCOaxVU4Nr5amov79c4WDUm4fniPBIY6ewZypdh1nL9SdYr9DZeIRPM4nA48PIjKtRHvkpzfpLWByJBTSBVyE851lFRQHY81dp4d68yf3xxa7C7bXTm79veh6mTrtenWn-Ahpj5JEwsGldtSMliRAB6nloK59YLHOBfTumBUII7V-xNA8nJo4')
-        center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #fff;
-    }
-    .hero-inner { padding: 0 20px; }
-    .hero-tag {
-      font-size: 0.7rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      opacity: 0.8;
-      margin-bottom: 20px;
-    }
-    .hero h1 {
-      font-size: clamp(3rem, 8vw, 6rem);
-      line-height: 1.05;
-      margin-bottom: 16px;
-      font-style: italic;
-    }
-    .hero-sub {
-      font-size: 0.8rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      opacity: 0.75;
-      margin-bottom: 48px;
-    }
-    .btn-hero {
-      display: inline-block;
-      padding: 16px 48px;
-      border: 1px solid rgba(255,255,255,0.8);
-      color: #fff;
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      cursor: pointer;
-      background: transparent;
-      font-family: 'Poppins', sans-serif;
-      transition: all 0.3s;
-    }
-    .btn-hero:hover { background: #fff; color: var(--dark); }
-
-    /* SECTIONS */
-    section { padding: 100px 40px; }
-    .section-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 12px;
-      display: block;
-    }
-    .section-title {
-      font-size: clamp(1.8rem, 3vw, 2.8rem);
-      margin-bottom: 60px;
-    }
-    .text-center { text-align: center; }
-    .container { max-width: 1100px; margin: 0 auto; }
-
-    /* SERVICES */
-    #services { background: var(--cream); }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2px;
-    }
-    .service-card {
-      background: #fff;
-      padding: 50px 30px;
-      text-align: center;
-      transition: background 0.3s;
-    }
-    .service-card:hover { background: #f5f1ec; }
-    .service-card i {
-      font-size: 2rem;
-      color: var(--gold);
-      margin-bottom: 20px;
-      display: block;
-    }
-    .service-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
-      margin-bottom: 12px;
-      font-weight: 500;
-    }
-    .service-card p {
-      font-size: 0.85rem;
-      color: var(--text);
-      line-height: 1.8;
-    }
-
-    /* PHILOSOPHY */
-    #philosophy {
-      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-        url('https://lh3.googleusercontent.com/aida-public/AB6AXuB6szJqSFVZx8szm_gg9XG51tE-t44Z47clFw7Vnw08uP7Sl63OJsmZ0e7AUh84NfEj_yawEtwLM_r73Qbkf_3MkN4tVE2XL0siTG39O1wEVWqUVYW9X_qIxNc6O07vudwLs6Vah2QZ_Tw34gl53dCshlQAt9lsKEsgQ9Ui-OOK3yEA9y8d0wNJr6dhIFAGlGBJOZGuV1bFRiX03m2kfOkV0MCG1CbEtUQsniVTwnEOrsnJFpen_U_B62ynedUWYe_YHquKV-qONOY')
-        center/cover no-repeat fixed;
-      color: #fff;
-      text-align: center;
-    }
-    #philosophy .section-label { color: var(--gold-light); }
-    #philosophy .section-title { color: #fff; margin-bottom: 30px; }
-    #philosophy p {
-      max-width: 600px;
-      margin: 0 auto 40px;
-      font-size: 0.95rem;
-      line-height: 1.9;
-      opacity: 0.9;
-    }
-    .checklist {
-      display: inline-flex;
-      flex-direction: column;
-      gap: 14px;
-      text-align: left;
-    }
-    .checklist li {
-      list-style: none;
-      font-size: 0.9rem;
-      letter-spacing: 0.05em;
-    }
-    .checklist li i { color: var(--gold-light); margin-right: 10px; }
-
-    /* BOUTIQUE */
-    #boutique { background: #fff; text-align: center; }
-    .boutique-img {
-      width: 100%;
-      max-height: 420px;
-      object-fit: cover;
-      margin-top: 50px;
-    }
-    .tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
-    .tag {
-      padding: 10px 28px;
-      border: 1px solid #ddd;
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--dark);
-    }
-
-    /* JOURNAL */
-    #journal { background: var(--cream); text-align: center; }
-    #journal p {
-      max-width: 500px;
-      margin: 0 auto;
-      color: var(--text);
-      font-size: 0.9rem;
-      line-height: 1.9;
-    }
-
-    /* CONTACT / CTA */
-    #contact { background: #fff; }
-    .cta-box {
-      background: var(--cream);
-      padding: 80px 40px;
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    .cta-box h2 { font-size: clamp(1.5rem, 2.5vw, 2.2rem); margin-bottom: 30px; }
-    .btn-cta {
-      display: inline-block;
-      padding: 16px 48px;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      cursor: pointer;
-      background: transparent;
-      font-family: 'Poppins', sans-serif;
-      transition: all 0.3s;
-    }
-    .btn-cta:hover { background: var(--gold); color: #fff; }
-
-    /* FOOTER */
-    footer {
-      background: #1a1a1a;
-      color: rgba(255,255,255,0.5);
-      padding: 60px 40px;
-      text-align: center;
-    }
-    .footer-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.8);
-      margin-bottom: 20px;
-    }
-    footer p { font-size: 0.78rem; line-height: 1.8; }
-    footer .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      margin-top: 16px;
-      flex-wrap: wrap;
-    }
-    footer .footer-links a {
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    footer .footer-links a:hover { color: var(--gold-light); }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      nav { padding: 0 20px; }
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      section { padding: 70px 20px; }
-      #philosophy { background-attachment: scroll; }
-    }
-
-    /* SCROLL REVEAL */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+	<script src="js/modernizr-3.6.0.min.js"></script>
+	<script src="https://kit.fontawesome.com/39de636081.js" crossorigin="anonymous"></script>
 </head>
 <body>
+	<div id="preloader">
+		<div class="loading-heart">
+			<img src="images/logo-png-black.png">
+		</div>
+	</div>
 
-  <!-- NAV -->
-  <nav id="navbar">
-    <a href="#hero" class="nav-logo">LuxSmile</a>
-    <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#philosophy">Philosophy</a></li>
-      <li><a href="#boutique">Boutique</a></li>
-      <li><a href="#journal">Journal</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><button class="nav-book" onclick="Calendly.initPopupWidget({url:'https://calendly.com/luxsmiledentalltd/new-meeting'});return false;">Book Now</button></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+	<div id="wrapper">
+		<header id="header">
+			<div class="nav-section">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="#hero" class="nav-logo"><img src="images/logo-flat.png" alt="LuxSmile" /></a>
 
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#services" onclick="closeMobile()">Services</a>
-    <a href="#philosophy" onclick="closeMobile()">Philosophy</a>
-    <a href="#boutique" onclick="closeMobile()">Boutique</a>
-    <a href="#journal" onclick="closeMobile()">Journal</a>
-    <a href="#contact" onclick="closeMobile()">Contact</a>
-    <button class="mob-book" onclick="Calendly.initPopupWidget({url:'https://calendly.com/luxsmiledentalltd/new-meeting'});closeMobile();return false;">Book Now</button>
-  </div>
+							<nav class="navbar">
+								<ul class="nav navbar-nav">
+									<li><a href="#hero">Home</a></li>
+									<li><a href="#introduction">About Us</a></li>
+									<li><a href="#whyus">Why Us?</a></li>
+									<li><a href="#services">Services</a></li>
+									<li><a href="#faq">FAQ</a></li>
+									<li><a href="#rsvp">Book Now</a></li>
+								</ul>
+								<button id="nav-mobile-btn"><i class="fas fa-bars"></i></button>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero-inner">
-      <p class="hero-tag">Ethical Dental Care · Toronto</p>
-      <h1>LuxSmile</h1>
-      <p class="hero-sub">Dental Boutique</p>
-      <button class="btn-hero" onclick="Calendly.initPopupWidget({url:'https://calendly.com/luxsmiledentalltd/new-meeting'});return false;">Book Now</button>
-    </div>
-  </section>
+		<!-- ======================== HERO ======================== -->
+		<section id="hero" class="section-divider-bottom-1">
+			<video class="background-video" playsinline autoplay muted loop>
+				<source src="images/luxsmile-slider.mp4" type="video/mp4">
+			</video>
 
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="container text-center">
-      <span class="section-label reveal">Boutique Services</span>
-      <h2 class="section-title reveal">Comprehensive Care</h2>
-      <div class="services-grid">
-        <div class="service-card reveal">
-          <i class="fas fa-tooth"></i>
-          <h3>Scaling &amp; Root Planing</h3>
-          <p>Deep cleaning treatments focused on restoring gum health and preventing periodontal disease.</p>
-        </div>
-        <div class="service-card reveal">
-          <i class="fas fa-search"></i>
-          <h3>Comprehensive Oral Exams</h3>
-          <p>Detailed assessments utilizing advanced diagnostic tools to ensure long-term oral wellness.</p>
-        </div>
-        <div class="service-card reveal">
-          <i class="fas fa-leaf"></i>
-          <h3>Gentle Stain Removal</h3>
-          <p>Safe and effective brightening techniques designed to enhance your natural smile without sensitivity.</p>
-        </div>
-        <div class="service-card reveal">
-          <i class="fas fa-tint"></i>
-          <h3>Fluoride Therapy</h3>
-          <p>Targeted remineralization treatments to strengthen enamel and protect against decay.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 v-center">
+						<div class="hero-wrapper v-center">
+							<h1 class="hero-title light" data-animation-direction="from-top" data-animation-delay="600">
+								<p><img src="images/logo-png-white.png" alt="LuxSmile"></p>
+								<p style="font-size: 18px; color: #ccb180; text-shadow: 0 0 1px #ccb180; margin-bottom: 0;">Premium Dental Hygiene Care · Toronto</p>
+							</h1>
 
-  <!-- PHILOSOPHY -->
-  <section id="philosophy">
-    <div class="container">
-      <span class="section-label reveal">Our Philosophy</span>
-      <h2 class="section-title reveal">Modern Tech &amp; Ethics</h2>
-      <p class="reveal">We believe in a holistic approach to dentistry. Our commitment to 100% vegan materials and advanced whitening technology ensures your treatment is as kind to the environment as it is to your smile. Over 15 years of registered expertise.</p>
-      <ul class="checklist reveal">
-        <li><i class="fas fa-check"></i> 100% Vegan Materials</li>
-        <li><i class="fas fa-check"></i> Advanced Whitening Technology</li>
-        <li><i class="fas fa-check"></i> Sustainable Practices</li>
-        <li><i class="fas fa-check"></i> 15+ Years of Registered Expertise</li>
-      </ul>
-    </div>
-  </section>
+							<div data-animation-direction="fade" data-animation-delay="1000">
+								<a href="tel:+14169949669" class="btn btn-light">
+									<span class="h-lines"></span><span class="v-lines"></span>416-994-9669
+								</a>
+								<a href="#rsvp" class="btn btn-light scrollto">
+									<span class="h-lines"></span><span class="v-lines"></span>Book Now
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-  <!-- BOUTIQUE -->
-  <section id="boutique">
-    <div class="container text-center">
-      <span class="section-label reveal">Inclusive Wellness</span>
-      <h2 class="section-title reveal">Care for Every Stage</h2>
-      <div class="tags reveal">
-        <span class="tag">Kids</span>
-        <span class="tag">Families</span>
-        <span class="tag">Seniors</span>
-        <span class="tag">Special Needs</span>
-      </div>
-      <img class="boutique-img reveal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3TRzGsTJqr7R_AVbbBg8iozPW4nEf-_R_-NrCFa_yQbYus2xJj1lkkhEdGlOHc_V1iEgJvs1q_OKKbzga1DBMXGB9FGGU_iHcZN4zt3ECPcDpHPe1HocvwPPpBDzI1ePtGdRZU0F2ffcAsq5R9dIEBFoGRG5-_cv-vz5bM8S5naWVkDGWlPn78H3dE5AgoAEIM3sBeL5e0g805KE0HQj6OAJ-Ikr_UY55hyfplrGggkKFhd9ozcxbNjuMyttmrR_8WJwKyXvRF0M" alt="Dental care for every stage">
-    </div>
-  </section>
+		<!-- ======================== INTRODUCTION ======================== -->
+		<section id="introduction">
+			<div class="container">
+				<div class="row">
+					<div class="about-us-desc col-lg-8 offset-lg-2"
+						data-animation-direction="from-bottom" data-animation-delay="300">
+						<h3>
+							<small>Welcome to LuxSmile</small>
+							Your Smile, Our Priority
+						</h3>
+						<p>LuxSmile is a premium dental hygiene practice based in Toronto, Ontario, offering both in-office and mobile services. Led by Leili Zarrabi, a Registered Dental Hygienist with over 14 years of experience, we combine luxury, expertise, and personalized care to help you achieve and maintain a healthy, beautiful smile.</p>
+					</div>
+				</div>
+			</div>
+		</section>
 
-  <!-- JOURNAL -->
-  <section id="journal">
-    <div class="container text-center">
-      <span class="section-label reveal">Coming Soon</span>
-      <h2 class="section-title reveal">The LuxSmile Journal</h2>
-      <p class="reveal">Insights on oral wellness, ethical care, and the art of a healthy smile. Articles coming soon.</p>
-    </div>
-  </section>
+		<!-- ======================== WHY US TITLE ======================== -->
+		<section id="our-story-title" class="parallax-background bg-color-overlay section-divider-bottom-2 padding-divider-top">
+			<div class="section-divider-top-1 off-section"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<h1 class="section-title light" data-animation-direction="from-bottom" data-animation-delay="300">Why Choose LuxSmile?</h1>
+					</div>
+				</div>
+			</div>
+		</section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-      <div class="cta-box reveal">
-        <span class="section-label">Ready to Visit Us?</span>
-        <h2>Ready for a refreshing dental experience?</h2>
-        <button class="btn-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/luxsmiledentalltd/new-meeting'});return false;">Book Now</button>
-      </div>
-    </div>
-  </section>
+		<!-- ======================== WHY US ======================== -->
+		<section id="whyus">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+						<div class="timeline">
+							<div class="year" data-animation-direction="from-top" data-animation-delay="250">
+								<span class="neela-style">Why Us?</span>
+							</div>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-logo">LuxSmile</div>
-    <p>Dental Boutique · Toronto, Ontario, Canada</p>
-    <p>Ethical · Vegan · Advanced Dental Hygiene</p>
-    <div class="footer-links">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Accessibility</a>
-      <a href="#">Terms of Service</a>
-    </div>
-    <p style="margin-top:30px; font-size:0.72rem;">&copy; 2025 LuxSmile Dental Boutique. All Rights Reserved.</p>
-  </footer>
+							<div class="template-1">
+								<div class="image-2" data-parallax="6" data-animation-direction="from-right" data-animation-delay="250">
+									<img src="images/dentist-with-smile-1+.jpg" alt="LuxSmile Expertise" width="600" height="818">
+								</div>
 
-  <!-- Calendly -->
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+								<div class="image-1" data-parallax="1" data-animation-direction="from-left" data-animation-delay="250">
+									<img src="images/smiling-happily-with-hand-hip-confident+.jpg" alt="LuxSmile" width="600" height="600">
+								</div>
 
-  <script>
-    // Sticky nav
-    window.addEventListener('scroll', function () {
-      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
-    });
+								<div class="description-wrapper" data-parallax="-6" data-animation-direction="from-bottom" data-animation-delay="250">
+									<div class="description" data-parallax="-6" data-animation-direction="from-bottom" data-animation-delay="250">
+										<div class="neela-style">
+											<h4>Expertise and Experience</h4>
+											<p>With over 14 years of experience as a dental hygienist, I bring a wealth of knowledge and expertise to each and every treatment. I'm committed to staying at the forefront of dental technology and techniques to provide you with the best care possible.</p>
+										</div>
+									</div>
+								</div>
+							</div>
 
-    // Mobile menu
-    document.getElementById('hamburger').addEventListener('click', function () {
-      document.getElementById('mobileMenu').classList.toggle('open');
-    });
-    function closeMobile() {
-      document.getElementById('mobileMenu').classList.remove('open');
-    }
+							<div class="gallery-container">
+								<div class="timeline-gallery-wrapper" data-animation-direction="from-left" data-animation-delay="250">
+									<div class="timeline-gallery owl-carousel">
+										<div class="item">
+											<a class="hover-img" href="images/gallery1.jpg" data-lightbox="gallery-timeline" title="LuxSmile Office Photo #1"><span class="btn btn-light btn-sm">+</span></a>
+											<img src="images/gallery1.jpg" alt="LuxSmile Office" width="620" height="431" />
+										</div>
+										<div class="item">
+											<a class="hover-img" href="images/gallery2.jpg" data-lightbox="gallery-timeline" title="LuxSmile Office Photo #2"><span class="btn btn-light btn-sm">+</span></a>
+											<img src="images/gallery2.jpg" alt="LuxSmile Office" width="620" height="431" />
+										</div>
+										<div class="item">
+											<a class="hover-img" href="images/gallery3.jpg" data-lightbox="gallery-timeline" title="LuxSmile Office Photo #3"><span class="btn btn-light btn-sm">+</span></a>
+											<img src="images/gallery3.jpg" alt="LuxSmile Office" width="620" height="431" />
+										</div>
+										<div class="item">
+											<a class="hover-img" href="images/gallery4.jpg" data-lightbox="gallery-timeline" title="LuxSmile Office Photo #4"><span class="btn btn-light btn-sm">+</span></a>
+											<img src="images/gallery4.jpg" alt="LuxSmile Office" width="620" height="431" />
+										</div>
+									</div>
+								</div>
 
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-      a.addEventListener('click', function (e) {
-        var target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
+								<div class="description-wrapper" data-animation-direction="from-bottom" data-animation-delay="250">
+									<div class="description">
+										<div class="neela-style">
+											<h4>Luxury and Comfort</h4>
+											<p>Dental care should be an enjoyable experience. That's why LuxSmile focuses on providing a relaxing, luxurious environment. Whether you're visiting our office or receiving care at home, we ensure that your experience feels as comfortable and indulgent as it is effective.</p>
+										</div>
+									</div>
+								</div>
+							</div>
 
-    // Scroll reveal
-    var reveals = document.querySelectorAll('.reveal');
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-    reveals.forEach(function (el) { observer.observe(el); });
-  </script>
+							<div class="template-2">
+								<div class="image-1" data-parallax="-2" data-animation-direction="from-left" data-animation-delay="250">
+									<img src="images/IMG-20241106-WA0058.jpg" alt="LuxSmile" width="600" height="818">
+								</div>
 
+								<div class="image-2" data-parallax="4" data-animation-direction="from-right" data-animation-delay="250">
+									<img src="images/IMG-20241106-WA0064.jpg" alt="LuxSmile" width="600" height="800">
+								</div>
+
+								<div class="description-wrapper" data-parallax="-5" data-animation-direction="from-bottom" data-animation-delay="250">
+									<div class="description" data-parallax="-6" data-animation-direction="from-bottom" data-animation-delay="250">
+										<div class="neela-style">
+											<h4>Convenience and Flexibility</h4>
+											<p>At LuxSmile, we understand that life is busy. That's why we offer both in-office and mobile services, so you can choose the option that works best for your schedule. Whether you prefer to visit us at our office or want the ease and comfort of in-home service, we bring expert care directly to you.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="gallery-container">
+								<div class="timeline-gallery-wrapper" data-animation-direction="from-left" data-animation-delay="250">
+									<div class="timeline-gallery owl-carousel">
+										<div class="item">
+											<a class="hover-img" href="images/Studio-Project+.jpg" data-lightbox="gallery-timeline" title="LuxSmile"><span class="btn btn-light btn-sm">+</span></a>
+											<img src="images/Studio-Project+.jpg" alt="LuxSmile" width="620" height="431" />
+										</div>
+										<div class="item">
+											<a class="hover-img" href="images/woman-patient-dentist.jpg" data-lightbox="gallery-timeline" title="LuxSmile"><span class="btn btn-light btn-sm">+</span></a>
+											<img src="images/woman-patient-dentist.jpg" alt="LuxSmile" width="620" height="431" />
+										</div>
+									</div>
+								</div>
+
+								<div class="description-wrapper" data-animation-direction="from-bottom" data-animation-delay="250">
+									<div class="description">
+										<div class="neela-style"><span class="h-lines"></span><span class="v-lines"></span>
+											<h4>Customized Care</h4>
+											<p>Your smile is unique, and so are your dental hygiene needs. We offer personalized care plans that are tailored specifically to your oral health goals. Whether you need a routine cleaning or want to address specific concerns like gum health or teeth whitening, we'll create a plan that's right for you.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="template-1">
+								<div class="image-1" data-parallax="-4" data-animation-direction="from-left" data-animation-delay="250">
+									<img src="images/3ba02203c92107500f65ddacbcaecb00.jpg" alt="LuxSmile" width="600" height="600">
+								</div>
+
+								<div class="image-2" data-parallax="6" data-animation-direction="from-right" data-animation-delay="250">
+									<img src="images/a9ce972b32b5d505534456f4cdd0a2a2+.jpg" alt="LuxSmile" width="600" height="818">
+								</div>
+
+								<div class="description-wrapper" data-parallax="-6" data-animation-direction="from-bottom" data-animation-delay="250">
+									<div class="description" data-parallax="-6" data-animation-direction="from-bottom" data-animation-delay="250">
+										<div class="neela-style"><span class="h-lines"></span><span class="v-lines"></span>
+											<h4>Non-Invasive and Comfortable Treatments</h4>
+											<p>We believe in providing treatments that are effective yet gentle. Our services, from routine cleanings to advanced whitening, are designed to minimize discomfort and ensure a positive experience.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="timeline_footer">
+							<img src="images/logo-png-black.png" style="height: 150px; margin: 10px 0;" data-animation-direction="fade" data-animation-delay="250">
+							<div class="punchline" data-animation-direction="from-bottom" data-animation-delay="250">
+								<small>At LuxSmile</small>
+								Your smile is our priority.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ======================== PHILOSOPHY ======================== -->
+		<section id="philosophy" class="parallax-background bg-color-overlay padding-divider-top section-divider-bottom-1">
+			<div class="section-divider-top-1 off-section"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<h1 class="section-title light" data-animation-direction="from-top" data-animation-delay="300">Our Philosophy</h1>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 center">
+						<div class="invite neela-style" data-animation-direction="from-left" data-animation-delay="100">
+							<div class="invite_title">
+								<div class="text">Comfort Meets Excellence</div>
+							</div>
+							<div class="invite_info">We believe every patient deserves exceptional care in a comfortable, stress-free environment. Whether you're visiting us at our office or receiving care at home, your experience is always our top priority. We are committed to using the most advanced techniques and the highest quality materials — because you deserve nothing less.</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ======================== SERVICES ======================== -->
+		<section id="services" class="divider-bottom-2 divider-pattern divider-bg-color">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<h1 class="section-title mt-70" data-animation-direction="from-bottom" data-animation-delay="300">Services</h1>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="blog-listing clearfix">
+							<div class="row gx-5">
+
+								<article class="item col-md-6" data-animation-direction="from-left" data-animation-delay="300">
+									<div class="info-blog">
+										<h3 class="post-title">Teeth Whitening</h3>
+										<p>Professional-grade whitening treatments using advanced technology for a brighter, more confident smile — safely and comfortably.</p>
+									</div>
+									<div style="text-align: center">
+										<a href="#rsvp" class="btn scrollto"><span class="h-lines"></span><span class="v-lines"></span>Book Now</a>
+									</div>
+								</article>
+
+								<article class="item col-md-6" data-animation-direction="from-left" data-animation-delay="300">
+									<div class="info-blog">
+										<h3 class="post-title">Scaling &amp; Root Planing</h3>
+										<p>Deep cleaning treatments focused on restoring gum health and preventing periodontal disease through thorough removal of plaque and tartar.</p>
+									</div>
+									<div style="text-align: center">
+										<a href="#rsvp" class="btn scrollto"><span class="h-lines"></span><span class="v-lines"></span>Book Now</a>
+									</div>
+								</article>
+
+								<article class="item col-md-6" data-animation-direction="from-left" data-animation-delay="300">
+									<div class="info-blog">
+										<h3 class="post-title">Routine Dental Cleaning</h3>
+										<p>Comprehensive prophylaxis appointments to keep your smile fresh, healthy, and free from the buildup that leads to cavities and gum disease.</p>
+									</div>
+									<div style="text-align: center">
+										<a href="#rsvp" class="btn scrollto"><span class="h-lines"></span><span class="v-lines"></span>Book Now</a>
+									</div>
+								</article>
+
+								<article class="item col-md-6" data-animation-direction="from-left" data-animation-delay="300">
+									<div class="info-blog">
+										<h3 class="post-title">Oral Hygiene Instruction</h3>
+										<p>Personalized coaching on the best at-home techniques, tools, and routines tailored to your specific oral health needs and goals.</p>
+									</div>
+									<div style="text-align: center">
+										<a href="#rsvp" class="btn scrollto"><span class="h-lines"></span><span class="v-lines"></span>Book Now</a>
+									</div>
+								</article>
+
+								<article class="item col-md-6" data-animation-direction="from-left" data-animation-delay="300">
+									<div class="info-blog">
+										<h3 class="post-title">Fluoride Therapy</h3>
+										<p>Targeted remineralization treatments to strengthen enamel and protect against decay — especially beneficial for those at higher risk of cavities.</p>
+									</div>
+									<div style="text-align: center">
+										<a href="#rsvp" class="btn scrollto"><span class="h-lines"></span><span class="v-lines"></span>Book Now</a>
+									</div>
+								</article>
+
+								<article class="item col-md-6" data-animation-direction="from-left" data-animation-delay="300">
+									<div class="info-blog">
+										<h3 class="post-title">Mobile Dental Hygiene</h3>
+										<p>Professional dental hygiene care delivered to your home, office, or care facility — bringing the same expert treatment to you, on your schedule.</p>
+									</div>
+									<div style="text-align: center">
+										<a href="#rsvp" class="btn scrollto"><span class="h-lines"></span><span class="v-lines"></span>Book Now</a>
+									</div>
+								</article>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ======================== TESTIMONIALS ======================== -->
+		<section id="testimonials" class="bg-color side-flowers-light">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-xl-10 offset-xl-1">
+						<div id="testimonials-slider" class="owl-carousel testimonials light" data-animation-direction="from-bottom" data-animation-delay="300">
+
+							<div class="item">
+								<blockquote>"LuxSmile completely changed how I feel about dental appointments. Leili is incredibly gentle, professional, and thorough. I always leave feeling pampered and confident about my oral health!"</blockquote>
+								<div class="author">
+									<h3>Sarah M.<small>Patient</small></h3>
+								</div>
+							</div>
+
+							<div class="item">
+								<blockquote>"The mobile dental hygiene service is a game-changer for our family. Having a professional come to our home is so convenient — especially with kids. I can't recommend LuxSmile enough!"</blockquote>
+								<div class="author">
+									<h3>David K.<small>Patient</small></h3>
+								</div>
+							</div>
+
+							<div class="item">
+								<blockquote>"I've been seeing Leili for years and the level of care at LuxSmile is absolutely unmatched. My teeth have never been healthier, and every visit feels like a spa experience. Worth every penny!"</blockquote>
+								<div class="author">
+									<h3>Jennifer L.<small>Patient</small></h3>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ======================== FAQ ======================== -->
+		<section id="faq" class="section-bg-color">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-xl-6">
+						<h2 class="section-title-lg uppercase desc" data-animation-direction="from-left" data-animation-delay="300">
+							<small>Frequently asked</small><strong>questions</strong>
+						</h2>
+						<div class="section-desc" data-animation-direction="from-right" data-animation-delay="300">From your first visit to your regular check-ups, LuxSmile is here to be your trusted partner in achieving and maintaining a healthy, beautiful smile.</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-8 col-xl-6">
+						<ul class="luxsfaq">
+
+							<li data-animation-direction="from-bottom" data-animation-delay="300">
+								<div class="neela-style"><span class="h-lines"></span><span class="v-lines"></span>
+									<h3>What services does LuxSmile offer?</h3>
+									<div class="info">
+										<p>LuxSmile offers a full range of dental hygiene services including routine cleanings, scaling and root planing, professional teeth whitening, fluoride therapy, oral hygiene instruction, and mobile dental hygiene for clients who prefer care in their own home.</p>
+									</div>
+								</div>
+							</li>
+
+							<li data-animation-direction="from-bottom" data-animation-delay="300">
+								<div class="neela-style"><span class="h-lines"></span><span class="v-lines"></span>
+									<h3>Do you offer mobile dental hygiene services?</h3>
+									<div class="info">
+										<p>Yes! One of our most popular offerings is our mobile dental hygiene service, where Leili comes directly to your home, office, or care facility. It's perfect for busy families, seniors, or anyone who finds it difficult to visit a clinic.</p>
+									</div>
+								</div>
+							</li>
+
+							<li data-animation-direction="from-bottom" data-animation-delay="300">
+								<div class="neela-style"><span class="h-lines"></span><span class="v-lines"></span>
+									<h3>How often should I have my teeth professionally cleaned?</h3>
+									<div class="info">
+										<p>Most patients benefit from a professional cleaning every 6 months. However, depending on your gum health, risk of cavities, and other factors, Leili may recommend more frequent visits — typically every 3 to 4 months for patients with active gum disease.</p>
+									</div>
+								</div>
+							</li>
+
+							<li data-animation-direction="from-bottom" data-animation-delay="300">
+								<div class="neela-style"><span class="h-lines"></span><span class="v-lines"></span>
+									<h3>What is the difference between a routine cleaning and deep cleaning?</h3>
+									<div class="info">
+										<p>A routine cleaning (prophylaxis) removes plaque and tartar from above and just below the gumline. A deep cleaning (scaling and root planing) goes further below the gumline to treat gum disease and remove buildup from the root surfaces. Your hygienist will recommend the appropriate treatment after an assessment.</p>
+									</div>
+								</div>
+							</li>
+
+							<li data-animation-direction="from-bottom" data-animation-delay="300">
+								<div class="neela-style"><span class="h-lines"></span><span class="v-lines"></span>
+									<h3>Is professional teeth whitening safe?</h3>
+									<div class="info">
+										<p>Yes — professional whitening performed or supervised by a registered dental hygienist is safe and effective. Leili uses high-quality whitening products and takes care to protect your gums and soft tissues. She will also assess your suitability for whitening during your appointment.</p>
+									</div>
+								</div>
+							</li>
+
+							<li data-animation-direction="from-bottom" data-animation-delay="300">
+								<div class="neela-style"><span class="h-lines"></span><span class="v-lines"></span>
+									<h3>Do you accept dental insurance?</h3>
+									<div class="info">
+										<p>LuxSmile provides detailed receipts that you can submit directly to your insurance provider for reimbursement. We recommend checking your plan's coverage for dental hygiene services. Please contact us if you have any questions about billing.</p>
+									</div>
+								</div>
+							</li>
+
+							<li data-animation-direction="from-bottom" data-animation-delay="300">
+								<div class="neela-style"><span class="h-lines"></span><span class="v-lines"></span>
+									<h3>How do I book an appointment?</h3>
+									<div class="info">
+										<p>You can book an appointment easily using our online booking form on this page, by calling us at 416-994-9669, or by emailing luxsmiledentalltd@gmail.com. We'll get back to you promptly to confirm your preferred date and time.</p>
+									</div>
+								</div>
+							</li>
+
+							<li data-animation-direction="from-bottom" data-animation-delay="300">
+								<div class="neela-style"><span class="h-lines"></span><span class="v-lines"></span>
+									<h3>What should I expect during my first visit?</h3>
+									<div class="info">
+										<p>Your first visit includes a comprehensive assessment of your oral health — including a review of your medical history, a periodontal assessment, and a full cleaning. Leili will discuss her findings with you and create a personalized care plan to meet your specific needs and goals.</p>
+									</div>
+								</div>
+							</li>
+
+							<li data-animation-direction="from-bottom" data-animation-delay="300">
+								<div class="neela-style"><span class="h-lines"></span><span class="v-lines"></span>
+									<h3>Can you accommodate patients with dental anxiety?</h3>
+									<div class="info">
+										<p>Absolutely. At LuxSmile, your comfort is our top priority. Leili takes a gentle, patient-centred approach and will always go at your pace. If you experience dental anxiety, simply let us know when booking and we'll do everything we can to make your visit as relaxed as possible.</p>
+									</div>
+								</div>
+							</li>
+
+							<li data-animation-direction="from-bottom" data-animation-delay="300">
+								<div class="neela-style"><span class="h-lines"></span><span class="v-lines"></span>
+									<h3>What areas do you serve for mobile dental hygiene?</h3>
+									<div class="info">
+										<p>LuxSmile's mobile service covers Toronto and the surrounding Greater Toronto Area. If you're unsure whether we can come to your location, please reach out and we'll do our best to accommodate you.</p>
+									</div>
+								</div>
+							</li>
+
+							<li data-animation-direction="from-bottom" data-animation-delay="300">
+								<div class="neela-style"><span class="h-lines"></span><span class="v-lines"></span>
+									<h3>Are your products and materials safe for all patients?</h3>
+									<div class="info">
+										<p>Yes. LuxSmile uses high-quality, clinically tested dental products that are safe for all patients. If you have specific allergies, sensitivities, or preferences, please let us know at the time of booking and we will make every effort to accommodate your needs.</p>
+									</div>
+								</div>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ======================== BOOK NOW ======================== -->
+		<section id="rsvp" class="section-bg-color extra-padding-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 col-xxl-6 offset-xxl-3" data-animation-direction="from-top" data-animation-delay="300">
+						<div class="form-wrapper flowers neela-style">
+							<h1 class="section-title">Book Now</h1>
+
+							<form id="form-rsvp" onsubmit="submitBooking(event)">
+
+								<div class="form-floating">
+									<input type="text" name="Name" id="name" placeholder="Your Name*" class="form-control required" required>
+									<label for="name">Your Name*</label>
+								</div>
+
+								<div class="form-floating">
+									<input type="email" name="Email" id="email" placeholder="E-mail*" class="form-control required" required>
+									<label for="email">E-mail*</label>
+								</div>
+
+								<div class="form-floating">
+									<input type="tel" name="Phone" id="phone" placeholder="Phone Number" class="form-control">
+									<label for="phone">Phone Number</label>
+								</div>
+
+								<div class="form-floating">
+									<input type="date" name="Date" id="date" placeholder="Preferred Date" class="form-control">
+									<label for="date">Preferred Date</label>
+								</div>
+
+								<div class="form-floating">
+									<input type="time" name="Time" id="time" placeholder="Preferred Time" class="form-control">
+									<label for="time">Preferred Time</label>
+								</div>
+
+								<div class="form-floating">
+									<textarea id="message" name="Message" placeholder="Message" class="form-control" rows="4"></textarea>
+									<label for="message">Message</label>
+								</div>
+
+								<div class="form_status_message" id="form-status" style="display:none; margin-bottom: 15px;"></div>
+
+								<div class="center">
+									<button type="submit" class="btn btn-primary submit_form">Send Request</button>
+								</div>
+							</form>
+
+							<p style="text-align:center; margin-top: 20px; opacity: 0.7; font-size: 14px;">
+								Or call us directly: <a href="tel:+14169949669" style="color: inherit;">416-994-9669</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ======================== FOOTER ======================== -->
+		<footer id="footer-onepage" class="bg-color">
+			<p style="text-align: center; padding: 0 20px; font-family: Playfair Display; font-size: 20px; font-style: italic; font-weight: 600;">Come see us and enjoy the ultimate comfort and luxury firsthand!</p>
+			<p style="text-align: center; padding: 0 20px 30px; font-style: italic;">Because your needs are our top priority, we've made booking as simple and flexible as possible. You can schedule an appointment at any time and place that works for you.</p>
+
+			<div class="footer-widget-area">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="footer-info left">
+								Toronto, Ontario, Canada<br>
+								Leili Zarrabi, RDH
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="footer-logo"><img src="images/logo-png-white.png" style="height: 75px;"></div>
+						</div>
+						<div class="col-md-4">
+							<div class="footer-info right" style="flex-wrap: wrap; gap: 10px;">
+								<span>Tel.:</span>
+								<a href="tel:+14169949669" style="white-space: nowrap; line-height: 1;">416-994-9669</a>
+								<span>E-mail: luxsmiledentalltd@gmail.com</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="copyright">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							&copy; 2025 - All Rights Reserved.
+							<div class="socials">
+								<a href="#" aria-label="Facebook"><i class="fa-brands fa-square-facebook"></i></a>
+								<a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+								<a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<!-- Libs -->
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/jquery-migrate-3.3.2.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/jquery.placeholder.min.js"></script>
+	<script src="js/ismobile.js"></script>
+	<script src="js/retina.min.js"></script>
+	<script src="js/waypoints.min.js"></script>
+	<script src="js/waypoints-sticky.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/lightbox.min.js"></script>
+	<script src="js/jquery.nicescroll.js"></script>
+
+	<!-- Template Scripts -->
+	<script src="js/variables-.js"></script>
+	<script src="js/scripts-.js"></script>
+
+	<!-- Booking form via Formspree -->
+	<script>
+		function submitBooking(e) {
+			e.preventDefault();
+			var form = document.getElementById('form-rsvp');
+			var status = document.getElementById('form-status');
+			var btn = form.querySelector('button[type=submit]');
+
+			btn.disabled = true;
+			btn.textContent = 'Sending...';
+
+			var data = new FormData(form);
+			fetch('https://formspree.io/f/xpwzadql', {
+				method: 'POST',
+				body: data,
+				headers: { 'Accept': 'application/json' }
+			}).then(function(res) {
+				if (res.ok) {
+					status.style.display = 'block';
+					status.style.color = '#28a745';
+					status.textContent = 'Thank you! Your booking request has been sent. We will contact you shortly to confirm your appointment.';
+					form.reset();
+					btn.textContent = 'Sent!';
+				} else {
+					status.style.display = 'block';
+					status.style.color = '#dc3545';
+					status.textContent = 'Something went wrong. Please call us at 416-994-9669 or email luxsmiledentalltd@gmail.com.';
+					btn.disabled = false;
+					btn.textContent = 'Send Request';
+				}
+			}).catch(function() {
+				status.style.display = 'block';
+				status.style.color = '#dc3545';
+				status.textContent = 'Something went wrong. Please call us at 416-994-9669 or email luxsmiledentalltd@gmail.com.';
+				btn.disabled = false;
+				btn.textContent = 'Send Request';
+			});
+		}
+	</script>
 </body>
 </html>
