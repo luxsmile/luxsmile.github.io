@@ -47,7 +47,7 @@
 									<li><a href="#whyus">Why Us?</a></li>
 									<li><a href="#services">Services</a></li>
 									<li><a href="#faq">FAQ</a></li>
-									<li><a href="#rsvp">Book Now</a></li>
+									<li><a href="#rsvp" onclick="Calendly.initPopupWidget({url:'https://calendly.com/luxsmiledentalltd/new-meeting'});return false;">Book Now</a></li>
 								</ul>
 								<button id="nav-mobile-btn"><i class="fas fa-bars"></i></button>
 							</nav>
@@ -77,7 +77,7 @@
 								<a href="tel:+14169949669" class="btn btn-light">
 									<span class="h-lines"></span><span class="v-lines"></span>416-994-9669
 								</a>
-								<a href="#rsvp" class="btn btn-light scrollto">
+								<a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/luxsmiledentalltd/new-meeting'});return false;" class="btn btn-light">
 									<span class="h-lines"></span><span class="v-lines"></span>Book Now
 								</a>
 							</div>
@@ -294,7 +294,7 @@
 										<p>Professional-grade whitening treatments using advanced technology for a brighter, more confident smile — safely and comfortably.</p>
 									</div>
 									<div style="text-align: center">
-										<a href="#rsvp" class="btn scrollto"><span class="h-lines"></span><span class="v-lines"></span>Book Now</a>
+										<a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/luxsmiledentalltd/new-meeting'});return false;" class="btn"><span class="h-lines"></span><span class="v-lines"></span>Book Now</a>
 									</div>
 								</article>
 
@@ -304,7 +304,7 @@
 										<p>Deep cleaning treatments focused on restoring gum health and preventing periodontal disease through thorough removal of plaque and tartar.</p>
 									</div>
 									<div style="text-align: center">
-										<a href="#rsvp" class="btn scrollto"><span class="h-lines"></span><span class="v-lines"></span>Book Now</a>
+										<a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/luxsmiledentalltd/new-meeting'});return false;" class="btn"><span class="h-lines"></span><span class="v-lines"></span>Book Now</a>
 									</div>
 								</article>
 
@@ -314,7 +314,7 @@
 										<p>Comprehensive prophylaxis appointments to keep your smile fresh, healthy, and free from the buildup that leads to cavities and gum disease.</p>
 									</div>
 									<div style="text-align: center">
-										<a href="#rsvp" class="btn scrollto"><span class="h-lines"></span><span class="v-lines"></span>Book Now</a>
+										<a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/luxsmiledentalltd/new-meeting'});return false;" class="btn"><span class="h-lines"></span><span class="v-lines"></span>Book Now</a>
 									</div>
 								</article>
 
@@ -324,7 +324,7 @@
 										<p>Personalized coaching on the best at-home techniques, tools, and routines tailored to your specific oral health needs and goals.</p>
 									</div>
 									<div style="text-align: center">
-										<a href="#rsvp" class="btn scrollto"><span class="h-lines"></span><span class="v-lines"></span>Book Now</a>
+										<a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/luxsmiledentalltd/new-meeting'});return false;" class="btn"><span class="h-lines"></span><span class="v-lines"></span>Book Now</a>
 									</div>
 								</article>
 
@@ -334,7 +334,7 @@
 										<p>Targeted remineralization treatments to strengthen enamel and protect against decay — especially beneficial for those at higher risk of cavities.</p>
 									</div>
 									<div style="text-align: center">
-										<a href="#rsvp" class="btn scrollto"><span class="h-lines"></span><span class="v-lines"></span>Book Now</a>
+										<a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/luxsmiledentalltd/new-meeting'});return false;" class="btn"><span class="h-lines"></span><span class="v-lines"></span>Book Now</a>
 									</div>
 								</article>
 
@@ -344,7 +344,7 @@
 										<p>Professional dental hygiene care delivered to your home, office, or care facility — bringing the same expert treatment to you, on your schedule.</p>
 									</div>
 									<div style="text-align: center">
-										<a href="#rsvp" class="btn scrollto"><span class="h-lines"></span><span class="v-lines"></span>Book Now</a>
+										<a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/luxsmiledentalltd/new-meeting'});return false;" class="btn"><span class="h-lines"></span><span class="v-lines"></span>Book Now</a>
 									</div>
 								</article>
 
@@ -514,53 +514,19 @@
 		<section id="rsvp" class="section-bg-color extra-padding-section">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 col-xxl-6 offset-xxl-3" data-animation-direction="from-top" data-animation-delay="300">
-						<div class="form-wrapper flowers neela-style">
-							<h1 class="section-title">Book Now</h1>
-
-							<form id="form-rsvp" onsubmit="submitBooking(event)">
-
-								<div class="form-floating">
-									<input type="text" name="Name" id="name" placeholder="Your Name*" class="form-control required" required>
-									<label for="name">Your Name*</label>
-								</div>
-
-								<div class="form-floating">
-									<input type="email" name="Email" id="email" placeholder="E-mail*" class="form-control required" required>
-									<label for="email">E-mail*</label>
-								</div>
-
-								<div class="form-floating">
-									<input type="tel" name="Phone" id="phone" placeholder="Phone Number" class="form-control">
-									<label for="phone">Phone Number</label>
-								</div>
-
-								<div class="form-floating">
-									<input type="date" name="Date" id="date" placeholder="Preferred Date" class="form-control">
-									<label for="date">Preferred Date</label>
-								</div>
-
-								<div class="form-floating">
-									<input type="time" name="Time" id="time" placeholder="Preferred Time" class="form-control">
-									<label for="time">Preferred Time</label>
-								</div>
-
-								<div class="form-floating">
-									<textarea id="message" name="Message" placeholder="Message" class="form-control" rows="4"></textarea>
-									<label for="message">Message</label>
-								</div>
-
-								<div class="form_status_message" id="form-status" style="display:none; margin-bottom: 15px;"></div>
-
-								<div class="center">
-									<button type="submit" class="btn btn-primary submit_form">Send Request</button>
-								</div>
-							</form>
-
-							<p style="text-align:center; margin-top: 20px; opacity: 0.7; font-size: 14px;">
-								Or call us directly: <a href="tel:+14169949669" style="color: inherit;">416-994-9669</a>
-							</p>
-						</div>
+					<div class="col-sm-12 text-center" data-animation-direction="from-top" data-animation-delay="300">
+						<h1 class="section-title">Book Now</h1>
+						<p style="margin-bottom: 30px; opacity: 0.7;">Choose a date and time that works for you.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="calendly-inline-widget" data-url="https://calendly.com/luxsmiledentalltd/new-meeting" style="min-width:320px;height:700px;"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 text-center" style="margin-top: 20px;">
+						<p style="opacity: 0.7; font-size: 14px;">Or call us directly: <a href="tel:+14169949669">416-994-9669</a></p>
 					</div>
 				</div>
 			</div>
@@ -629,44 +595,7 @@
 	<script src="js/variables-.js"></script>
 	<script src="js/scripts-.js"></script>
 
-	<!-- Booking form via Formspree -->
-	<script>
-		function submitBooking(e) {
-			e.preventDefault();
-			var form = document.getElementById('form-rsvp');
-			var status = document.getElementById('form-status');
-			var btn = form.querySelector('button[type=submit]');
-
-			btn.disabled = true;
-			btn.textContent = 'Sending...';
-
-			var data = new FormData(form);
-			fetch('https://formspree.io/f/xpwzadql', {
-				method: 'POST',
-				body: data,
-				headers: { 'Accept': 'application/json' }
-			}).then(function(res) {
-				if (res.ok) {
-					status.style.display = 'block';
-					status.style.color = '#28a745';
-					status.textContent = 'Thank you! Your booking request has been sent. We will contact you shortly to confirm your appointment.';
-					form.reset();
-					btn.textContent = 'Sent!';
-				} else {
-					status.style.display = 'block';
-					status.style.color = '#dc3545';
-					status.textContent = 'Something went wrong. Please call us at 416-994-9669 or email luxsmiledentalltd@gmail.com.';
-					btn.disabled = false;
-					btn.textContent = 'Send Request';
-				}
-			}).catch(function() {
-				status.style.display = 'block';
-				status.style.color = '#dc3545';
-				status.textContent = 'Something went wrong. Please call us at 416-994-9669 or email luxsmiledentalltd@gmail.com.';
-				btn.disabled = false;
-				btn.textContent = 'Send Request';
-			});
-		}
-	</script>
+	<!-- Calendly -->
+	<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 </html>
