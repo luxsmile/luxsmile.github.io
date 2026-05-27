@@ -627,8 +627,14 @@ var Neela;
 
             if ($(".timeline-gallery").length) {
                 $(".timeline-gallery").owlCarousel({
-                    nav: true,
+                    nav: false,
                     dots: false,
+                    loop: true,
+                    autoplay: true,
+                    autoplayTimeout: 3500,
+                    autoplayHoverPause: true,
+                    animateIn: 'lux-fadeIn',
+                    animateOut: 'lux-fadeOut',
                     responsive: {
                         "0": {
                             items: 1
