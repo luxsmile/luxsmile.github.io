@@ -1,203 +1,197 @@
 """
 Renders luxsmile_magazine.png at exactly 300 DPI press quality.
 Page: 2.125" x 4.875"  ->  638 x 1463 pixels @ 300 DPI
+All fonts minimum 8pt per Leaside magazine print spec.
+
+Layout (bottom to top in reportlab pts):
+  Footer:       y   0 –  38   (38pt)
+  Services:     y  38 – 126   (88pt)
+  Stats:        y 126 – 164   (38pt)
+  Whitening:    y 164 – 182   (18pt)
+  Side-by-side: y 182 – 262   (80pt)   navy left | gold right
+  Photo:        y 262 – 317   (55pt)
+  Header:       y 317 – 351   (34pt)
+  Total = 351pt
 """
 from PIL import Image, ImageDraw, ImageFont
 import os
 
-# ── Canvas size ───────────────────────────────────────────────────
-DPI    = 300
-W_IN, H_IN = 2.125, 4.875
+DPI         = 300
+W_IN, H_IN  = 2.125, 4.875
 W = round(W_IN * DPI)   # 638
 H = round(H_IN * DPI)   # 1463
+S = DPI / 72.0           # 1 pt -> pixels
 
-S = DPI / 72.0           # scale: 1 reportlab point -> pixels
-
-# ── Colors (RGB) ─────────────────────────────────────────────────
 NAVY  = (27,  42,  74)
 GOLD  = (201, 169, 110)
 CREAM = (250, 246, 239)
 WHITE = (255, 255, 255)
-DARK  = (26,  26,  26)
+DARK  = (40,  40,  40)
 
-# ── Coordinate helpers ────────────────────────────────────────────
-# reportlab: y=0 bottom, y=351 top
-# PIL:        y=0 top,    y=H   bottom
 def ry(pt_y):
-    """reportlab y-point -> PIL pixel y (top of that point line)"""
+    """reportlab y (0=bottom) -> PIL y (0=top)"""
     return round((351 - pt_y) * S)
 
 def px(pt):
     return round(pt * S)
 
-# ── Font loader ───────────────────────────────────────────────────
 F = "C:/Windows/Fonts/"
-_font_cache = {}
+_fc = {}
 def font(name, pt):
     key = (name, pt)
-    if key not in _font_cache:
-        size_px = max(8, round(pt * S))
+    if key not in _fc:
         try:
-            _font_cache[key] = ImageFont.truetype(F + name, size_px)
+            _fc[key] = ImageFont.truetype(F + name, round(pt * S))
         except:
-            _font_cache[key] = ImageFont.load_default()
-    return _font_cache[key]
+            _fc[key] = ImageFont.load_default()
+    return _fc[key]
 
-# ── Drawing helpers ───────────────────────────────────────────────
 img  = Image.new("RGB", (W, H), CREAM)
 draw = ImageDraw.Draw(img)
 
-def rect(x_pt, y_pt_bottom, w_pt, h_pt, color):
-    x0 = px(x_pt)
-    y0 = ry(y_pt_bottom + h_pt)
-    x1 = px(x_pt + w_pt)
-    y1 = ry(y_pt_bottom)
-    draw.rectangle([x0, y0, x1, y1], fill=color)
+def rect(x, yb, w, h, color):
+    draw.rectangle([px(x), ry(yb + h), px(x + w), ry(yb)], fill=color)
 
-def hline(y_pt, color, x0_pt=0, x1_pt=153, width_pt=0.5):
-    y = ry(y_pt)
-    draw.line([(px(x0_pt), y), (px(x1_pt), y)],
-              fill=color, width=max(1, round(width_pt * S)))
+def hline(y, color, x0=0, x1=153, lw=0.5):
+    draw.line([(px(x0), ry(y)), (px(x1), ry(y))],
+              fill=color, width=max(1, round(lw * S)))
 
-def text_left(txt, x_pt, y_pt_baseline, fnt, color):
-    """Draw text left-aligned; y_pt_baseline is reportlab baseline."""
-    draw.text((px(x_pt), ry(y_pt_baseline) - fnt.size), txt,
-              font=fnt, fill=color)
+def vline(x, y0, y1, color, lw=0.5):
+    draw.line([(px(x), ry(y1)), (px(x), ry(y0))],
+              fill=color, width=max(1, round(lw * S)))
 
-def text_right(txt, x_pt, y_pt_baseline, fnt, color):
-    bbox = draw.textbbox((0, 0), txt, font=fnt)
-    tw = bbox[2] - bbox[0]
-    draw.text((px(x_pt) - tw, ry(y_pt_baseline) - fnt.size), txt,
-              font=fnt, fill=color)
+def tl(txt, x, y, f, color):
+    draw.text((px(x), ry(y) - f.size), txt, font=f, fill=color)
 
-def text_center(txt, y_pt_baseline, fnt, color, cx_pt=76.5):
-    bbox = draw.textbbox((0, 0), txt, font=fnt)
-    tw = bbox[2] - bbox[0]
-    x = px(cx_pt) - tw // 2
-    draw.text((x, ry(y_pt_baseline) - fnt.size), txt,
-              font=fnt, fill=color)
+def tr(txt, x, y, f, color):
+    bb = draw.textbbox((0, 0), txt, font=f)
+    draw.text((px(x) - (bb[2] - bb[0]), ry(y) - f.size), txt, font=f, fill=color)
 
-# ════════════════════════════════════════════════════════════════
-# 1. HEADER  y: 321-351
-# ════════════════════════════════════════════════════════════════
-rect(0, 321, 153, 30, CREAM)
-hline(321, GOLD)
+def tc(txt, y, f, color, cx=76.5):
+    bb = draw.textbbox((0, 0), txt, font=f)
+    draw.text((px(cx) - (bb[2] - bb[0]) // 2, ry(y) - f.size),
+              txt, font=f, fill=color)
 
-# Logo
+
+# ══ 1. HEADER  y: 317–351  (34pt) ═══════════════════════════════
+rect(0, 317, 153, 34, CREAM)
+hline(317, GOLD)
+
 try:
-    logo = Image.open(r"C:\Users\leili\luxsmile.github.io\logo.png").convert("RGBA")
-    logo_size = px(26)
-    logo = logo.resize((logo_size, logo_size), Image.LANCZOS)
-    img.paste(logo, (px(4), ry(349)), logo)
+    logo_path = r"C:\Users\leili\luxsmile.github.io\images\luxsmile-logo-navy.png"
+    logo = Image.open(logo_path).convert("RGBA")
+    logo_sz = px(33)                          # 33pt — fills the header nicely
+    logo = logo.resize((logo_sz, logo_sz), Image.LANCZOS)
+    header_px = round(34 * S)                 # header height in pixels
+    top_y = (header_px - logo_sz) // 2        # vertically centred
+    img.paste(logo, (px(2), top_y), logo)
 except Exception as e:
     print(f"Logo: {e}")
 
-# LuxSmile
-text_left("LuxSmile",         32, 337, font("timesbd.ttf", 12), NAVY)
-text_left("MOBILE DENTAL HYGIENE", 32, 330, font("arialbd.ttf", 4.5), NAVY)
-text_right("Leaside & Surrounding Area", 150, 326, font("arial.ttf", 3.5), NAVY)
+tl("LuxSmile",              38, 338, font("timesbd.ttf", 12), NAVY)
+tl("MOBILE DENTAL HYGIENE", 38, 326, font("arialbd.ttf",  8), NAVY)
 
-# ════════════════════════════════════════════════════════════════
-# 2. PHOTO  y: 261-321
-# ════════════════════════════════════════════════════════════════
+
+# ══ 2. PHOTO  y: 262–317  (55pt) ════════════════════════════════
 try:
-    photo = Image.open(r"C:\Users\leili\luxsmile.github.io\dental.jpg").convert("RGB")
-    ph_w, ph_h = px(153), px(60)
+    photo = Image.open(
+        r"C:\Users\leili\luxsmile.github.io\dental.jpg"
+    ).convert("RGB")
+    ph_w, ph_h = px(153), px(55)
     scale = max(ph_w / photo.width, ph_h / photo.height)
-    nw, nh = round(photo.width * scale), round(photo.height * scale)
+    nw = round(photo.width  * scale)
+    nh = round(photo.height * scale)
     photo = photo.resize((nw, nh), Image.LANCZOS)
     ox = (nw - ph_w) // 2
     oy = (nh - ph_h) // 2
     photo = photo.crop((ox, oy, ox + ph_w, oy + ph_h))
-    img.paste(photo, (0, ry(321)))
+    img.paste(photo, (0, ry(317)))
 except Exception as e:
     print(f"Photo: {e}")
-    rect(0, 261, 153, 60, (80, 110, 140))
+    rect(0, 262, 153, 55, (70, 100, 130))
 
-# ════════════════════════════════════════════════════════════════
-# 3. HEADLINE BOX  y: 191-261
-# ════════════════════════════════════════════════════════════════
-rect(0, 191, 153, 70, NAVY)
+hline(262, GOLD)   # thin gold line between photo and side section
 
-text_center("AT YOUR DOOR  OR  OUR OFFICE", 255, font("arialbd.ttf", 5), GOLD)
-hline(252, GOLD, x0_pt=12, x1_pt=141)
-text_center("Premium dental hygiene", 241, font("timesbi.ttf", 11), WHITE)
-text_center("that comes to you.",     229, font("timesbi.ttf", 11), WHITE)
-text_center("416-994-9669",           217, font("arialbd.ttf",  9), WHITE)
-text_center("Leili H Zarrabi, RDH",  205, font("timesi.ttf",  6.5), GOLD)
 
-# ════════════════════════════════════════════════════════════════
-# 4. GOLD GIFT BAND  y: 133-191
-# ════════════════════════════════════════════════════════════════
-rect(0, 133, 153, 58, GOLD)
+# ══ 3. SIDE-BY-SIDE  y: 182–262  (80pt) ═════════════════════════
+#   Left navy column  x: 0–77
+#   Right gold column x: 77–153
 
-text_center("*  FIRST-VISIT GIFT  *", 185, font("arialbd.ttf", 5),   NAVY)
-hline(182, NAVY, x0_pt=18, x1_pt=135, width_pt=0.4)
-text_center("Complimentary",          173, font("timesi.ttf",  7.5), NAVY)
-text_center("Waterpik",               159, font("timesbi.ttf", 16),  NAVY)
-text_center("A $250+ value  (While quantities last.)", 145,
-            font("arialbd.ttf", 5), NAVY)
+rect(0,  182, 77,  80, NAVY)   # navy left
+rect(77, 182, 76,  80, GOLD)   # gold right
+vline(77, 182, 262, CREAM, lw=1)   # cream divider line
 
-# ════════════════════════════════════════════════════════════════
-# 5. TEETH WHITENING  y: 115-133
-# ════════════════════════════════════════════════════════════════
-rect(0, 115, 153, 18, NAVY)
-text_center("TEETH WHITENING",                        125, font("arialbd.ttf", 7), GOLD)
-text_center("Advanced technology  -  Little to no sensitivity",
-            117, font("arialbd.ttf", 5), WHITE)
+# ── Navy left: "Premium dental hygiene" ──────────────────────────
+tl("AT YOUR DOOR",     4, 254, font("arialbd.ttf", 8), GOLD)
+tl("OR OUR OFFICE",   4, 244, font("arialbd.ttf", 8), GOLD)
+hline(240, GOLD, x0=4, x1=73)
 
-# ════════════════════════════════════════════════════════════════
-# 6. STATS  y: 83-115  (3 columns)
-# ════════════════════════════════════════════════════════════════
-rect(0, 83, 153, 32, CREAM)
-hline(115, GOLD)
-hline(83,  GOLD)
-hline(83, GOLD, x0_pt=51, x1_pt=51, width_pt=0.5)  # vertical
-hline(83, GOLD, x0_pt=102, x1_pt=102, width_pt=0.5) # vertical
+tc("Premium dental",    229, font("timesbi.ttf", 9), WHITE, cx=38)
+tc("hygiene that",      219, font("timesbi.ttf", 9), WHITE, cx=38)
+tc("comes to you.",     209, font("timesbi.ttf", 9), WHITE, cx=38)
 
-# draw verticals as actual vertical lines
-for x_pt in (51, 102):
-    draw.line([(px(x_pt), ry(115)), (px(x_pt), ry(83))],
-              fill=GOLD, width=max(1, round(0.5 * S)))
+tc("Leaside &",         197, font("arialbd.ttf", 8), GOLD,  cx=38)
+tc("Surrounding",       187, font("arialbd.ttf", 8), GOLD,  cx=38)
+
+# ── Gold right: "New Client Gift" ────────────────────────────────
+tc("NEW CLIENT GIFT",   254, font("arialbd.ttf",  8), NAVY, cx=115)
+hline(250, NAVY, x0=80, x1=150, lw=0.4)
+tc("Complimentary",     241, font("timesi.ttf",   8), NAVY, cx=115)
+tc("Waterpik",          227, font("timesbi.ttf", 14), NAVY, cx=115)
+tc("$250+ value",       214, font("arialbd.ttf",  8), NAVY, cx=115)
+tc("Call or Text:",     202, font("arialbd.ttf",  8), NAVY, cx=115)
+tc("416·994·9669",      191, font("arialbd.ttf",  9), NAVY, cx=115)
+
+hline(182, GOLD)   # bottom border of side section
+
+
+# ══ 4. TEETH WHITENING  y: 164–182  (18pt) ══════════════════════
+rect(0, 164, 153, 18, NAVY)
+tc("TEETH WHITENING", 173, font("arialbd.ttf", 8), GOLD)
+
+
+# ══ 5. STATS  y: 126–164  (38pt, 3 columns) ═════════════════════
+rect(0, 126, 153, 38, CREAM)
+hline(164, GOLD)
+hline(126, GOLD)
+vline(51,  126, 164, GOLD)
+vline(102, 126, 164, GOLD)
 
 stats = [
-    (25,  "15",     ["YRS", "EXP"]),
-    (76,  "CDCP",   ["& All Insurance", "Plans Accepted"]),
-    (127, "Direct", ["BILLING", "AVAILABLE"]),
+    (25,  "15+",    font("arialbd.ttf", 9), "Yrs. Exp."),
+    (76,  "CDCP",   font("arialbd.ttf", 9), "+ All Plans"),
+    (127, "Direct", font("timesbi.ttf", 9), "Billing"),
 ]
-for cx, big, sub in stats:
-    text_center(big, 102, font("arialbd.ttf", 9), NAVY, cx_pt=cx)
-    for j, line in enumerate(sub):
-        text_center(line, 95 - j*7, font("arial.ttf", 4.5), NAVY, cx_pt=cx)
+for cx, big, fb, sub in stats:
+    tc(big, 150, fb,                     NAVY, cx=cx)
+    tc(sub, 138, font("arialbd.ttf", 8), NAVY, cx=cx)
 
-# ════════════════════════════════════════════════════════════════
-# 7. SERVICES  y: 30-83
-# ════════════════════════════════════════════════════════════════
-rect(0, 30, 153, 53, CREAM)
 
-text_left("OUR SERVICES",      7, 77, font("arialbd.ttf", 5),   GOLD)
-text_left("Full-service hygiene", 7, 69, font("timesbi.ttf", 8.5), NAVY)
+# ══ 6. SERVICES  y: 38–126  (88pt) ══════════════════════════════
+rect(0, 38, 153, 88, CREAM)
 
-left_svcs  = ["Complete Oral Exam", "Teeth Cleaning", "Stain Removal",
-               "Fluoride Treatment", "Sealants (Cavity Protection)"]
-right_svcs = ["Advanced Gum Therapy", "Children's Hygiene", "Seniors & Special Care",
-               "Oral Health Education", "Referrals"]
+tc("Full service hygiene",        118, font("timesbi.ttf", 9), NAVY)
+tc("including, but not limited to:", 107, font("arialbd.ttf", 8), NAVY)
 
-for i, (l, r) in enumerate(zip(left_svcs, right_svcs)):
-    y = 61 - i * 7
-    text_left("- " + l, 7,  y, font("arialbd.ttf", 4.5), NAVY)
-    text_left("- " + r, 79, y, font("arialbd.ttf", 4.5), NAVY)
+services = [
+    "Complete oral examination",
+    "Teeth cleaning",
+    "Teeth whitening",
+    "Sealant and fluoride treatment",
+    "Referrals to specialists",
+]
+f8 = font("arialbd.ttf", 8)
+for i, svc in enumerate(services):
+    tl("•  " + svc, 12, 95 - i * 11, f8, NAVY)
 
-# ════════════════════════════════════════════════════════════════
-# 8. FOOTER  y: 0-30
-# ════════════════════════════════════════════════════════════════
-rect(0, 0, 153, 30, NAVY)
 
-text_left("TEXT OR CALL:",         7, 24, font("arialbd.ttf", 5),   GOLD)
-text_left("416-994-9669",          7, 12, font("arialbd.ttf", 12),  WHITE)
-text_right("Leili H Zarrabi, RDH",148, 17, font("timesi.ttf", 6.5), WHITE)
-text_right("REGISTERED DENTAL HYGIENIST",
-           148, 9, font("arial.ttf", 4), WHITE)
+# ══ 7. FOOTER  y: 0–38  (38pt) ══════════════════════════════════
+rect(0, 0, 153, 38, NAVY)
+
+tl("TEXT TO BOOK:",           7,  30, font("arialbd.ttf",  8), GOLD)
+tl("416-994-9669",            7,  17, font("arialbd.ttf", 11), WHITE)
+tr("Leili H. Zarrabi, RDH", 148,  28, font("timesi.ttf",   8), WHITE)
+
 
 # ── Save ─────────────────────────────────────────────────────────
 out_png = r"C:\Users\leili\luxsmile.github.io\luxsmile_magazine_300dpi.png"
