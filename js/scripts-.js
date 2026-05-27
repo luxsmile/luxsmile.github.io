@@ -642,11 +642,13 @@ var Neela;
                     },
                     rtl: $_self.rtlFlag
                 });
-                $(".luxury-gallery").owlCarousel({
+                var $lux = $(".luxury-gallery");
+                $lux.owlCarousel({
                     nav: false,
                     dots: false,
                     loop: true,
                     autoplay: true,
+                    startPosition: 0,
                     autoplayTimeout: 8000,
                     autoplayHoverPause: true,
                     animateIn: 'lux-fadeIn',
@@ -657,6 +659,13 @@ var Neela;
                         }
                     },
                     rtl: $_self.rtlFlag
+                });
+                $lux.on('changed.owl.carousel', function(e) {
+                    var idx = e.item.index % e.item.count;
+                    var timeout = idx === 0 ? 8000 : 3500;
+                    $lux.trigger('stop.owl.autoplay');
+                    $lux.data('owl.carousel').settings.autoplayTimeout = timeout;
+                    $lux.trigger('play.owl.autoplay', [timeout]);
                 });
             }
 
