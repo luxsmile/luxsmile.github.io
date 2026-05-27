@@ -626,12 +626,28 @@ var Neela;
             var $_self = this;
 
             if ($(".timeline-gallery").length) {
-                $(".timeline-gallery").owlCarousel({
+                $(".timeline-gallery:not(.luxury-gallery)").owlCarousel({
                     nav: false,
                     dots: false,
                     loop: true,
                     autoplay: true,
                     autoplayTimeout: 3500,
+                    autoplayHoverPause: true,
+                    animateIn: 'lux-fadeIn',
+                    animateOut: 'lux-fadeOut',
+                    responsive: {
+                        "0": {
+                            items: 1
+                        }
+                    },
+                    rtl: $_self.rtlFlag
+                });
+                $(".luxury-gallery").owlCarousel({
+                    nav: false,
+                    dots: false,
+                    loop: true,
+                    autoplay: true,
+                    autoplayTimeout: 8000,
                     autoplayHoverPause: true,
                     animateIn: 'lux-fadeIn',
                     animateOut: 'lux-fadeOut',
