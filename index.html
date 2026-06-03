@@ -19,8 +19,11 @@
 	<link href="css/owl.carousel.min.css" rel="stylesheet" />
 	<link href="css/style-0.css" rel="stylesheet" />
 
-	<!-- Calendly -->
-	<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+	<!-- Cal.com -->
+	<script type="text/javascript">
+	(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["-ns", namespace, api]);}else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+	Cal("init", {origin:"https://cal.com"});
+	</script>
 
 	<script src="js/modernizr-3.6.0.min.js"></script>
 	<script src="https://kit.fontawesome.com/39de636081.js" crossorigin="anonymous"></script>
@@ -742,28 +745,28 @@
 						<div class="neela-style"><span class="h-lines"></span><span class="v-lines"></span>
 							<h3 style="color: #ccb180;">New Client</h3>
 							<p style="font-size: 14px; margin-bottom: 25px;">Full examination &amp; cleaning</p>
-							<a href="#" onclick="Calendly.initPopupWidget({url:'https://cal.com/leili-w2vzvg/new-client'});return false;" class="btn btn-light" style="color:#7a766e; border-color:#7a766e;"><span class="h-lines" style="border-color:#7a766e;"></span><span class="v-lines" style="border-color:#7a766e;"></span>Book Now</a>
+							<a href="#" data-cal-link="leili-w2vzvg/new-client" class="btn btn-light" style="color:#7a766e; border-color:#7a766e;"><span class="h-lines" style="border-color:#7a766e;"></span><span class="v-lines" style="border-color:#7a766e;"></span>Book Now</a>
 						</div>
 					</div>
 					<div class="col-md-4 text-center" style="margin-bottom: 30px;">
 						<div class="neela-style"><span class="h-lines"></span><span class="v-lines"></span>
 							<h3 style="color: #ccb180;">Returning Client</h3>
 							<p style="font-size: 14px; margin-bottom: 25px;">Regular cleaning &amp; checkup</p>
-							<a href="#" onclick="Calendly.initPopupWidget({url:'https://cal.com/leili-w2vzvg/90min'});return false;" class="btn btn-light" style="color:#7a766e; border-color:#7a766e;"><span class="h-lines" style="border-color:#7a766e;"></span><span class="v-lines" style="border-color:#7a766e;"></span>Book Now</a>
+							<a href="#" data-cal-link="leili-w2vzvg/90min" class="btn btn-light" style="color:#7a766e; border-color:#7a766e;"><span class="h-lines" style="border-color:#7a766e;"></span><span class="v-lines" style="border-color:#7a766e;"></span>Book Now</a>
 						</div>
 					</div>
 					<div class="col-md-4 text-center" style="margin-bottom: 30px;">
 						<div class="neela-style"><span class="h-lines"></span><span class="v-lines"></span>
 							<h3 style="color: #ccb180;">Whitening</h3>
 							<p style="font-size: 14px; margin-bottom: 25px;">Professional teeth whitening</p>
-							<a href="#" onclick="Calendly.initPopupWidget({url:'https://cal.com/leili-w2vzvg/whitening'});return false;" class="btn btn-light" style="color:#7a766e; border-color:#7a766e;"><span class="h-lines" style="border-color:#7a766e;"></span><span class="v-lines" style="border-color:#7a766e;"></span>Book Now</a>
+							<a href="#" data-cal-link="leili-w2vzvg/whitening" class="btn btn-light" style="color:#7a766e; border-color:#7a766e;"><span class="h-lines" style="border-color:#7a766e;"></span><span class="v-lines" style="border-color:#7a766e;"></span>Book Now</a>
 						</div>
 					</div>
 					<div class="col-md-4 text-center" style="margin-bottom: 30px;">
 						<div class="neela-style"><span class="h-lines"></span><span class="v-lines"></span>
 							<h3 style="color: #ccb180;">Consultation</h3>
 							<p style="font-size: 14px; margin-bottom: 25px;">Questions &amp; treatment planning</p>
-							<a href="#" onclick="Calendly.initPopupWidget({url:'https://cal.com/leili-w2vzvg/consultation'});return false;" class="btn btn-light" style="color:#7a766e; border-color:#7a766e;"><span class="h-lines" style="border-color:#7a766e;"></span><span class="v-lines" style="border-color:#7a766e;"></span>Book Now</a>
+							<a href="#" data-cal-link="leili-w2vzvg/consultation" class="btn btn-light" style="color:#7a766e; border-color:#7a766e;"><span class="h-lines" style="border-color:#7a766e;"></span><span class="v-lines" style="border-color:#7a766e;"></span>Book Now</a>
 						</div>
 					</div>
 				</div>
@@ -843,6 +846,5 @@
 	<script src="js/scripts-.js"></script>
 
 	<!-- Calendly -->
-	<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 </html>
