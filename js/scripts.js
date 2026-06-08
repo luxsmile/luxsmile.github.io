@@ -641,7 +641,11 @@ var Neela;
             if ($(".testimonials").length) {
                 $(".testimonials").owlCarousel({
                     nav: false,
-                    dots: true,
+                    dots: false,
+                    autoplay: true,
+                    autoplayTimeout: 4000,
+                    autoplayHoverPause: true,
+                    loop: true,
                     responsive: {
                         "0": {
                             items: 1
