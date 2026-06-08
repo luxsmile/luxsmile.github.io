@@ -34,28 +34,36 @@
 		.lux-fadeOut { animation: lux-fadeOut 0.8s ease forwards; }
 
 		/* Testimonials slider arrows */
+		#testimonials {
+			position: relative;
+		}
 		#testimonials .owl-nav {
-			position: static !important;
+			position: absolute !important;
+			top: 50% !important;
+			left: 0 !important;
+			right: 0 !important;
+			transform: translateY(-50%);
 			display: flex !important;
-			justify-content: center;
-			gap: 16px;
-			margin-top: 28px;
+			justify-content: space-between !important;
 			border: none !important;
 			background: transparent !important;
+			pointer-events: none;
+			width: 100%;
 		}
 		#testimonials .owl-nav button.owl-prev,
 		#testimonials .owl-nav button.owl-next {
+			pointer-events: all;
 			width: 44px !important;
 			height: 44px !important;
 			border-radius: 50% !important;
 			border: 1px solid #ccb180 !important;
-			background-color: transparent !important;
+			background-color: rgba(255,255,255,0.15) !important;
 			color: #ccb180 !important;
 			font-size: 20px !important;
 			line-height: 1 !important;
-			display: flex;
-			align-items: center;
-			justify-content: center;
+			display: flex !important;
+			align-items: center !important;
+			justify-content: center !important;
 			transition: all 0.3s ease;
 		}
 		#testimonials .owl-nav button.owl-prev:hover,
