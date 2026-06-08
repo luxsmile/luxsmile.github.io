@@ -32,6 +32,37 @@
 		@keyframes lux-fadeOut { from { opacity: 1; } to   { opacity: 0; } }
 		.lux-fadeIn  { animation: lux-fadeIn  0.8s ease forwards; }
 		.lux-fadeOut { animation: lux-fadeOut 0.8s ease forwards; }
+
+		/* Testimonials slider arrows */
+		#testimonials .owl-nav {
+			position: static !important;
+			display: flex !important;
+			justify-content: center;
+			gap: 16px;
+			margin-top: 28px;
+			border: none !important;
+			background: transparent !important;
+		}
+		#testimonials .owl-nav button.owl-prev,
+		#testimonials .owl-nav button.owl-next {
+			width: 44px !important;
+			height: 44px !important;
+			border-radius: 50% !important;
+			border: 1px solid #ccb180 !important;
+			background-color: transparent !important;
+			color: #ccb180 !important;
+			font-size: 20px !important;
+			line-height: 1 !important;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: all 0.3s ease;
+		}
+		#testimonials .owl-nav button.owl-prev:hover,
+		#testimonials .owl-nav button.owl-next:hover {
+			background-color: #ccb180 !important;
+			color: #fff !important;
+		}
 	</style>
 </head>
 <body>
