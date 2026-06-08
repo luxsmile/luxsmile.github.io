@@ -539,50 +539,34 @@
 
 							<div class="item">
 								<blockquote>"I cannot say enough wonderful things about my experience with Leili. From the very first moment, she was so gentle, meticulous, and truly attentive to every detail. She made the entire process so comfortable and easy. Honestly, it was the best experience I've ever had. I felt completely at ease, and I absolutely love the results. Leili's professionalism and care really stood out, and I can't wait to come back. If you're looking for top-tier care, Leili is the best."</blockquote>
-								<div class="author">
-									<h3>K.S.<small>Patient</small></h3>
-								</div>
+								<div class="author" style="display:flex;align-items:center;gap:14px;"><button class="test-prev-btn" aria-label="Previous">&#8592;</button><h3>K.S.<small>Client</small></h3><button class="test-next-btn" aria-label="Next">&#8594;</button></div>
 							</div>
 
 							<div class="item">
 								<blockquote>"Leili is more than just a hygienist — she's a true expert in dental care with over 15 years of experience. Her knowledge, precision, and dedication make every visit comfortable and reassuring. Highly recommend her for top-notch care."</blockquote>
-								<div class="author">
-									<h3>A.R.<small>Patient</small></h3>
-								</div>
+								<div class="author" style="display:flex;align-items:center;gap:14px;"><button class="test-prev-btn" aria-label="Previous">&#8592;</button><h3>A.R.<small>Client</small></h3><button class="test-next-btn" aria-label="Next">&#8594;</button></div>
 							</div>
 
 							<div class="item">
 								<blockquote>"Leili is the best hygienist I've ever had. My family and I have been seeing her for years. She is very professional and knowledgeable in her work. She cleans our teeth with such care and enthusiasm — you can clearly feel she loves her job. What I love most is how she carefully examines our teeth and explains everything thoroughly. She caught my son's cavities and advised us on the correction his teeth required, then referred us to the best orthodontist in town. I highly recommend her to all."</blockquote>
-								<div class="author">
-									<h3>M.F.<small>Patient</small></h3>
-								</div>
+								<div class="author" style="display:flex;align-items:center;gap:14px;"><button class="test-prev-btn" aria-label="Previous">&#8592;</button><h3>M.F.<small>Client</small></h3><button class="test-next-btn" aria-label="Next">&#8594;</button></div>
 							</div>
 
 							<div class="item">
 								<blockquote>"LuxSmile completely changed how I feel about dental appointments. Leili is incredibly gentle, professional, and thorough. I always leave feeling pampered and confident about my oral health!"</blockquote>
-								<div class="author">
-									<h3>Sarah M.<small>Patient</small></h3>
-								</div>
+								<div class="author" style="display:flex;align-items:center;gap:14px;"><button class="test-prev-btn" aria-label="Previous">&#8592;</button><h3>Sarah M.<small>Client</small></h3><button class="test-next-btn" aria-label="Next">&#8594;</button></div>
 							</div>
 
 							<div class="item">
 								<blockquote>"The mobile dental hygiene service is a game-changer for our family. Having a professional come to our home is so convenient — especially with kids. I can't recommend LuxSmile enough!"</blockquote>
-								<div class="author">
-									<h3>David K.<small>Patient</small></h3>
-								</div>
+								<div class="author" style="display:flex;align-items:center;gap:14px;"><button class="test-prev-btn" aria-label="Previous">&#8592;</button><h3>David K.<small>Client</small></h3><button class="test-next-btn" aria-label="Next">&#8594;</button></div>
 							</div>
 
 							<div class="item">
 								<blockquote>"I've been seeing Leili for years and the level of care at LuxSmile is absolutely unmatched. My teeth have never been healthier, and every visit feels like a spa experience. Worth every penny!"</blockquote>
-								<div class="author">
-									<h3>Jennifer L.<small>Patient</small></h3>
-								</div>
+								<div class="author" style="display:flex;align-items:center;gap:14px;"><button class="test-prev-btn" aria-label="Previous">&#8592;</button><h3>Jennifer L.<small>Client</small></h3><button class="test-next-btn" aria-label="Next">&#8594;</button></div>
 							</div>
 
-						</div>
-						<div class="testimonials-nav">
-							<button id="test-prev" aria-label="Previous review">&#8592;</button>
-							<button id="test-next" aria-label="Next review">&#8594;</button>
 						</div>
 					</div>
 				</div>
@@ -900,10 +884,10 @@
 	<!-- Testimonials custom nav -->
 	<script>
 		$(document).ready(function() {
-			$('#test-prev').on('click', function() {
+			$(document).on('click', '.test-prev-btn', function() {
 				$('#testimonials-slider').trigger('prev.owl.carousel');
 			});
-			$('#test-next').on('click', function() {
+			$(document).on('click', '.test-next-btn', function() {
 				$('#testimonials-slider').trigger('next.owl.carousel');
 			});
 		});
