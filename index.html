@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
@@ -32,6 +32,20 @@
 		@keyframes lux-fadeOut { from { opacity: 1; } to   { opacity: 0; } }
 		.lux-fadeIn  { animation: lux-fadeIn  0.8s ease forwards; }
 		.lux-fadeOut { animation: lux-fadeOut 0.8s ease forwards; }
+
+		.test-nav { text-align: center; margin-top: 24px; }
+		.test-nav button {
+			width: 46px; height: 46px;
+			border-radius: 50%;
+			border: 2px solid #ccb180;
+			background: #ccb180;
+			color: #fff;
+			font-size: 20px;
+			cursor: pointer;
+			margin: 0 8px;
+			transition: background 0.3s, color 0.3s;
+		}
+		.test-nav button:hover { background: transparent; color: #ccb180; }
 	</style>
 </head>
 <body>
@@ -554,6 +568,10 @@
 
 						</div>
 					</div>
+					<div class="test-nav">
+						<button id="test-prev">&#8592;</button>
+						<button id="test-next">&#8594;</button>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -865,6 +883,17 @@
 	<!-- Template Scripts -->
 	<script src="js/variables-.js"></script>
 	<script src="js/scripts-.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			$('#test-prev').on('click', function() {
+				$('#testimonials-slider').trigger('prev.owl.carousel');
+			});
+			$('#test-next').on('click', function() {
+				$('#testimonials-slider').trigger('next.owl.carousel');
+			});
+		});
+	</script>
 
 	<!-- Calendly -->
 </body>
