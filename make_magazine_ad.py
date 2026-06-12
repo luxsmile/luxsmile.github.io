@@ -37,13 +37,13 @@ c = canvas.Canvas(os.path.join(BASE, "luxsmile_magazine.pdf"), pagesize=(W, H))
 c.setPageCompression(1)
 
 # ── CMYK colors (newsprint-safe, total ink <= 250%) ──────────────
-NAVY  = CMYKColor(0.85, 0.65, 0.30, 0.45)   # total 225%
-GOLD  = CMYKColor(0.00, 0.16, 0.45, 0.21)   # total 82%
+TEAL  = CMYKColor(0.90, 0.25, 0.35, 0.10)   # deep fresh teal, total 160%
+GOLD  = CMYKColor(0.00, 0.16, 0.45, 0.21)   # warm gold accent, total 82%
 WHITE = CMYKColor(0, 0, 0, 0)
 BLACK = CMYKColor(0, 0, 0, 1.0)             # 100K only
 
 # ═════════════════════════════════════════════════════════════════
-# 1. HEADER  y: 309-351  (42 pt) — logo + MOBILE DENTAL HYGIENE big
+# 1. HEADER  y: 309-351  (42 pt) — white, logo, black + teal brand
 # ═════════════════════════════════════════════════════════════════
 c.setFillColor(WHITE)
 c.rect(0, 309, W, 42, fill=1, stroke=0)
@@ -56,15 +56,15 @@ except Exception as e:
     print(f"Logo: {e}")
 
 c.setFont("Times-Bold", 18)
-c.setFillColor(NAVY)
+c.setFillColor(BLACK)
 c.drawString(42, 332, "LuxSmile")
 
 c.setFont("Helvetica-Bold", 8)
-c.setFillColor(GOLD)
+c.setFillColor(TEAL)
 c.drawString(42, 320, "MOBILE DENTAL")
 c.drawString(42, 311.5, "HYGIENE")
 
-c.setStrokeColor(GOLD)
+c.setStrokeColor(TEAL)
 c.setLineWidth(1)
 c.line(0, 309, W, 309)
 
@@ -75,17 +75,17 @@ try:
     photo = ImageReader(dental_compressed)
     c.drawImage(photo, 0, 255, width=W, height=54)
 except Exception:
-    c.setFillColor(NAVY)
+    c.setFillColor(TEAL)
     c.rect(0, 255, W, 54, fill=1, stroke=0)
 
 # ═════════════════════════════════════════════════════════════════
-# 3. NAVY HEADLINE BLOCK  y: 205-255  (50 pt)
+# 3. TEAL HEADLINE BLOCK  y: 205-255  (50 pt)
 # ═════════════════════════════════════════════════════════════════
-c.setFillColor(NAVY)
+c.setFillColor(TEAL)
 c.rect(0, 205, W, 50, fill=1, stroke=0)
 
 c.setFont("Helvetica-Bold", 6)
-c.setFillColor(GOLD)
+c.setFillColor(WHITE)
 c.drawCentredString(W/2, 245, "LEASIDE  &  SURROUNDING  AREAS")
 
 c.setFont("Times-Bold", 12)
@@ -94,20 +94,20 @@ c.drawCentredString(W/2, 231, "Premium dental hygiene")
 c.drawCentredString(W/2, 218, "that comes to you.")
 
 c.setFont("Times-BoldItalic", 7.5)
-c.setFillColor(GOLD)
+c.setFillColor(WHITE)
 c.drawCentredString(W/2, 208.5, "Leili H Zarrabi, RDH  ·  15+ years")
 
 # ═════════════════════════════════════════════════════════════════
-# 4. GOLD GIFT BAND  y: 147-205  (58 pt) — Waterpik, eye-catching
+# 4. GOLD GIFT BAND  y: 147-205  (58 pt) — the one gold touch
 # ═════════════════════════════════════════════════════════════════
 c.setFillColor(GOLD)
 c.rect(0, 147, W, 58, fill=1, stroke=0)
 
 c.setFont("Helvetica-Bold", 6.5)
-c.setFillColor(NAVY)
+c.setFillColor(BLACK)
 c.drawCentredString(W/2, 196, "F I R S T - V I S I T   G I F T")
 
-c.setStrokeColor(NAVY)
+c.setStrokeColor(BLACK)
 c.setLineWidth(0.5)
 c.line(28, 193, W - 28, 193)
 
@@ -121,13 +121,13 @@ c.setFont("Helvetica-Bold", 6)
 c.drawCentredString(W/2, 151, "A $250+ value  ·  While quantities last")
 
 # ═════════════════════════════════════════════════════════════════
-# 5. WHITENING STRIP  y: 125-147  (22 pt) — navy, stands out
+# 5. WHITENING STRIP  y: 125-147  (22 pt) — teal, stands out
 # ═════════════════════════════════════════════════════════════════
-c.setFillColor(NAVY)
+c.setFillColor(TEAL)
 c.rect(0, 125, W, 22, fill=1, stroke=0)
 
 c.setFont("Helvetica-Bold", 9.5)
-c.setFillColor(GOLD)
+c.setFillColor(WHITE)
 c.drawCentredString(W/2, 137, "TEETH  WHITENING")
 
 c.setFont("Helvetica-Bold", 5.5)
@@ -135,13 +135,13 @@ c.setFillColor(WHITE)
 c.drawCentredString(W/2, 128.5, "Advanced technology  ·  Little to no sensitivity")
 
 # ═════════════════════════════════════════════════════════════════
-# 6. SERVICES  y: 60-125  (65 pt) — the essentials only
+# 6. SERVICES  y: 60-125  (65 pt) — white, black text, the essentials
 # ═════════════════════════════════════════════════════════════════
 c.setFillColor(WHITE)
 c.rect(0, 60, W, 65, fill=1, stroke=0)
 
 c.setFont("Helvetica-Bold", 6)
-c.setFillColor(GOLD)
+c.setFillColor(TEAL)
 c.drawCentredString(W/2, 116, "O U R   C A R E")
 
 services = [
@@ -150,14 +150,14 @@ services = [
     "Children's & Seniors' Cleaning",
     "Referrals to Specialists",
 ]
-c.setFillColor(NAVY)
+c.setFillColor(BLACK)
 y = 105
 for s in services:
     c.setFont("Helvetica-Bold", 7.5)
     c.drawCentredString(W/2, y, s)
     y -= 10
 
-c.setStrokeColor(GOLD)
+c.setStrokeColor(TEAL)
 c.setLineWidth(0.5)
 c.line(14, 70, W - 14, 70)
 c.setFont("Helvetica-Bold", 6.5)
@@ -165,9 +165,9 @@ c.setFillColor(BLACK)
 c.drawCentredString(W/2, 62.5, "CDCP & all insurance plans  ·  Direct billing")
 
 # ═════════════════════════════════════════════════════════════════
-# 7. FOOTER  y: 0-60  (60 pt) — navy, phone + website + QR code
+# 7. FOOTER  y: 0-60  (60 pt) — crisp black, phone + website + QR
 # ═════════════════════════════════════════════════════════════════
-c.setFillColor(NAVY)
+c.setFillColor(BLACK)
 c.rect(0, 0, W, 60, fill=1, stroke=0)
 
 # QR code on right (white tile so it scans on newsprint)
@@ -200,5 +200,5 @@ size_kb = os.path.getsize(os.path.join(BASE, "luxsmile_magazine.pdf")) // 1024
 print("[OK] Magazine flyer created: luxsmile_magazine.pdf")
 print(f"  Size: {size_kb} KB")
 print(f"  Dimensions: 2.125 x 4.875 inches")
-print(f"  Colors: CMYK, 100K black, total ink under 250%")
+print(f"  Colors: teal + black + gold touch, CMYK, ink under 250%")
 print(f"  QR code links to https://luxsmile.ca")
