@@ -47,6 +47,16 @@
 		}
 		.test-nav button:hover { background: transparent; color: #ccb180; }
 
+		.luxury-gallery .item img {
+			max-width: 82%;
+			height: auto;
+			display: block;
+			margin: 0 auto;
+		}
+		@media (max-width: 767px) {
+			.luxury-gallery .item img { max-width: 100%; }
+		}
+
 		#gift-banner .container {
 			opacity: 0;
 			transform: translateY(40px);
@@ -206,10 +216,10 @@
 								<div class="timeline-gallery-wrapper" data-animation-direction="from-left" data-animation-delay="250">
 									<div class="timeline-gallery luxury-gallery owl-carousel">
 										<div class="item">
-											<img src="images/toothbrush-spa.jpg" alt="LuxSmile" style="max-width:82%; height:auto; display:block;" />
+											<img src="images/toothbrush-spa.jpg" alt="LuxSmile" />
 										</div>
 	<div class="item">
-											<img src="images/toothbrush-linen.jpg" alt="LuxSmile" style="max-width:82%; height:auto; display:block;" />
+											<img src="images/toothbrush-linen.jpg" alt="LuxSmile" />
 										</div>
 									</div>
 								</div>
