@@ -46,6 +46,23 @@
 			transition: background 0.3s, color 0.3s;
 		}
 		.test-nav button:hover { background: transparent; color: #ccb180; }
+
+		#gift-banner .container {
+			opacity: 0;
+			transform: translateY(40px);
+			transition: opacity 1.2s ease, transform 1.2s ease;
+		}
+		#gift-banner.in-view .container {
+			opacity: 1;
+			transform: translateY(0);
+		}
+		@keyframes gift-pulse {
+			0%, 100% { transform: scale(1); }
+			50% { transform: scale(1.05); }
+		}
+		#gift-banner.in-view .gift-title {
+			animation: gift-pulse 3s ease-in-out infinite;
+		}
 	</style>
 </head>
 <body>
@@ -115,7 +132,7 @@
 		<!-- ======================== NEW CLIENT GIFT BANNER ======================== -->
 		<section id="gift-banner" style="background: rgba(98, 93, 82, 0.85); padding: 28px 20px; text-align: center;">
 			<div class="container">
-				<p style="font-family: 'Playfair Display', serif; font-size: 26px; font-style: italic; color: #fff; margin-bottom: 6px;">New Client Gift — Complimentary Waterpik</p>
+				<p class="gift-title" style="font-family: 'Playfair Display', serif; font-size: 26px; font-style: italic; color: #fff; margin-bottom: 6px;">New Client Gift — Complimentary Waterpik</p>
 				<p style="font-size: 15px; color: #fff; margin-bottom: 14px;">A premier electric water flosser &amp; brush ($250+ value), yours on your first appointment. While quantities last.</p>
 				<p style="font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase; color: #fff; margin-bottom: 0;"><strong>CDCP &amp; All Insurance Plans Accepted &nbsp;·&nbsp; Direct Billing Available</strong></p>
 			</div>
@@ -926,6 +943,22 @@
 				$('#testimonials-slider').trigger('next.owl.carousel');
 			});
 		});
+	</script>
+
+	<script>
+		(function () {
+			var banner = document.getElementById('gift-banner');
+			if (!banner || !('IntersectionObserver' in window)) {
+				if (banner) banner.classList.add('in-view');
+				return;
+			}
+			var observer = new IntersectionObserver(function (entries) {
+				entries.forEach(function (entry) {
+					entry.target.classList.toggle('in-view', entry.isIntersecting);
+				});
+			}, { threshold: 0.35 });
+			observer.observe(banner);
+		})();
 	</script>
 
 	<!-- Calendly -->
