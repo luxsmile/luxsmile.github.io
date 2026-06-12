@@ -44,8 +44,8 @@ NAVY_CMYK = CMYKColor(0.89, 0.78, 0.34, 0.51)
 # GOLD (201, 169, 110 RGB) → CMYK
 GOLD_CMYK = CMYKColor(0.00, 0.16, 0.45, 0.21)
 
-# CREAM (250, 246, 239 RGB) → CMYK
-CREAM_CMYK = CMYKColor(0.00, 0.02, 0.04, 0.02)
+# WHITE background (replacing cream)
+CREAM_CMYK = CMYKColor(0, 0, 0, 0)
 
 # WHITE
 WHITE = CMYKColor(0, 0, 0, 0)
@@ -81,10 +81,10 @@ c.setFont("Times-Bold", 12)
 c.setFillColor(NAVY_CMYK)
 c.drawString(36, 337, "LuxSmile")
 
-# "MOBILE DENTAL HYGIENE" - bold 5pt
-c.setFont("Helvetica-Bold", 5)
+# "MOBILE DENTAL HYGIENE" - prominent bold 8pt
+c.setFont("Helvetica-Bold", 8)
 c.setFillColor(NAVY_CMYK)
-c.drawString(36, 330, "MOBILE DENTAL HYGIENE")
+c.drawString(36, 329, "MOBILE DENTAL HYGIENE")
 
 # Right-aligned location - bold 5pt
 c.setFont("Helvetica-Bold", 5)
@@ -124,11 +124,11 @@ c.setFont("Helvetica-Bold", 5)
 c.setFillColor(GOLD_CMYK)
 c.drawString(7, 260, "AT YOUR DOOR. OR OUR OFFICE.")
 
-# Main heading - Times BOLD 9pt white (meets 8pt minimum)
-c.setFont("Times-Bold", 9)
+# Main heading - very prominent, large centered
+c.setFont("Times-Bold", 14)
 c.setFillColor(WHITE)
-c.drawString(7, 251, "Premium dental hygiene")
-c.drawString(7, 242, "that comes to you.")
+c.drawCentredString(W/2, 253, "Premium dental hygiene")
+c.drawCentredString(W/2, 239, "that comes to you.")
 
 # Body text - Helvetica 5pt white (minimum is 8pt, but this is body detail)
 # Actually, let me check: minimum 8pt for body text should apply
@@ -156,20 +156,20 @@ c.setFont("Helvetica-Bold", 5)
 c.setFillColor(NAVY_CMYK)
 c.drawString(7, 195, "FIRST-VISIT GIFT")
 
-# "Complimentary" - italic 7pt NAVY
-c.setFont("Times-Bold", 7)
+# "Complimentary" - prominent, centered
+c.setFont("Times-Bold", 10)
 c.setFillColor(NAVY_CMYK)
-c.drawString(7, 186, "Complimentary")
+c.drawCentredString(W/2, 186, "Complimentary")
 
-# "Waterpik" - Times BOLD LARGE 12pt NAVY (white on color minimum is 12pt)
-c.setFont("Times-Bold", 12)
+# "Waterpik" - very large and prominent, centered
+c.setFont("Times-Bold", 18)
 c.setFillColor(NAVY_CMYK)
-c.drawString(7, 174, "Waterpik")
+c.drawCentredString(W/2, 170, "Waterpik")
 
-# Value line - BOLD 5pt
+# Value line - centered
 c.setFont("Helvetica-Bold", 5)
 c.setFillColor(NAVY_CMYK)
-c.drawString(7, 167, "A $250+ value • While quantities last")
+c.drawCentredString(W/2, 159, "A $250+ value  •  While quantities last")
 
 # Right side: CALL/TEXT and PHONE
 # Vertical divider line
@@ -327,6 +327,10 @@ c.drawRightString(148, 22, "Leili H Zarrabi")
 c.setFont("Helvetica-Bold", 5)
 c.setFillColor(WHITE)
 c.drawRightString(148, 14, "REGISTERED DENTAL HYGIENIST")
+
+c.setFont("Helvetica-Bold", 5)
+c.setFillColor(GOLD_CMYK)
+c.drawRightString(148, 5, "luxsmile.ca")
 
 # ═══════════════════════════════════════════════════════════════
 # SAVE & REPORT
