@@ -57,11 +57,11 @@
 			transform: translateY(0);
 		}
 		@keyframes gift-pulse {
-			0%, 100% { transform: scale(1); }
-			50% { transform: scale(1.05); }
+			0%, 100% { transform: scale(1); opacity: 1; }
+			50% { transform: scale(1.12); opacity: 0.4; }
 		}
-		#gift-banner.in-view .gift-title {
-			animation: gift-pulse 3s ease-in-out infinite;
+		#gift-banner.in-view .container {
+			animation: gift-pulse 2.8s ease-in-out 1.2s infinite;
 		}
 	</style>
 </head>
@@ -133,7 +133,7 @@
 		<section id="gift-banner" style="background: rgba(98, 93, 82, 0.85); padding: 28px 20px; text-align: center;">
 			<div class="container">
 				<p class="gift-title" style="font-family: 'Playfair Display', serif; font-size: 26px; font-style: italic; color: #fff; margin-bottom: 6px;">New Client Gift — Complimentary Waterpik</p>
-				<p style="font-size: 15px; color: #fff; margin-bottom: 14px;">A premier electric water flosser &amp; brush ($250+ value), yours on your first appointment. While quantities last.</p>
+				<p style="font-size: 15px; color: #ccb180; margin-bottom: 14px;">A premier electric water flosser &amp; brush ($250+ value), yours on your first appointment. While quantities last.</p>
 				<p style="font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase; color: #fff; margin-bottom: 0;"><strong>CDCP &amp; All Insurance Plans Accepted &nbsp;·&nbsp; Direct Billing Available</strong></p>
 			</div>
 		</section>
