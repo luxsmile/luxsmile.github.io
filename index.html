@@ -57,20 +57,11 @@
 			transform: translateY(0);
 		}
 		@keyframes gift-pulse {
-			0%, 33%, 100% { transform: scale(1); opacity: 1; }
-			16% { transform: scale(1.1); opacity: 0.55; }
+			0%, 100% { transform: scale(1); }
+			50% { transform: scale(1.05); }
 		}
-		#gift-banner.in-view .container p:nth-child(1) {
-			animation: gift-pulse 9s ease-in-out 1.2s infinite;
-		}
-		#gift-banner.in-view .container p:nth-child(2) {
-			animation: gift-pulse 9s ease-in-out 4.2s infinite;
-		}
-		#gift-banner.in-view .container p:nth-child(3) {
-			animation: gift-pulse 9s ease-in-out 7.2s infinite;
-		}
-		#gift-banner:hover .container p {
-			animation: none;
+		#gift-banner.in-view .gift-title {
+			animation: gift-pulse 3s ease-in-out infinite;
 		}
 	</style>
 </head>
