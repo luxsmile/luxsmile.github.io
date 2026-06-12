@@ -36,13 +36,15 @@ qr_img.save(qr_path)
 c = canvas.Canvas(os.path.join(BASE, "luxsmile_magazine.pdf"), pagesize=(W, H))
 c.setPageCompression(1)
 
-# ── CMYK colors (newsprint-safe, total ink <= 250%) ──────────────
-WINE  = CMYKColor(0.15, 1.00, 0.60, 0.18)   # deep burgundy, total 193%
-WHITE = CMYKColor(0, 0, 0, 0)
-BLACK = CMYKColor(0, 0, 0, 1.0)             # 100K only
+# ── CMYK colors matching luxsmile.ca (newsprint-safe) ────────────
+# Website: charcoal black #1f1d1a, champagne gold #ccb180, white
+CHARCOAL = CMYKColor(0, 0, 0, 1.0)            # 100K black, crisp on newsprint
+GOLD     = CMYKColor(0.00, 0.13, 0.37, 0.20)  # champagne gold #ccb180
+WHITE    = CMYKColor(0, 0, 0, 0)
+BLACK    = CMYKColor(0, 0, 0, 1.0)
 
 # ═════════════════════════════════════════════════════════════════
-# 1. HEADER  y: 309-351  (42 pt) — white, logo, black + wine brand
+# 1. HEADER  y: 309-351  (42 pt) — white, logo, black + gold brand
 # ═════════════════════════════════════════════════════════════════
 c.setFillColor(WHITE)
 c.rect(0, 309, W, 42, fill=1, stroke=0)
@@ -59,11 +61,11 @@ c.setFillColor(BLACK)
 c.drawString(42, 332, "LuxSmile")
 
 c.setFont("Helvetica-Bold", 8)
-c.setFillColor(WINE)
+c.setFillColor(GOLD)
 c.drawString(42, 320, "MOBILE DENTAL")
 c.drawString(42, 311.5, "HYGIENE")
 
-c.setStrokeColor(WINE)
+c.setStrokeColor(GOLD)
 c.setLineWidth(1)
 c.line(0, 309, W, 309)
 
@@ -74,17 +76,17 @@ try:
     photo = ImageReader(dental_compressed)
     c.drawImage(photo, 0, 255, width=W, height=54)
 except Exception:
-    c.setFillColor(WINE)
+    c.setFillColor(CHARCOAL)
     c.rect(0, 255, W, 54, fill=1, stroke=0)
 
 # ═════════════════════════════════════════════════════════════════
-# 3. WINE HEADLINE BLOCK  y: 205-255  (50 pt)
+# 3. CHARCOAL HEADLINE BLOCK  y: 205-255  (50 pt) — like site hero
 # ═════════════════════════════════════════════════════════════════
-c.setFillColor(WINE)
+c.setFillColor(CHARCOAL)
 c.rect(0, 205, W, 50, fill=1, stroke=0)
 
 c.setFont("Helvetica-Bold", 6)
-c.setFillColor(WHITE)
+c.setFillColor(GOLD)
 c.drawCentredString(W/2, 245, "LEASIDE  &  SURROUNDING  AREAS")
 
 c.setFont("Times-Bold", 12)
@@ -93,32 +95,31 @@ c.drawCentredString(W/2, 231, "Premium dental hygiene")
 c.drawCentredString(W/2, 218, "that comes to you.")
 
 c.setFont("Times-BoldItalic", 7.5)
-c.setFillColor(WHITE)
+c.setFillColor(GOLD)
 c.drawCentredString(W/2, 208.5, "Leili H Zarrabi, RDH  ·  15+ years")
 
 # ═════════════════════════════════════════════════════════════════
-# 4. GIFT BOX  y: 145-205  (60 pt) — white card with wine frame
+# 4. GIFT CARD  y: 145-205  (60 pt) — white card, gold double frame
 # ═════════════════════════════════════════════════════════════════
 c.setFillColor(WHITE)
 c.rect(0, 145, W, 60, fill=1, stroke=0)
 
-# Elegant double frame
-c.setStrokeColor(WINE)
+c.setStrokeColor(GOLD)
 c.setLineWidth(1.2)
 c.rect(6, 148, W - 12, 54, fill=0, stroke=1)
 c.setLineWidth(0.4)
 c.rect(9, 151, W - 18, 48, fill=0, stroke=1)
 
 c.setFont("Helvetica-Bold", 6.5)
-c.setFillColor(BLACK)
+c.setFillColor(GOLD)
 c.drawCentredString(W/2, 191, "F I R S T - V I S I T   G I F T")
 
 c.setFont("Times-BoldItalic", 11)
-c.setFillColor(WINE)
+c.setFillColor(BLACK)
 c.drawCentredString(W/2, 179, "Complimentary")
 
 c.setFont("Times-Bold", 20)
-c.setFillColor(WINE)
+c.setFillColor(BLACK)
 c.drawCentredString(W/2, 161, "Waterpik")
 
 c.setFont("Helvetica-Bold", 5.8)
@@ -126,13 +127,13 @@ c.setFillColor(BLACK)
 c.drawCentredString(W/2, 153.5, "A $250+ value  ·  While quantities last")
 
 # ═════════════════════════════════════════════════════════════════
-# 5. WHITENING STRIP  y: 123-145  (22 pt) — crisp black band
+# 5. WHITENING STRIP  y: 123-145  (22 pt) — charcoal with gold
 # ═════════════════════════════════════════════════════════════════
-c.setFillColor(BLACK)
+c.setFillColor(CHARCOAL)
 c.rect(0, 123, W, 22, fill=1, stroke=0)
 
 c.setFont("Helvetica-Bold", 9.5)
-c.setFillColor(WHITE)
+c.setFillColor(GOLD)
 c.drawCentredString(W/2, 135, "TEETH  WHITENING")
 
 c.setFont("Helvetica-Bold", 5.5)
@@ -146,7 +147,7 @@ c.setFillColor(WHITE)
 c.rect(0, 58, W, 65, fill=1, stroke=0)
 
 c.setFont("Helvetica-Bold", 6)
-c.setFillColor(WINE)
+c.setFillColor(GOLD)
 c.drawCentredString(W/2, 114, "O U R   C A R E")
 
 services = [
@@ -162,7 +163,7 @@ for s in services:
     c.drawCentredString(W/2, y, s)
     y -= 10
 
-c.setStrokeColor(WINE)
+c.setStrokeColor(GOLD)
 c.setLineWidth(0.5)
 c.line(14, 68, W - 14, 68)
 c.setFont("Helvetica-Bold", 6.5)
@@ -170,9 +171,9 @@ c.setFillColor(BLACK)
 c.drawCentredString(W/2, 60.5, "CDCP & all insurance plans  ·  Direct billing")
 
 # ═════════════════════════════════════════════════════════════════
-# 7. FOOTER  y: 0-58  (58 pt) — wine, phone + website + QR code
+# 7. FOOTER  y: 0-58  (58 pt) — charcoal, phone + website + QR code
 # ═════════════════════════════════════════════════════════════════
-c.setFillColor(WINE)
+c.setFillColor(CHARCOAL)
 c.rect(0, 0, W, 58, fill=1, stroke=0)
 
 # QR code on right (white tile so it scans on newsprint)
@@ -183,7 +184,7 @@ c.drawImage(ImageReader(qr_path), W - QR_S - 8, 8, width=QR_S, height=QR_S)
 
 # Left side: call to action
 c.setFont("Helvetica-Bold", 6)
-c.setFillColor(WHITE)
+c.setFillColor(GOLD)
 c.drawString(8, 45, "CALL OR TEXT TO BOOK")
 
 c.setFont("Helvetica-Bold", 12.5)
@@ -191,7 +192,7 @@ c.setFillColor(WHITE)
 c.drawString(8, 31, "416·994·9669")
 
 c.setFont("Times-Bold", 10)
-c.setFillColor(WHITE)
+c.setFillColor(GOLD)
 c.drawString(8, 17, "luxsmile.ca")
 
 c.setFont("Helvetica-Bold", 5)
@@ -205,5 +206,5 @@ size_kb = os.path.getsize(os.path.join(BASE, "luxsmile_magazine.pdf")) // 1024
 print("[OK] Magazine flyer created: luxsmile_magazine.pdf")
 print(f"  Size: {size_kb} KB")
 print(f"  Dimensions: 2.125 x 4.875 inches")
-print(f"  Colors: burgundy + black + white, CMYK, ink under 250%")
+print(f"  Colors: website palette - charcoal black + champagne gold + white")
 print(f"  QR code links to https://luxsmile.ca")
