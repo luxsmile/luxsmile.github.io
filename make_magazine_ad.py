@@ -1,7 +1,7 @@
 from reportlab.pdfgen import canvas
 from reportlab.lib.colors import CMYKColor
 from reportlab.lib.utils import ImageReader
-from PIL import Image
+from PIL import Image, ImageChops
 import qrcode
 import os
 import sys
@@ -51,6 +51,25 @@ try:
 except Exception as e:
     print(f"Photo prep: {e}")
 
+# ── Prepare a tightly-cropped logo (prints larger & sharper) ─────
+logo_draw = os.path.join(BASE, "logo.png")
+try:
+    _lg = Image.open(logo_draw).convert("RGBA")
+    _comp = Image.alpha_composite(
+        Image.new("RGBA", _lg.size, (255, 255, 255, 255)), _lg).convert("L")
+    _bbox = ImageChops.difference(
+        _comp, Image.new("L", _comp.size, 255)).getbbox()
+    if _bbox:
+        pad = 6
+        l, t, r, b = _bbox
+        _lg = _lg.crop((max(0, l - pad), max(0, t - pad),
+                        min(_lg.width, r + pad), min(_lg.height, b + pad)))
+        logo_trim = os.path.join(BASE, "logo_trim.png")
+        _lg.save(logo_trim)
+        logo_draw = logo_trim
+except Exception as e:
+    print(f"Logo prep: {e}")
+
 # ── Generate QR code -> luxsmile.ca ──────────────────────────────
 qr_path = os.path.join(BASE, "qr_luxsmile.png")
 qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_M, border=2)
@@ -83,20 +102,20 @@ c.setFillColor(WHITE)
 c.rect(0, 309, W, 42, fill=1, stroke=0)
 
 try:
-    logo = ImageReader(os.path.join(BASE, "logo.png"))
-    c.drawImage(logo, 5, 313, width=34, height=34,
-                mask='auto', preserveAspectRatio=True)
+    logo = ImageReader(logo_draw)
+    c.drawImage(logo, 8, 309, width=43, height=43,
+                mask='auto', preserveAspectRatio=True, anchor='c')
 except Exception as e:
     print(f"Logo: {e}")
 
 c.setFont("Times-Bold", 18)
 c.setFillColor(BLACK)
-c.drawString(42, 332, "LuxSmile")
+c.drawString(55, 332, "LuxSmile")
 
 c.setFont("Helvetica-Bold", 8)
 c.setFillColor(BLACK)
-c.drawString(42, 320, "MOBILE DENTAL")
-c.drawString(42, 311.5, "HYGIENE")
+c.drawString(55, 320, "MOBILE DENTAL")
+c.drawString(55, 311.5, "HYGIENE")
 
 c.setStrokeColor(GOLD)
 c.setLineWidth(1)
