@@ -1,7 +1,7 @@
 from reportlab.pdfgen import canvas
 from reportlab.lib.colors import CMYKColor
 from reportlab.lib.utils import ImageReader
-from PIL import Image, ImageChops
+from PIL import Image, ImageChops, ImageOps
 import qrcode
 import os
 import sys
@@ -51,22 +51,25 @@ try:
 except Exception as e:
     print(f"Photo prep: {e}")
 
-# ── Prepare a tightly-cropped logo (prints larger & sharper) ─────
+# ── Prepare logo: darken faint lines + trim whitespace (sharper print) ──
 logo_draw = os.path.join(BASE, "logo.png")
 try:
-    _lg = Image.open(logo_draw).convert("RGBA")
-    _comp = Image.alpha_composite(
-        Image.new("RGBA", _lg.size, (255, 255, 255, 255)), _lg).convert("L")
-    _bbox = ImageChops.difference(
-        _comp, Image.new("L", _comp.size, 255)).getbbox()
+    _src = Image.open(logo_draw).convert("RGBA")
+    # Flatten on white, then strengthen the pale grey strokes toward solid black
+    _g = Image.alpha_composite(
+        Image.new("RGBA", _src.size, (255, 255, 255, 255)), _src).convert("L")
+    _g = ImageOps.autocontrast(_g, cutoff=0)
+    _g = _g.point(lambda p: int(255 * (p / 255) ** 2.2))   # darken/strengthen lines
+    # Trim surrounding whitespace so the emblem fills the space
+    _bbox = ImageChops.difference(_g, Image.new("L", _g.size, 255)).getbbox()
     if _bbox:
         pad = 6
         l, t, r, b = _bbox
-        _lg = _lg.crop((max(0, l - pad), max(0, t - pad),
-                        min(_lg.width, r + pad), min(_lg.height, b + pad)))
-        logo_trim = os.path.join(BASE, "logo_trim.png")
-        _lg.save(logo_trim)
-        logo_draw = logo_trim
+        _g = _g.crop((max(0, l - pad), max(0, t - pad),
+                      min(_g.width, r + pad), min(_g.height, b + pad)))
+    logo_sharp = os.path.join(BASE, "logo_sharp.png")
+    _g.convert("RGB").save(logo_sharp)
+    logo_draw = logo_sharp
 except Exception as e:
     print(f"Logo prep: {e}")
 
