@@ -21,8 +21,20 @@ W, H = 153, 351
 
 BASE = r"C:\Users\leili\luxsmile.github.io"
 
+# ── Options from command line ────────────────────────────────────
+#   positional: band colour (burgundy|bronze|gold)
+#   flag:       --cmyk  -> convert the photo to CMYK and save a separate file
+_args  = [a.lower() for a in sys.argv[1:]]
+cmyk   = "--cmyk" in _args
+choice = next((a for a in _args if not a.startswith("--")), "burgundy")
+_suffix = "" if choice == "burgundy" else f"_{choice}"
+if cmyk:
+    _suffix += "_cmyk"
+OUT_NAME = f"luxsmile_magazine{_suffix}.pdf" if _suffix else "luxsmile_magazine.pdf"
+
 # ── Prepare dental photo (cropped to fit, compressed) ────────────
 dental_compressed = os.path.join(BASE, "dental_compressed.jpg")
+photo_src = dental_compressed
 try:
     dental_img = Image.open(os.path.join(BASE, "dental.jpg")).convert("RGB")
     # Photo area is 153 x 54 pt -> ~300 DPI: 638 x 225 px
@@ -33,6 +45,9 @@ try:
     ox, oy = (nw - target_w) // 2, (nh - target_h) // 2
     dental_img = dental_img.crop((ox, oy, ox + target_w, oy + target_h))
     dental_img.save(dental_compressed, "JPEG", quality=80, optimize=True)
+    if cmyk:
+        # Embed the photo as CMYK so the entire PDF is CMYK (press / PDF-X)
+        photo_src = dental_img.convert("CMYK")
 except Exception as e:
     print(f"Photo prep: {e}")
 
@@ -55,10 +70,8 @@ BRONZE   = CMYKColor(0.05, 0.32, 0.68, 0.42)  # deep antique bronze — richer t
 
 # ── Choose the offer-band color (default burgundy) ───────────────
 BANDS = {"burgundy": BURGUNDY, "bronze": BRONZE, "gold": GOLD}
-choice = sys.argv[1].lower() if len(sys.argv) > 1 else "burgundy"
 BAND_COLOR = BANDS.get(choice, BURGUNDY)
 BAND_TEXT  = BLACK if choice == "gold" else WHITE   # light gold needs dark text
-OUT_NAME   = "luxsmile_magazine.pdf" if choice == "burgundy" else f"luxsmile_magazine_{choice}.pdf"
 
 c = canvas.Canvas(os.path.join(BASE, OUT_NAME), pagesize=(W, H))
 c.setPageCompression(1)
@@ -93,7 +106,7 @@ c.line(0, 309, W, 309)
 # 2. PHOTO  y: 255-309  (54 pt)
 # ═════════════════════════════════════════════════════════════════
 try:
-    photo = ImageReader(dental_compressed)
+    photo = ImageReader(photo_src)
     c.drawImage(photo, 0, 255, width=W, height=54)
 except Exception:
     c.setFillColor(CHARCOAL)
@@ -154,11 +167,7 @@ c.drawCentredString(W/2, 153.2, "$250+ VALUE  ·  FIRST 20 CLIENTS")
 # ═════════════════════════════════════════════════════════════════
 # Charcoal band, framed in gold — a dark block pops between the white sections
 c.setFillColor(CHARCOAL)
-c.rect(0, 123, W, 22, fill=1, stroke=0)
-c.setStrokeColor(GOLD)
-c.setLineWidth(1.1)
-c.line(0, 144.4, W, 144.4)
-c.line(0, 123.6, W, 123.6)
+c.rect(0, 123, W, 24, fill=1, stroke=0)
 
 c.setFont("Helvetica-Bold", 11)
 c.setFillColor(GOLD)
