@@ -5,6 +5,16 @@ from PIL import Image
 import qrcode
 import os
 import sys
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+
+# Embed real fonts so the PDF is fully press-ready (no font substitution).
+# Registered under the standard names so every setFont call below embeds.
+_WF = "C:/Windows/Fonts/"
+pdfmetrics.registerFont(TTFont("Helvetica",        _WF + "arial.ttf"))
+pdfmetrics.registerFont(TTFont("Helvetica-Bold",   _WF + "arialbd.ttf"))
+pdfmetrics.registerFont(TTFont("Times-Bold",       _WF + "timesbd.ttf"))
+pdfmetrics.registerFont(TTFont("Times-BoldItalic", _WF + "timesbi.ttf"))
 
 # Page size: 2.125" x 4.875" = 153 x 351 points
 W, H = 153, 351
