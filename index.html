@@ -47,6 +47,36 @@
 		}
 		.test-nav button:hover { background: transparent; color: #ccb180; }
 
+		.hero-badge {
+			display: inline-block;
+			margin: 22px auto 8px;
+			padding: 12px 26px;
+			border: 1px solid #ccb180;
+			border-radius: 40px;
+			background: rgba(0,0,0,0.25);
+			color: #ccb180;
+			font-size: 13px;
+			font-weight: 400;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+			animation: hero-badge-glow 2.6s ease-in-out infinite;
+		}
+		@keyframes hero-badge-glow {
+			0%, 100% { box-shadow: 0 0 6px rgba(204,177,128,0.4); border-color: #ccb180; }
+			50% { box-shadow: 0 0 20px rgba(204,177,128,0.9); border-color: #f0d9a8; }
+		}
+		.hero-welcome {
+			color: #fff;
+			font-size: 14px;
+			font-weight: 300;
+			font-style: italic;
+			font-family: 'Playfair Display', serif;
+			letter-spacing: 0.04em;
+			margin: 0 auto 4px;
+			max-width: 540px;
+			line-height: 1.7;
+		}
+
 		.luxury-gallery .item img {
 			max-width: 82%;
 			height: auto;
@@ -143,7 +173,7 @@
 							<p style="font-size: 15px; color: #ccb180; text-shadow: 0 0 1px #ccb180; margin-bottom: 0; letter-spacing: 0.2em; text-transform: uppercase;">Dental Boutique</p>
 							</h1>
 
-							<p data-animation-direction="fade" data-animation-delay="900" style="color: #fff; font-size: 14px; font-weight: 300; letter-spacing: 0.08em; margin: 18px auto 4px; max-width: 560px; line-height: 1.8;">CDCP &amp; All Insurance Accepted &nbsp;·&nbsp; Direct Billing<br>No insurance? You're welcome too — caring service at an affordable price.</p>
+							<div data-animation-direction="fade" data-animation-delay="900"><span class="hero-badge">CDCP &amp; All Insurance Accepted &nbsp;·&nbsp; Direct Billing</span><p class="hero-welcome">No insurance? You're welcome too — caring service at an affordable price.</p></div>
 
 								<div data-animation-direction="fade" data-animation-delay="1000">
 								<a href="tel:+14169949669" class="btn btn-light">
