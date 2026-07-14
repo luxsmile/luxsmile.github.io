@@ -30,6 +30,8 @@ public/
 | GitHub Pages hosting | Free, reliable, and automatically deploys when files are pushed to the main branch |
 | `.nojekyll` file | Disables GitHub's default Jekyll processing so all files are served as-is |
 | Single page layout | All content lives on one page for a smooth scrolling experience |
+| "Your Visit" section (before FAQ) | Four-step walkthrough of the home-studio experience, added to reassure new patients hesitant about a home office; styled with the site's existing gold/serif theme |
+| "Where do appointments take place?" FAQ entry | Answers the home-studio legitimacy question directly on the page, since phone inquiries showed patients hesitate to ask it |
 
 ---
 
