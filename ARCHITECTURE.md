@@ -33,6 +33,7 @@ public/
 | "Your Visit" section (before FAQ) | Four-step walkthrough of the home-studio experience, added to reassure new patients hesitant about a home office; styled with the site's existing gold/serif theme |
 | "Where do appointments take place?" FAQ entry | Answers the home-studio legitimacy question directly on the page, since phone inquiries showed patients hesitate to ask it |
 | Whitening spotlight banner near the top | Replaced the duplicate insurance strip (same info already in the hero badge) with a "From $199" whitening offer + direct booking button — whitening is the easiest service for new visitors to understand and act on |
+| Removed "New Client Gift — Complimentary Waterpik" banner (July 2026) | CDHO advertising rules prohibit inducements to new clients and cap free products at nominal value (~$20); a $250+ Waterpik promotion risked a professional-misconduct complaint. Banner, its animation styles, and its scroll script were all removed |
 
 ---
 
