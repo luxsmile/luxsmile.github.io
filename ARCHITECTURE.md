@@ -34,6 +34,7 @@ public/
 | "Where do appointments take place?" FAQ entry | Answers the home-studio legitimacy question directly on the page, since phone inquiries showed patients hesitate to ask it |
 | Whitening spotlight banner near the top | Replaced the duplicate insurance strip (same info already in the hero badge) with a "From $199" whitening offer + direct booking button — whitening is the easiest service for new visitors to understand and act on |
 | Removed "New Client Gift — Complimentary Waterpik" banner (July 2026) | CDHO advertising rules prohibit inducements to new clients and cap free products at nominal value (~$20); a $250+ Waterpik promotion risked a professional-misconduct complaint. Banner, its animation styles, and its scroll script were all removed |
+| Reworded all whitening content for CDHO compliance (July 2026) | Advertising a price is allowed, but the guideline bans subjective words ("gentle"), promised results ("noticeably brighter smile"), and references to drugs (removed "hydrogen peroxide" and percentages — the three strengths are now described as "three strength levels", with exact pricing confirmed at assessment). "From $199" is now explained: standard session $199, stronger options priced higher, results vary per person |
 
 ---
 
