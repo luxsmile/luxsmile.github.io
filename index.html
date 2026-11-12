@@ -280,6 +280,8 @@
 			(function () {
 				var v = document.currentScript.previousElementSibling;
 				var saveData = navigator.connection && navigator.connection.saveData;
+				// Phones get a tall version of the still photo that shows the whole scene (not a zoomed-in slice)
+				if (window.matchMedia('(max-width: 767px)').matches) { v.poster = 'images/hero-still-phone.jpg'; }
 				if (window.matchMedia('(min-width: 768px)').matches && !saveData) {
 					v.src = v.getAttribute('data-src');
 					v.play().catch(function () {});
