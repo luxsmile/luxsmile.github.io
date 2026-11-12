@@ -204,8 +204,8 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 	.svc-hero.fit-right { background-size: cover; background-position: 80% center; }
 }
 
-/* Phones: a tall version of the photo (whole scene, soft blurred edges) sits behind the banner text */
+/* Phones: the plain photo fills the banner like the other service pages, shifted right so the "CDCP" heading and the hand show */
 @media (max-width: 767px) {
-	.svc-hero.photo-top-phone { background-image: var(--phone-photo) !important; background-size: cover; background-position: center; }
-	.svc-hero.photo-top-phone::before { background: rgba(25,22,20,0.45); }
+	.svc-hero.photo-top-phone { background-image: var(--phone-photo) !important; background-size: cover; background-position: 72% center; }
+	.svc-hero.photo-top-phone::before { background: rgba(25,22,20,0.5); }
 }
