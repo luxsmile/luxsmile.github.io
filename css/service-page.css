@@ -203,3 +203,9 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 @media (max-width: 767px) {
 	.svc-hero.fit-right { background-size: cover; background-position: 80% center; }
 }
+
+/* Phones: whole photo shown as a picture across the top of the banner, text on dark below it (not zoomed in behind the text) */
+@media (max-width: 767px) {
+	.svc-hero.photo-top-phone { background-image: var(--phone-photo) !important; background-size: 100% auto; background-position: center top; background-color: #191614; padding-top: calc(75vw + 30px); }
+	.svc-hero.photo-top-phone::before { background: linear-gradient(180deg, rgba(25,22,20,0) 0, rgba(25,22,20,0) calc(75vw - 60px), rgba(25,22,20,1) 75vw, rgba(25,22,20,1) 100%); }
+}
