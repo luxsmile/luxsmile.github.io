@@ -210,11 +210,19 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 	.svc-hero.photo-top-phone::before { background: rgba(25,22,20,0.45); }
 }
 
-/* Tooth gems page: close-up photo enlarged on computers so the gems sit to the right of the title */
-@media (min-width: 768px) {
+/* Tooth gems page: the close-up photo always shows in full colour, with no wash over it */
+.svc-hero.light.soft.gem::before { display: none; }
+/* Computers: photo enlarged a little so the gems sit to the right of the words */
+@media (min-width: 1024px) {
 	.svc-hero.light.soft.gem { background-size: 122% auto; background-position: 0% 36%; }
-	.svc-hero.light.soft.gem .kicker, .svc-hero.light.soft.gem h1, .svc-hero.light.soft.gem p.lead { text-shadow: 0 0 10px rgba(250,247,242,0.95), 0 0 3px rgba(250,247,242,0.9); }
+	.svc-hero.light.soft.gem .inner > * { max-width: 440px; }
+	.svc-hero.light.soft.gem .kicker, .svc-hero.light.soft.gem h1, .svc-hero.light.soft.gem p.lead { text-shadow: 0 0 6px #faf7f2, 0 0 14px #faf7f2, 0 0 22px rgba(250,247,242,0.9); }
 	.svc-hero.light.soft.gem .kicker { color: #6f5a30; }
-	/* Much lighter fade than the other light heroes, so the photo keeps its colour */
-	.svc-hero.light.soft.gem::before { background: linear-gradient(90deg, rgba(250,247,242,0.55) 0%, rgba(250,247,242,0.4) 30%, rgba(250,247,242,0.08) 55%, rgba(250,247,242,0) 70%); }
+	.svc-hero.light.soft.gem p.lead { color: #2b2925; }
+}
+/* Tablets and phones: the whole photo on top, the words underneath on cream */
+@media (max-width: 1023px) {
+	.svc-hero.light.soft.gem { background-color: #faf7f2; background-size: 100% auto; background-position: center top; background-repeat: no-repeat; text-align: center; padding: calc(66.7vw + 28px) 16px 44px; }
+	.svc-hero.light.soft.gem .inner > * { max-width: none; }
+	.svc-hero.light.soft.gem .btn { margin-left: 15px; }
 }
