@@ -83,8 +83,9 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 .svc-book .tel { display: block; margin-top: 14px; font-family: 'Playfair Display', serif; font-size: 30px; color: #fff; text-decoration: none; letter-spacing: 1px; }
 
 /* Related services */
-.svc-related { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 14px; }
-.svc-related a { border: 1px solid #ccb180; color: #8a7346; padding: 9px 16px; font-size: 14px; text-decoration: none; }
+.svc-related { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px 20px; }
+/* Double gold border, like the buttons and boxes on the home page */
+.svc-related a { border: 1px solid #ccb180; outline: 1px solid rgba(204,177,128,0.55); outline-offset: 3px; color: #8a7346; padding: 10px 18px; font-size: 14px; text-decoration: none; transition: background 0.3s, color 0.3s; }
 .svc-related a:hover { background: #ccb180; color: #fff; }
 
 .svc-note { font-size: 14px; font-style: italic; color: #777; text-align: center; }
