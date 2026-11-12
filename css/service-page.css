@@ -175,3 +175,16 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 .svc-hero.split.photo-bg .text { background: rgba(250,247,242,0.55); padding: 26px 28px; -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px); }
 .svc-hero.split.photo-bg p.lead { color: #2b2925; font-weight: 400; }
 @media (max-width: 767px) { .svc-hero.split.photo-bg .text { padding: 18px 16px; } }
+
+/* Photo fills the banner; white heading on the left over a soft dark fade, face and smile clear on the right */
+.svc-hero.side { text-align: left; background-position: right 82%; padding: 130px 24px 120px; }
+.svc-hero.side::before { background: linear-gradient(90deg, rgba(25,22,20,0.78) 0%, rgba(25,22,20,0.55) 40%, rgba(25,22,20,0.05) 75%, rgba(25,22,20,0) 100%); }
+.svc-hero.side .inner { max-width: 1140px; }
+.svc-hero.side .inner > * { max-width: 540px; }
+.svc-hero.side .btn { margin-left: 0; }
+@media (max-width: 767px) {
+	.svc-hero.side { text-align: center; padding: 70px 16px 60px; background-position: 75% center; }
+	.svc-hero.side::before { background: rgba(25,22,20,0.55); }
+	.svc-hero.side .inner > * { max-width: none; }
+	.svc-hero.side .btn { margin-left: 15px; }
+}
