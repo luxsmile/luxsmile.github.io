@@ -155,7 +155,7 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
 /* Split hero with a soft background photo behind it (children's page) */
 .svc-hero.split.photo-bg { background-size: cover; background-position: center; background-repeat: no-repeat; }
-.svc-hero.split.photo-bg::before { display: block; background: linear-gradient(90deg, rgba(250,247,242,0.82) 0%, rgba(250,247,242,0.6) 45%, rgba(250,247,242,0.25) 100%); }
+.svc-hero.split.photo-bg::before { display: block; background: linear-gradient(90deg, rgba(250,247,242,0.72) 0%, rgba(250,247,242,0.42) 45%, rgba(250,247,242,0.1) 100%); }
 .svc-hero.split.photo-bg .inner { position: relative; }
 
 /* Light hero with the photo showing faintly (teeth cleaning page) */
