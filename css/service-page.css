@@ -226,3 +226,7 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 	.svc-hero.light.soft.gem .inner > * { max-width: none; }
 	.svc-hero.light.soft.gem .btn { margin-left: 15px; }
 }
+/* Fluoride page: same full-colour title photo treatment, with the child on the right of the words */
+@media (min-width: 1024px) {
+	.svc-hero.light.soft.gem.kids { background-size: 128% auto; background-position: 0% 22%; }
+}
