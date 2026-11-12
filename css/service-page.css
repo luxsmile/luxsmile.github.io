@@ -212,5 +212,9 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
 /* Tooth gems page: close-up photo enlarged on computers so the gems sit to the right of the title */
 @media (min-width: 768px) {
-	.svc-hero.light.soft.gem { background-size: 150% auto; background-position: 9% 38%; }
+	.svc-hero.light.soft.gem { background-size: 122% auto; background-position: 0% 36%; }
+	.svc-hero.light.soft.gem .kicker, .svc-hero.light.soft.gem h1, .svc-hero.light.soft.gem p.lead { text-shadow: 0 0 10px rgba(250,247,242,0.95), 0 0 3px rgba(250,247,242,0.9); }
+	.svc-hero.light.soft.gem .kicker { color: #6f5a30; }
+	/* Much lighter fade than the other light heroes, so the photo keeps its colour */
+	.svc-hero.light.soft.gem::before { background: linear-gradient(90deg, rgba(250,247,242,0.55) 0%, rgba(250,247,242,0.4) 30%, rgba(250,247,242,0.08) 55%, rgba(250,247,242,0) 70%); }
 }
