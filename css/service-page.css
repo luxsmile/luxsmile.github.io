@@ -124,3 +124,19 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 	.svc-split h2 { text-align: center; }
 	.svc-split h2 + .rule { margin-left: auto; }
 }
+
+/* Photo on the left instead of the right; on phones the text still comes first */
+.svc-split.reverse { grid-template-columns: 1fr 1.1fr; }
+@media (max-width: 767px) {
+	.svc-split.reverse { grid-template-columns: 1fr; }
+	.svc-split.reverse img { order: 2; }
+}
+
+/* Services drop-down in the header, with the gold service icons */
+.svc-drop { position: relative; }
+.svc-drop-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); min-width: 230px; padding: 8px 0; margin-top: 10px; background: #fff; box-shadow: 0 8px 24px rgba(0,0,0,0.18); border-top: 2px solid #ccb180; z-index: 60; }
+.svc-drop-menu::before { content: ""; position: absolute; left: 0; right: 0; top: -14px; height: 14px; }
+.svc-drop:hover .svc-drop-menu, .svc-drop:focus-within .svc-drop-menu { display: block; }
+.svc-header nav .svc-drop-menu a { display: block; color: #4a4640; padding: 10px 18px; text-transform: none; letter-spacing: 0.02em; font-size: 14px; }
+.svc-header nav .svc-drop-menu a:hover { background: #f7f3ec; color: #8a7346; }
+.svc-drop-menu i { width: 24px; margin-right: 8px; color: #ccb180; text-align: center; }
