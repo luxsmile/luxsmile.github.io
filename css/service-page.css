@@ -99,3 +99,28 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 .svc-hero.light p.lead { color: #4a4640; }
 .svc-hero.light .kicker { color: #8a7346; }
 .svc-hero.light .btn { color: #8a7346; }
+
+/* Split hero: photo beside the text on a cream pattern band (children's page) */
+.svc-hero.split { background: #f7f3ec url("../images/neela-pattern.png") repeat; background-size: 400px; color: #2b2925; padding: 60px 24px; text-align: left; }
+.svc-hero.split::before { display: none; }
+.svc-hero.split .inner { max-width: 1140px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.svc-hero.split h1 { color: #2b2925; }
+.svc-hero.split p.lead { color: #4a4640; }
+.svc-hero.split .kicker { color: #8a7346; }
+.svc-hero.split .btn { color: #8a7346; margin-left: 0; }
+.svc-hero.split img, .svc-split img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border: 1px solid rgba(204,177,128,0.8); outline: 1px solid rgba(204,177,128,0.5); outline-offset: 8px; }
+@media (max-width: 767px) {
+	.svc-hero.split { padding: 40px 16px; text-align: center; }
+	.svc-hero.split .inner { grid-template-columns: 1fr; gap: 28px; }
+	.svc-hero.split .btn { margin-left: 15px; }
+}
+
+/* Text beside a framed photo inside the page */
+.svc-split { max-width: 1040px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 44px; align-items: center; }
+.svc-split h2 { text-align: left; }
+.svc-split h2 + .rule { margin-left: 0; }
+@media (max-width: 767px) {
+	.svc-split { grid-template-columns: 1fr; gap: 24px; }
+	.svc-split h2 { text-align: center; }
+	.svc-split h2 + .rule { margin-left: auto; }
+}
