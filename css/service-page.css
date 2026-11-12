@@ -152,3 +152,8 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 .svc-gallery.single { grid-template-columns: 1fr; max-width: 640px; }
 /* Show the whole photo (no cropping), a little smaller than the text column */
 .svc-split img.fit { aspect-ratio: auto; object-fit: contain; max-width: 440px; justify-self: center; }
+
+/* Split hero with a soft background photo behind it (children's page) */
+.svc-hero.split.photo-bg { background-size: cover; background-position: center; background-repeat: no-repeat; }
+.svc-hero.split.photo-bg::before { display: block; background: rgba(250,247,242,0.78); }
+.svc-hero.split.photo-bg .inner { position: relative; }
