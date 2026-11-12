@@ -160,3 +160,7 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
 /* Light hero with the photo showing faintly (teeth cleaning page) */
 .svc-hero.light.soft::before { background: linear-gradient(rgba(250,247,242,0.62), rgba(250,247,242,0.5)); }
+/* Keep the leaves visible but make the text in front of them crisp */
+.svc-hero.split.photo-bg .text { background: rgba(250,247,242,0.55); padding: 26px 28px; -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px); }
+.svc-hero.split.photo-bg p.lead { color: #2b2925; font-weight: 400; }
+@media (max-width: 767px) { .svc-hero.split.photo-bg .text { padding: 18px 16px; } }
