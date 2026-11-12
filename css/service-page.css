@@ -207,5 +207,5 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 /* Phones: a tall version of the photo (whole scene, soft blurred edges) sits behind the banner text */
 @media (max-width: 767px) {
 	.svc-hero.photo-top-phone { background-image: var(--phone-photo) !important; background-size: cover; background-position: center; }
-	.svc-hero.photo-top-phone::before { background: rgba(25,22,20,0.55); }
+	.svc-hero.photo-top-phone::before { background: rgba(25,22,20,0.45); }
 }
