@@ -228,5 +228,5 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 }
 /* Fluoride page: same full-colour title photo treatment, with the child on the right of the words */
 @media (min-width: 1024px) {
-	.svc-hero.light.soft.gem.kids { background-size: 128% auto; background-position: 0% 22%; }
+	.svc-hero.light.soft.gem.kids { background-size: 150% auto; background-position: 0% 50%; }
 }
