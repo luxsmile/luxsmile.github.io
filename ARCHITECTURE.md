@@ -55,3 +55,4 @@ public/
 ---
 
 *This file is updated whenever a new technical decision is made based on a user request.*
+| Hero leaves, deep-cleaning banner, whitening photo (Nov 2026) | Phones get `images/hero-still-phone.jpg` (whole cleaning scene on a blurred tall fill) as the hero poster. The hero side leaves (`.hero-wrapper::before/::after`) are hidden on the home page and replaced by four `.hero-leaf` spans showing halves of `images/hero-leaves.svg`: top halves above the logo, bottom halves under Book Now. Deep cleaning banner uses `images/dental-exam-fade.jpg` (left edge faded to dark) with `.svc-hero.side.fit-right`, showing the whole photo on the right on computers. Home whitening section restored to `whitening-hero-2.jpg` at the user's request |
