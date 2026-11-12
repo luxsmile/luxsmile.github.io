@@ -73,7 +73,7 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
 /* Booking band */
 /* Booking band: photo with dark overlay, like the home page footer */
-.svc-book { position: relative; background: url("../images/toothbrush-spa.jpg") center/cover no-repeat; color: #fff; text-align: center; padding: 80px 20px; }
+.svc-book { position: relative; background: url("../images/bamboo-toothbrushes-eucalyptus.jpg") center/cover no-repeat; color: #fff; text-align: center; padding: 80px 20px; }
 .svc-book::before { content: ""; position: absolute; inset: 0; background: rgba(43,41,37,0.68); }
 .svc-book > * { position: relative; }
 .svc-book h2 { color: #fff; font-size: 34px; font-style: italic; margin-bottom: 10px; }
@@ -91,11 +91,11 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 .svc-note { font-size: 14px; font-style: italic; color: #777; text-align: center; }
 
 /* Footer */
-/* Footer: bamboo toothbrush photo under a soft dark wash, like the booking band */
-.svc-footer { position: relative; background: url("../images/toothbrush-cup-marble.jpg") center 60%/cover no-repeat; color: #f5f0e8; text-align: center; padding: 44px 20px; font-size: 14px; line-height: 2; border-top: 1px solid rgba(204,177,128,0.6); }
+/* Footer: lavender and bamboo toothbrush photo under a soft dark wash, same as the home page footer */
+.svc-footer { position: relative; background: url("../images/toothbrush-spa.jpg") center/cover no-repeat; color: #fff; text-align: center; padding: 44px 20px; font-size: 14px; line-height: 2; border-top: 1px solid rgba(204,177,128,0.6); }
 .svc-footer::before { content: ""; position: absolute; inset: 0; background: rgba(43,41,37,0.55); }
 .svc-footer > * { position: relative; }
-.svc-footer a { color: #e6d3ab; }
+.svc-footer a { color: #fff; }
 
 /* Light hero variant for bright photos (children's page): soft cream wash, dark text */
 .svc-hero.light::before { background: linear-gradient(rgba(255,255,255,0.72), rgba(247,243,236,0.6)); }
