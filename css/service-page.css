@@ -91,11 +91,11 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 .svc-note { font-size: 14px; font-style: italic; color: #777; text-align: center; }
 
 /* Footer */
-/* Footer: photo showing faintly through a soft cream wash, instead of solid black */
-.svc-footer { position: relative; background: url("../images/toothbrush-linen.jpg") center/cover no-repeat; color: #4a4640; text-align: center; padding: 40px 20px; font-size: 14px; line-height: 2; border-top: 1px solid rgba(204,177,128,0.6); }
-.svc-footer::before { content: ""; position: absolute; inset: 0; background: rgba(250,247,242,0.86); }
+/* Footer: bamboo toothbrush photo under a soft dark wash, like the booking band */
+.svc-footer { position: relative; background: url("../images/toothbrush-cup-marble.jpg") center 60%/cover no-repeat; color: #f5f0e8; text-align: center; padding: 44px 20px; font-size: 14px; line-height: 2; border-top: 1px solid rgba(204,177,128,0.6); }
+.svc-footer::before { content: ""; position: absolute; inset: 0; background: rgba(43,41,37,0.55); }
 .svc-footer > * { position: relative; }
-.svc-footer a { color: #8a7346; }
+.svc-footer a { color: #e6d3ab; }
 
 /* Light hero variant for bright photos (children's page): soft cream wash, dark text */
 .svc-hero.light::before { background: linear-gradient(rgba(255,255,255,0.72), rgba(247,243,236,0.6)); }
