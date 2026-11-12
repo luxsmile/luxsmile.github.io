@@ -347,6 +347,11 @@ var Neela;
                     var navActive = $(this);
                     var scroll = 0;
 
+                    // Links to other pages (e.g. service pages) open normally
+                    if (navActive.attr("href").charAt(0) !== "#") {
+                        return;
+                    }
+
                     if (navActive.attr("href") !== "#hero") {
                         scroll = $(navActive.attr("href")).offset().top - 65;
                     }
