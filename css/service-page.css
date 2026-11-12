@@ -209,3 +209,8 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 	.svc-hero.photo-top-phone { background-image: var(--phone-photo) !important; background-size: cover; background-position: center; }
 	.svc-hero.photo-top-phone::before { background: rgba(25,22,20,0.45); }
 }
+
+/* Tooth gems page: close-up photo enlarged on computers so the gems sit to the right of the title */
+@media (min-width: 768px) {
+	.svc-hero.light.soft.gem { background-size: 150% auto; background-position: 9% 38%; }
+}
