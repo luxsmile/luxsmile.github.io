@@ -285,14 +285,15 @@
 
 		<!-- ======================== HERO ======================== -->
 		<section id="hero">
-			<video class="background-video" playsinline autoplay muted loop preload="none" poster="images/hero-still.jpg" data-src="images/luxsmile-slider.mp4"></video>
+			<video class="background-video" playsinline autoplay muted loop preload="none" data-src="images/luxsmile-slider.mp4"></video>
 			<script>
 			// Phones and data-saver connections keep the still photo; only wider screens download the 4 MB video
 			(function () {
 				var v = document.currentScript.previousElementSibling;
 				var saveData = navigator.connection && navigator.connection.saveData;
 				// Phones get a tall version of the still photo that shows the whole scene (not a zoomed-in slice)
-				if (window.matchMedia('(max-width: 767px)').matches) { v.poster = 'images/hero-still-phone.jpg'; }
+				// (set here, not in the HTML, so phones don't download both versions)
+				v.poster = window.matchMedia('(max-width: 767px)').matches ? 'images/hero-still-phone.jpg' : 'images/hero-still.jpg';
 				if (window.matchMedia('(min-width: 768px)').matches && !saveData) {
 					v.src = v.getAttribute('data-src');
 					v.play().catch(function () {});
