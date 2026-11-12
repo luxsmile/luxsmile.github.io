@@ -11,7 +11,7 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 .svc-header nav { display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: center; }
 .svc-header nav a { color: #f5f0e8; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; }
 .svc-header nav a:hover, .svc-header nav a.active { color: #ccb180; }
-.svc-header nav a.call { color: #ccb180; border: 1px solid #ccb180; padding: 7px 14px; }
+.svc-header nav a.call { color: #ccb180; border: 1px solid #ccb180; outline: 1px solid rgba(204,177,128,0.55); outline-offset: 3px; padding: 7px 14px; margin: 4px; }
 @media (max-width: 767px) {
 	.svc-header img { height: 36px; }
 	.svc-header nav a.opt { display: none; }
