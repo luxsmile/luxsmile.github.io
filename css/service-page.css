@@ -197,3 +197,9 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 .photo-frame { display: block; }
 .photo-frame img { display: block; }
 .photo-frame.fit { max-width: 440px; justify-self: center; width: 100%; }
+
+/* Hero photo shown whole on the right (not zoomed in), its left edge fading into the dark side behind the text */
+.svc-hero.fit-right { background-color: #191614; background-size: auto 100%; background-repeat: no-repeat; background-position: right center; }
+@media (max-width: 767px) {
+	.svc-hero.fit-right { background-size: cover; background-position: 80% center; }
+}
