@@ -168,6 +168,12 @@
 			.hero-leaf.tr, .hero-leaf.br { right: -20px; transform: scaleX(-1); }
 		}
 
+		/* Infection prevention section: five points in two columns (one on phones), each with a gold icon */
+		.safety-list { list-style: none; margin: 10px 0 60px; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 36px; }
+		.safety-list li { display: flex; align-items: flex-start; gap: 16px; padding: 18px 20px; background: #fff; border: 1px solid rgba(204,177,128,0.5); line-height: 1.6; }
+		.safety-list li i { flex: 0 0 42px; height: 42px; display: flex; align-items: center; justify-content: center; border: 1px solid #ccb180; border-radius: 50%; color: #ccb180; font-size: 17px; }
+		@media (max-width: 767px) { .safety-list { grid-template-columns: 1fr; gap: 12px; margin-bottom: 40px; } }
+
 		/* Slim service bar under the menu (scrolls away with the page; the menu itself stays) */
 		.top-svc-bar { display: flex; justify-content: center; gap: 6px 34px; padding: 11px 16px; background: rgba(43,41,37,0.62); border-top: 1px solid rgba(204,177,128,0.6); border-bottom: 1px solid rgba(204,177,128,0.6); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
 		.top-svc-bar a { color: #f5f0e8; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; white-space: nowrap; display: flex; align-items: center; gap: 8px; }
@@ -919,6 +925,27 @@
 						</div>
 					</div>
 				</div>
+			</div>
+		</section>
+
+		<!-- ======================== INFECTION PREVENTION ======================== -->
+		<section id="safety" style="padding-top: 10px;">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-xl-6">
+						<h2 class="section-title-lg uppercase desc" data-animation-direction="from-left" data-animation-delay="300">
+							<small>Your safety</small><strong>Infection Prevention &amp; Sterilization</strong>
+						</h2>
+						<div class="section-desc" data-animation-direction="from-right" data-animation-delay="300">Every visit, in the studio or at your home, follows the College of Dental Hygienists of Ontario (CDHO) infection prevention and control standards and Public Health Ontario guidelines.</div>
+					</div>
+				</div>
+				<ul class="safety-list" data-animation-direction="from-bottom" data-animation-delay="400">
+					<li><i class="fas fa-box"></i>Instruments cleaned and sterilized before every visit, then kept in sealed pouches until your appointment</li>
+					<li><i class="fas fa-clipboard-check"></i>Sterilization equipment routinely monitored, with records kept</li>
+					<li><i class="fas fa-trash-alt"></i>Single-use disposable items wherever possible, used once and discarded</li>
+					<li><i class="fas fa-user-shield"></i>Fresh gloves, mask and protective eyewear for every client</li>
+					<li><i class="fas fa-spray-can"></i>Equipment and surfaces disinfected before and after each visit</li>
+				</ul>
 			</div>
 		</section>
 
