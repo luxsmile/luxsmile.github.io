@@ -242,3 +242,11 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 }
 /* Smaller framed photo (sensitivity page) */
 .photo-frame.fit:has(img.small) { max-width: 340px; }
+/* Photo-background hero with the subject on the right: words left-aligned on computers, shading lighter over the subject */
+@media (min-width: 1024px) {
+	.svc-hero.side-right { background-size: 150% auto; background-position: 0% 50% !important; text-align: left; }
+	.svc-hero.side-right::before { background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.12) 68%, rgba(0,0,0,0.05) 100%); }
+	.svc-hero.side-right .inner { max-width: 1140px; }
+	.svc-hero.side-right .inner > * { max-width: 520px; }
+	.svc-hero.side-right .btn { margin-left: 0; margin-right: 12px; }
+}
