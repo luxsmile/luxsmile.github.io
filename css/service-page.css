@@ -259,3 +259,7 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 @media (min-width: 1024px) {
 	.svc-hero.side-right.pos-top { background-size: 135% auto; background-position: 0% 10% !important; }
 }
+/* Tooth gems page: side-right hero sized so the gems sit to the right of the words */
+@media (min-width: 1024px) {
+	.svc-hero.side-right.gem-pos { background-size: 125% auto; background-position: 0% 38% !important; }
+}
