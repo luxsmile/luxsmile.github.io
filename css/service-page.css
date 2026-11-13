@@ -240,3 +240,5 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 	.svc-hero.light.soft.gem.sens .kicker { color: #e6d3a8; }
 	.svc-hero.light.soft.gem.sens .btn { color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.8); }
 }
+/* Smaller framed photo (sensitivity page) */
+.photo-frame.fit:has(img.small) { max-width: 340px; }
