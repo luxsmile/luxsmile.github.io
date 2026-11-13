@@ -255,3 +255,7 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 .svc-split .svc-overlap img { position: absolute; width: 66%; aspect-ratio: 4 / 3; object-fit: cover; border: 6px solid #fff; outline: 1px solid rgba(204,177,128,0.8); box-shadow: 0 8px 22px rgba(0,0,0,0.16); }
 .svc-split .svc-overlap img:first-child { top: 0; left: 0; }
 .svc-split .svc-overlap img:last-child { bottom: 0; right: 0; }
+/* Children's page: same side-right hero, photo anchored higher so the face shows */
+@media (min-width: 1024px) {
+	.svc-hero.side-right.pos-top { background-size: 135% auto; background-position: 0% 10% !important; }
+}
