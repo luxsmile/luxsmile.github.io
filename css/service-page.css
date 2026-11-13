@@ -232,9 +232,11 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 }
 /* Sensitivity page: same full-colour title photo treatment, with the woman on the right of the words */
 @media (min-width: 1024px) {
-	.svc-hero.light.soft.gem.sens { background-size: 130% auto; background-position: 0% 30%; }
+	.svc-hero.light.soft.gem.sens { background-size: 130% auto; background-position: 0% 4%; }
 }
 @media (min-width: 1024px) {
-	/* This photo is dark on the left, so a cream fade sits behind the words only; the woman stays in full colour */
-	.svc-hero.light.soft.gem.sens::before { display: block; background: linear-gradient(90deg, rgba(250,247,242,0.92) 0%, rgba(250,247,242,0.85) 34%, rgba(250,247,242,0) 52%); }
+	/* No fade over this photo: it shows in full colour, so the words are white with a soft dark shadow to stay readable on the dark greenery */
+	.svc-hero.light.soft.gem.sens .kicker, .svc-hero.light.soft.gem.sens h1, .svc-hero.light.soft.gem.sens p.lead { color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.9), 0 0 12px rgba(0,0,0,0.75), 0 0 26px rgba(0,0,0,0.55); }
+	.svc-hero.light.soft.gem.sens .kicker { color: #e6d3a8; }
+	.svc-hero.light.soft.gem.sens .btn { color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.8); }
 }
