@@ -7,9 +7,14 @@
 	<meta charset="utf-8">
 	<title>LuxSmile — Dental Hygienist in Toronto &amp; Mobile Care</title>
 	<meta name="description" content="Independent dental hygiene studio in Toronto — professional teeth cleaning, whitening, and mobile dental hygiene across the Greater Toronto Area. CDCP &amp; insurance accepted. Book today.">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="canonical" href="https://luxsmile.ca/">
+
+	<!-- Start fetching the top photo right away (phones get the tall version) -->
+	<link rel="preload" as="image" href="images/hero-still-phone.jpg" media="(max-width: 767px)" fetchpriority="high">
+	<link rel="preload" as="image" href="images/hero-still.jpg" media="(min-width: 768px)" fetchpriority="high">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 	<!-- Social sharing preview -->
 	<meta property="og:type" content="website">
@@ -74,7 +79,7 @@
 	</script>
 
 	<script src="js/modernizr-3.6.0.min.js"></script>
-	<script src="https://kit.fontawesome.com/39de636081.js" crossorigin="anonymous"></script>
+	<script defer src="https://kit.fontawesome.com/39de636081.js" crossorigin="anonymous"></script>
 	<style>
 		@keyframes lux-fadeIn  { from { opacity: 0; } to   { opacity: 1; } }
 		@keyframes lux-fadeOut { from { opacity: 1; } to   { opacity: 0; } }
@@ -278,7 +283,7 @@
 									<li><a href="#faq">FAQ</a></li>
 									<li><a href="#rsvp">Book Now</a></li>
 								</ul>
-								<button id="nav-mobile-btn"><i class="fas fa-bars"></i></button>
+								<button id="nav-mobile-btn" aria-label="Open menu"><i class="fas fa-bars"></i></button>
 							</nav>
 						</div>
 					</div>
@@ -297,7 +302,7 @@
 
 		<!-- ======================== HERO ======================== -->
 		<section id="hero">
-			<video class="background-video" playsinline autoplay muted loop preload="none" data-src="images/luxsmile-slider.mp4"></video>
+			<video class="background-video" aria-hidden="true" tabindex="-1" playsinline autoplay muted loop preload="none" data-src="images/luxsmile-slider.mp4"></video>
 			<script>
 			// Phones and data-saver connections keep the still photo; only wider screens download the 4 MB video
 			(function () {
@@ -373,7 +378,7 @@
 			<div class="container">
 				<p style="font-family: 'Playfair Display', serif; font-size: 26px; font-style: italic; color: #fff; margin-bottom: 6px;">Professional Teeth Whitening — <span style="color: #ccb180;">From $299</span></p>
 				<p style="font-size: 15px; color: #ccb180; margin-bottom: 18px;">A one-hour in-office session using 100% vegan materials. Three strength levels — $299, $399 or $499 — with the right option for you recommended at your assessment, before treatment begins. Whitening results vary from person to person.</p>
-				<a href="javascript:void(0)" data-cal-link="leili-w2vzvg/whitening" class="btn btn-light">
+				<a href="javascript:void(0)" role="button" data-cal-link="leili-w2vzvg/whitening" class="btn btn-light">
 					<span class="h-lines"></span><span class="v-lines"></span>Book Your Whitening
 				</a>
 			</div>
@@ -879,7 +884,7 @@
 							</div>
 						</div>
 						<p style="color: #ccb180; font-size: 15px; font-style: italic; font-family: 'Playfair Display', serif; margin-bottom: 30px;" data-animation-direction="from-bottom" data-animation-delay="450">Standard $299 &nbsp;·&nbsp; Enhanced $399 &nbsp;·&nbsp; Maximum $499 — recommended for you at your assessment. Touch-up sessions available after your treatment.</p>
-						<a href="javascript:void(0)" data-cal-link="leili-w2vzvg/whitening" class="btn btn-light" data-animation-direction="from-bottom" data-animation-delay="500">
+						<a href="javascript:void(0)" role="button" data-cal-link="leili-w2vzvg/whitening" class="btn btn-light" data-animation-direction="from-bottom" data-animation-delay="500">
 							<span class="h-lines"></span><span class="v-lines"></span>Book Your Whitening
 						</a>
 						<p style="margin-top: 10px;"><a href="teeth-whitening.html" style="color: #f5f0e8; text-decoration: underline;">Full whitening details &amp; FAQ</a></p>
@@ -1132,28 +1137,28 @@
 						<div class="neela-style" style="background:#fff; padding: 30px 20px; border: 1px solid #ccb180;"><span class="h-lines"></span><span class="v-lines"></span>
 							<h3 style="color: #ccb180;">New Client</h3>
 							<p style="font-size: 14px; margin-bottom: 25px; color: #555;">Full assessment &amp; cleaning</p>
-							<a href="javascript:void(0)" data-cal-link="leili-w2vzvg/new-client" class="btn" style="isolation:isolate;"><span class="h-lines"></span><span class="v-lines"></span>Book Now</a>
+							<a href="javascript:void(0)" role="button" data-cal-link="leili-w2vzvg/new-client" class="btn" style="isolation:isolate;"><span class="h-lines"></span><span class="v-lines"></span>Book Now</a>
 						</div>
 					</div>
 					<div class="col-md-4 text-center" style="margin-bottom: 30px;">
 						<div class="neela-style" style="background:#fff; padding: 30px 20px; border: 1px solid #ccb180;"><span class="h-lines"></span><span class="v-lines"></span>
 							<h3 style="color: #ccb180;">Returning Client</h3>
 							<p style="font-size: 14px; margin-bottom: 25px; color: #555;">Regular cleaning &amp; checkup</p>
-							<a href="javascript:void(0)" data-cal-link="leili-w2vzvg/90min" class="btn" style="isolation:isolate;"><span class="h-lines"></span><span class="v-lines"></span>Book Now</a>
+							<a href="javascript:void(0)" role="button" data-cal-link="leili-w2vzvg/90min" class="btn" style="isolation:isolate;"><span class="h-lines"></span><span class="v-lines"></span>Book Now</a>
 						</div>
 					</div>
 					<div class="col-md-4 text-center" style="margin-bottom: 30px;">
 						<div class="neela-style" style="background:#fff; padding: 30px 20px; border: 1px solid #ccb180;"><span class="h-lines"></span><span class="v-lines"></span>
 							<h3 style="color: #ccb180;">Whitening</h3>
 							<p style="font-size: 14px; margin-bottom: 25px; color: #555;">Professional teeth whitening · From $299</p>
-							<a href="javascript:void(0)" data-cal-link="leili-w2vzvg/whitening" class="btn" style="isolation:isolate;"><span class="h-lines"></span><span class="v-lines"></span>Book Now</a>
+							<a href="javascript:void(0)" role="button" data-cal-link="leili-w2vzvg/whitening" class="btn" style="isolation:isolate;"><span class="h-lines"></span><span class="v-lines"></span>Book Now</a>
 						</div>
 					</div>
 					<div class="col-md-4 text-center" style="margin-bottom: 30px;">
 						<div class="neela-style" style="background:#fff; padding: 30px 20px; border: 1px solid #ccb180;"><span class="h-lines"></span><span class="v-lines"></span>
 							<h3 style="color: #ccb180;">Consultation</h3>
 							<p style="font-size: 14px; margin-bottom: 25px; color: #555;">Questions &amp; treatment planning</p>
-							<a href="javascript:void(0)" data-cal-link="leili-w2vzvg/consultation" class="btn" style="isolation:isolate;"><span class="h-lines"></span><span class="v-lines"></span>Book Now</a>
+							<a href="javascript:void(0)" role="button" data-cal-link="leili-w2vzvg/consultation" class="btn" style="isolation:isolate;"><span class="h-lines"></span><span class="v-lines"></span>Book Now</a>
 						</div>
 					</div>
 				</div>
@@ -1229,6 +1234,29 @@
 	<!-- Template Scripts -->
 	<script src="js/variables-.js"></script>
 	<script src="js/scripts-.js"></script>
+	<script>
+	// Screen-reader labels: give repeated "Read more" / "Book now" buttons and the slider arrows their own names
+	window.addEventListener('load', function () {
+		document.querySelectorAll('a[onclick^="luxToggle"]').forEach(function (a) {
+			var box = a.parentElement, t = null;
+			while (box && box.tagName !== 'SECTION' && !(t = box.querySelector('h3'))) box = box.parentElement;
+			a.setAttribute('role', 'button');
+			if (t) a.setAttribute('aria-label', 'Read more about ' + t.textContent.trim());
+		});
+		document.querySelectorAll('#rsvp a[data-cal-link]').forEach(function (a) {
+			var card = a.parentElement, t = null;
+			while (card && card.id !== 'rsvp' && !(t = card.querySelector('h3'))) card = card.parentElement;
+			if (t) a.setAttribute('aria-label', a.textContent.trim() + ': ' + t.textContent.trim());
+		});
+		document.querySelectorAll('.owl-prev, .owl-next').forEach(function (b) {
+			b.removeAttribute('role');
+			b.setAttribute('aria-label', b.classList.contains('owl-prev') ? 'Previous' : 'Next');
+		});
+		document.querySelectorAll('.owl-dot').forEach(function (b, i) { b.setAttribute('aria-label', 'Slide ' + (i + 1)); });
+		var c = document.querySelector('.lb-close'); if (c) c.setAttribute('aria-label', 'Close');
+		var x = document.querySelector('.lb-cancel'); if (x) x.setAttribute('aria-label', 'Cancel');
+	});
+	</script>
 	<script>
 	// Links from other pages (e.g. /#safety): land on the right section once the page has finished loading
 	(function () {

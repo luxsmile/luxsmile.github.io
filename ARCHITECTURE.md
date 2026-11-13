@@ -53,6 +53,9 @@ public/
 | One main heading per page (Nov 2026) | Home page section titles changed from h1 to h2 (only the hero stays h1), with matching CSS so they look identical |
 | `robots.txt` + `sitemap.xml` | Tell search engines the site may be crawled and list every page; update the sitemap whenever a page is added |
 | Photo descriptions (alt text) | Every image has a short factual description for Google Images and screen readers |
+| `llms.txt` (Nov 2026) | A plain-text summary of the practice (who, where, services, prices, contact, links to each service page) written for AI tools such as ChatGPT and Gemini. Keep it in step with the site when prices, services or hours change; same CDHO wording rules as the pages |
+| Faster first view (Nov 2026) | The home page tells the browser to fetch the top photo immediately (`<link rel="preload">`, phone and computer versions chosen by screen width), the Font Awesome kit script no longer holds up the page (`defer`), and the Playfair Display lettering shows a fallback font until it arrives (`font-display: swap`) |
+| Accessibility labels (Nov 2026) | Pinch-to-zoom is allowed on every page (no `maximum-scale`). Booking pop-up links carry `role="button"`. A small script at the end of the home page names the repeated "Read more" / "Book Now" buttons, slider arrows and photo-viewer buttons for screen readers. NOT changed: the brand gold (#ccb180) on white fails Google's contrast check, but it is the site's signature colour, so it stays unless she asks; heading levels inside sections (h3/h4) were also left as they are to avoid changing the look |
 
 ---
 

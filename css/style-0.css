@@ -37,6 +37,7 @@
   src: url("../webfonts/playfairdisplay-regular.woff2") format("woff2"), url("../webfonts/playfairdisplay-regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 /* #Variables
 ================================================== */
