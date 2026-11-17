@@ -198,6 +198,16 @@
 		.top-svc-bar a i { color: #ccb180; font-size: 17px; }
 		.top-svc-bar a:hover { color: #ccb180; }
 		#hero { padding-top: 140px; }
+		/* Computers: menu sits on the same line as the logo (less white space), and the hero fills the screen */
+		@media (min-width: 1200px) {
+			.nav-section { min-height: 64px; }
+			.nav-section .nav-logo { height: 62px; }
+			.navbar-nav > li > a { padding: 0 11px; line-height: 62px; font-size: 11pt; }
+			.navbar-nav .dropdown-menu { top: 62px; }
+			#hero { padding-top: 110px; min-height: 100vh; display: flex; align-items: center; }
+			#hero > .container { width: 100%; }
+			.hero-logo-glow { margin-top: 20px; }
+		}
 		@media (max-width: 991px) {
 			.top-svc-bar { justify-content: flex-start; overflow-x: auto; gap: 0 22px; padding: 10px 14px; scrollbar-width: none; }
 			.top-svc-bar::-webkit-scrollbar { display: none; }
