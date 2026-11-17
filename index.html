@@ -12,7 +12,7 @@
 	<link rel="canonical" href="https://luxsmile.ca/">
 
 	<!-- Start fetching the top photo right away (phones get the tall version) -->
-	<link rel="preload" as="image" href="images/hero-still-phone.jpg" media="(max-width: 767px)" fetchpriority="high">
+	<link rel="preload" as="image" href="images/hero-still-phone-lady.jpg" media="(max-width: 767px)" fetchpriority="high">
 	<link rel="preload" as="image" href="images/hero-still.jpg" media="(min-width: 768px)" fetchpriority="high">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -330,7 +330,7 @@
 				var saveData = navigator.connection && navigator.connection.saveData;
 				// Phones get a tall version of the still photo that shows the whole scene (not a zoomed-in slice)
 				// (set here, not in the HTML, so phones don't download both versions)
-				v.poster = window.matchMedia('(max-width: 767px)').matches ? 'images/hero-still-phone.jpg' : 'images/hero-still.jpg';
+				v.poster = window.matchMedia('(max-width: 767px)').matches ? 'images/hero-still-phone-lady.jpg' : 'images/hero-still.jpg';
 				if (window.matchMedia('(min-width: 768px)').matches && !saveData) {
 					v.src = v.getAttribute('data-src');
 					v.play().catch(function () {});
