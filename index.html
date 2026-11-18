@@ -331,7 +331,7 @@
 				// Phones play a short, small (0.2 MB) clip after the page has loaded; the still image shows meanwhile
 				// (set here, not in the HTML, so phones don't download both versions)
 				var phone = window.matchMedia('(max-width: 767px)').matches; v.poster = phone ? 'images/hero-still-phone-smile.jpg' : 'images/hero-still.jpg';
-				if (phone && !saveData) { var startPhone = function () { v.src = 'images/luxsmile-phone.mp4'; v.play().catch(function () {}); }; var startLater = function () { setTimeout(startPhone, 3000); }; if (document.readyState === 'complete') { startLater(); } else { window.addEventListener('load', startLater); } }
+				if (phone && !saveData) { var startPhone = function () { v.src = 'images/luxsmile-phone.mp4'; v.play().catch(function () {}); }; if (document.readyState === 'complete') { startPhone(); } else { window.addEventListener('load', startPhone); } }
 					if (!phone && !saveData) {
 					v.src = v.getAttribute('data-src');
 					v.play().catch(function () {});
