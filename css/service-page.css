@@ -261,5 +261,6 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 }
 /* Tooth gems page: side-right hero sized so the gems sit to the right of the words */
 @media (min-width: 1024px) {
-	.svc-hero.side-right.gem-pos { background-size: 100% auto; background-position: 0% 38% !important; }
+	.svc-hero.side-right.gem-pos { background-color: #191614; background-repeat: no-repeat; background-size: auto 100%; background-position: right center !important; }
+	.svc-hero.side-right.gem-pos::before { background: linear-gradient(90deg, #191614 0%, #191614 37%, rgba(25,22,20,0.6) 47%, rgba(25,22,20,0.15) 58%, rgba(25,22,20,0) 66%); }
 }
