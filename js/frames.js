@@ -8,7 +8,7 @@
 	document.querySelectorAll(".svc-card, .svc-related a, .svc-header nav a.call").forEach(addLines);
 
 	// Images can't hold the lines themselves, so each framed photo gets a wrapper
-	document.querySelectorAll(".svc-split > img, .svc-hero.split img, .svc-gallery img").forEach(function (img) {
+	document.querySelectorAll(".svc-split > img, .svc-overlap img, .svc-hero.split img, .svc-gallery img").forEach(function (img) {
 		var frame = document.createElement("span");
 		frame.className = "photo-frame" + (img.classList.contains("fit") ? " fit" : "");
 		img.parentNode.insertBefore(frame, img);
