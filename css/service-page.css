@@ -255,6 +255,16 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 .svc-overlap .photo-frame { position: absolute; width: 66%; box-shadow: 0 8px 22px rgba(0,0,0,0.16); }
 .svc-overlap .photo-frame:first-child { top: 0; left: 0; }
 .svc-overlap .photo-frame:last-child { bottom: 0; right: 0; }
+/* The second photo fades into the first where they overlap (mask covers the photo and its double border) */
+.svc-overlap .photo-frame:last-child {
+	-webkit-mask-image: linear-gradient(135deg, transparent 4%, #000 46%);
+	mask-image: linear-gradient(135deg, transparent 4%, #000 46%);
+	-webkit-mask-size: calc(100% + 40px) calc(100% + 40px); mask-size: calc(100% + 40px) calc(100% + 40px);
+	-webkit-mask-position: center; mask-position: center;
+	-webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+	-webkit-mask-clip: no-clip; mask-clip: no-clip;
+	box-shadow: none;
+}
 .svc-overlap .photo-frame img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border: 6px solid #fff; }
 /* Children's page: same side-right hero, photo anchored higher so the face shows */
 @media (min-width: 1024px) {
