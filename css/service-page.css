@@ -270,8 +270,12 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 @media (min-width: 1024px) {
 	.svc-hero.side-right.pos-top { background-size: 135% auto; background-position: 0% 10% !important; }
 }
-/* Tooth gems page: side-right hero sized so the gems sit to the right of the words */
+/* Tooth gems page: smiling face on a dark background; to the right of the words on computers, above them on phones and tablets */
 @media (min-width: 1024px) {
-	.svc-hero.side-right.gem-pos { background-color: #191614; background-repeat: no-repeat; background-size: auto 100%; background-position: right center !important; }
-	.svc-hero.side-right.gem-pos::before { background: linear-gradient(90deg, #191614 0%, #191614 37%, rgba(25,22,20,0.6) 47%, rgba(25,22,20,0.15) 58%, rgba(25,22,20,0) 66%); }
+	.svc-hero.side-right.gem-pos { background-color: #050505; background-repeat: no-repeat; background-size: auto 100%; background-position: right center !important; }
+	.svc-hero.side-right.gem-pos::before { background: linear-gradient(90deg, #050505 0%, #050505 55%, rgba(5,5,5,0) 70%); }
+}
+@media (max-width: 1023px) {
+	.svc-hero.side-right.gem-pos { --face: min(100vw, 420px); background-color: #050505; background-repeat: no-repeat; background-size: var(--face) auto; background-position: center top !important; padding-top: var(--face); }
+	.svc-hero.side-right.gem-pos::before { background: linear-gradient(180deg, rgba(5,5,5,0) 0, rgba(5,5,5,0) calc(min(100vw, 420px) * 0.88), #050505 calc(min(100vw, 420px) * 1.08)); }
 }
