@@ -285,3 +285,6 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 	.svc-hero.side-right.gem-pos p.lead { font-size: 15px; line-height: 1.5; min-height: 275px; margin-bottom: 0; }
 	.svc-hero.side-right.gem-pos h1, .svc-hero.side-right.gem-pos .kicker, .svc-hero.side-right.gem-pos p.lead { text-shadow: 0 1px 3px rgba(0,0,0,0.95), 0 0 12px rgba(0,0,0,0.85); }
 }
+/* Tooth gems page: short line under the header buttons */
+.svc-hero.side-right.gem-pos p.more { color: #fff; font-size: 15px; line-height: 1.6; margin: 28px auto 0; text-shadow: 0 1px 3px rgba(0,0,0,0.95), 0 0 12px rgba(0,0,0,0.85); }
+@media (min-width: 1024px) { .svc-hero.side-right.gem-pos p.more { margin-left: 0; } }
