@@ -277,6 +277,6 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 }
 @media (max-width: 1023px) {
 	.svc-hero.side-right.gem-pos { background-color: #050505; background-repeat: no-repeat; background-size: auto 100%; background-position: center !important; }
-	.svc-hero.side-right.gem-pos::before { background: rgba(5,5,5,0.4); }
+	.svc-hero.side-right.gem-pos::before { background: rgba(5,5,5,0.25); }
 	.svc-hero.side-right.gem-pos .kicker, .svc-hero.side-right.gem-pos h1, .svc-hero.side-right.gem-pos p.lead { text-shadow: 0 1px 3px rgba(0,0,0,0.95), 0 0 12px rgba(0,0,0,0.8); }
 }
