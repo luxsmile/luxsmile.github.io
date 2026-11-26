@@ -277,9 +277,9 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 	.svc-hero.side-right.gem-pos::before { background: none; }
 }
 @media (max-width: 1023px) {
-	/* The face sits behind the words; her upper lip is always 280px down, so the words end above it and the buttons start below her mouth */
-	.svc-hero.side-right.gem-pos { --face: min(100vw, 460px); background-color: #0a0a0a; background-repeat: no-repeat; background-size: var(--face) auto; background-position: center calc(280px - var(--face) * 0.75) !important; padding-top: 24px; padding-bottom: 32px; }
-	.svc-hero.side-right.gem-pos::before { background: linear-gradient(180deg, rgba(10,10,10,0.5) 0, rgba(10,10,10,0.35) 200px, rgba(10,10,10,0) 265px); }
+	/* The face sits behind the words; her upper lip is always 316px down, so the words end above it and the buttons start below her mouth */
+	.svc-hero.side-right.gem-pos { --face: min(100vw, 460px); background-color: #0a0a0a; background-repeat: no-repeat; background-size: var(--face) auto; background-position: center calc(316px - var(--face) * 0.75) !important; padding-top: 60px; padding-bottom: 32px; }
+	.svc-hero.side-right.gem-pos::before { background: linear-gradient(180deg, rgba(10,10,10,0.5) 0, rgba(10,10,10,0.35) 236px, rgba(10,10,10,0) 301px); }
 	.svc-hero.side-right.gem-pos .kicker { font-size: 11px; margin-bottom: 8px; }
 	.svc-hero.side-right.gem-pos h1 { font-size: 30px; margin-bottom: 8px; }
 	.svc-hero.side-right.gem-pos p.lead { font-size: 15px; line-height: 1.5; min-height: 275px; margin-bottom: 0; }
@@ -287,4 +287,4 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 }
 /* Tooth gems page: short line under the header buttons */
 .svc-hero.side-right.gem-pos p.more { color: #fff; font-size: 15px; line-height: 1.6; margin: 28px auto 0; text-shadow: 0 1px 3px rgba(0,0,0,0.95), 0 0 12px rgba(0,0,0,0.85); }
-@media (min-width: 1024px) { .svc-hero.side-right.gem-pos p.more { margin-left: 0; } }
+@media (min-width: 1024px) { .svc-hero.side-right.gem-pos p.more { margin-left: 0; } .svc-hero.side-right.gem-pos .inner { position: relative; top: 28px; } }
