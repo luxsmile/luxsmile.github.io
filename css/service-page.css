@@ -271,12 +271,17 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 	.svc-hero.side-right.pos-top { background-size: 135% auto; background-position: 0% 10% !important; }
 }
 /* Tooth gems page: smiling face blended into a dark background (photo edges are faded into #0a0a0a, so keep that colour);
-   to the right of the words on computers, below them on phones and tablets so the gem is never behind text */
+   to the right of the words on computers, behind them on phones and tablets with the mouth and gem left clear */
 @media (min-width: 1024px) {
 	.svc-hero.side-right.gem-pos { background-color: #0a0a0a; background-repeat: no-repeat; background-size: auto 100%; background-position: right 3% center !important; }
 	.svc-hero.side-right.gem-pos::before { background: none; }
 }
 @media (max-width: 1023px) {
-	.svc-hero.side-right.gem-pos { --face: min(100vw, 460px); background-color: #0a0a0a; background-repeat: no-repeat; background-size: var(--face) auto; background-position: center bottom !important; padding-bottom: var(--face); }
-	.svc-hero.side-right.gem-pos::before { background: none; }
+	/* The face sits behind the words; her upper lip is always 280px down, so the words end above it and the buttons start below her mouth */
+	.svc-hero.side-right.gem-pos { --face: min(100vw, 460px); background-color: #0a0a0a; background-repeat: no-repeat; background-size: var(--face) auto; background-position: center calc(280px - var(--face) * 0.75) !important; padding-top: 24px; padding-bottom: 32px; }
+	.svc-hero.side-right.gem-pos::before { background: linear-gradient(180deg, rgba(10,10,10,0.5) 0, rgba(10,10,10,0.35) 200px, rgba(10,10,10,0) 265px); }
+	.svc-hero.side-right.gem-pos .kicker { font-size: 11px; margin-bottom: 8px; }
+	.svc-hero.side-right.gem-pos h1 { font-size: 30px; margin-bottom: 8px; }
+	.svc-hero.side-right.gem-pos p.lead { font-size: 15px; line-height: 1.5; min-height: 275px; margin-bottom: 0; }
+	.svc-hero.side-right.gem-pos h1, .svc-hero.side-right.gem-pos .kicker, .svc-hero.side-right.gem-pos p.lead { text-shadow: 0 1px 3px rgba(0,0,0,0.95), 0 0 12px rgba(0,0,0,0.85); }
 }
