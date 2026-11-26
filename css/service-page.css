@@ -270,13 +270,13 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 @media (min-width: 1024px) {
 	.svc-hero.side-right.pos-top { background-size: 135% auto; background-position: 0% 10% !important; }
 }
-/* Tooth gems page: smiling face on a dark background; to the right of the words on computers, behind them on phones and tablets */
+/* Tooth gems page: smiling face blended into a dark background (photo edges are faded into #0a0a0a, so keep that colour);
+   to the right of the words on computers, below them on phones and tablets so the gem is never behind text */
 @media (min-width: 1024px) {
-	.svc-hero.side-right.gem-pos { background-color: #050505; background-repeat: no-repeat; background-size: auto 100%; background-position: right center !important; }
-	.svc-hero.side-right.gem-pos::before { background: linear-gradient(90deg, #050505 0%, #050505 55%, rgba(5,5,5,0) 70%); }
+	.svc-hero.side-right.gem-pos { background-color: #0a0a0a; background-repeat: no-repeat; background-size: auto 100%; background-position: right 3% center !important; }
+	.svc-hero.side-right.gem-pos::before { background: none; }
 }
 @media (max-width: 1023px) {
-	.svc-hero.side-right.gem-pos { background-color: #050505; background-repeat: no-repeat; background-size: auto 100%; background-position: center !important; }
-	.svc-hero.side-right.gem-pos::before { background: rgba(5,5,5,0.25); }
-	.svc-hero.side-right.gem-pos .kicker, .svc-hero.side-right.gem-pos h1, .svc-hero.side-right.gem-pos p.lead { text-shadow: 0 1px 3px rgba(0,0,0,0.95), 0 0 12px rgba(0,0,0,0.8); }
+	.svc-hero.side-right.gem-pos { --face: min(100vw, 460px); background-color: #0a0a0a; background-repeat: no-repeat; background-size: var(--face) auto; background-position: center bottom !important; padding-bottom: var(--face); }
+	.svc-hero.side-right.gem-pos::before { background: none; }
 }
